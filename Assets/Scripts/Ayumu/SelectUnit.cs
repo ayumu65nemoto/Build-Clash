@@ -6,11 +6,13 @@ public class SelectUnit : MonoBehaviour
 {
     //ユニット格納
     [SerializeField] GameObject[] units;
+    public GameObject unit;
     //ユニット番号
     public int selectUnitNumber;
-    private int vecX = 0;
-    private int vecY = 1;
-    private int vecZ = -5;
+    //ボタンフラグ
+    public bool push_a = false;
+    public bool push_b = false;
+    public bool push_c = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,27 +20,63 @@ public class SelectUnit : MonoBehaviour
         selectUnitNumber = 0;
     }
 
-    public void OnClickA()
+    public void PushDownA()
     {
-        selectUnitNumber = 0;
-        SetUnit();
+        push_a = true;
     }
 
-    public void OnClickB()
+    public void PushDownB()
     {
-        selectUnitNumber = 1;
-        SetUnit();
+        push_b = true;
     }
 
-    public void OnClickC()
+    public void PushDownC()
     {
-        selectUnitNumber = 2;
-        SetUnit();
+        push_c = true;
     }
 
-    public void SetUnit()
+    public void PushUpA()
+    {
+        push_a = false;
+    }
+
+    public void PushUpB()
+    {
+        push_b = false;
+    }
+
+    public void PushUpC()
+    {
+        push_c = false;
+    }
+
+    void Update()
+    {
+        if (push_a == true)
+        {
+            selectUnitNumber = 0;
+            PresetUnit();
+        }
+        if (push_b == true)
+        {
+            selectUnitNumber = 1;
+            PresetUnit();
+        }
+        if (push_c == true)
+        {
+            selectUnitNumber = 2;
+            PresetUnit();
+        }
+    }
+
+    public void PresetUnit()
+    {
+        unit = units[selectUnitNumber];
+    }
+
+    public void SetUnit(int vecX, int vecY, int vecZ)
     {
         //selectUnitNumber個目のユニットを配置する
-        var unit = Instantiate(units[selectUnitNumber], new Vector3(vecX, vecY, vecZ), Quaternion.Euler(0f, 0, 0f));
+        var set = Instantiate(unit, new Vector3(vecX, vecY, vecZ), Quaternion.Euler(0f, 0, 0f));
     }
 }
