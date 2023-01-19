@@ -42,7 +42,7 @@ public class BallShot : MonoBehaviour
             //AudioSource.PlayClipAtPoint(sound, transform.position);
 
             // ‚T•bŒã‚É–C’e‚ð”j‰ó‚·‚é
-            Destroy(ball, 5.0f);
+            Destroy(ball, 2.0f);
         }
     }
 }
