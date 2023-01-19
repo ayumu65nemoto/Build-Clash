@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowShot : MonoBehaviour
+public class FlameShot : MonoBehaviour
 {
     public GameObject prefab;
     private int _count;
-    private int _angle = 90;
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +19,19 @@ public class ArrowShot : MonoBehaviour
         _count += 1;
 
         // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-        if (_count % 180 == 0)
+        if (_count % 900 == 0)
         {
-            GameObject arrow = Instantiate(prefab, transform.position, Quaternion.Euler(_angle, 0, 0));
-            Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
+            GameObject flame = Instantiate(prefab, transform.position, Quaternion.identity);
+            Rigidbody flameRb = flame.GetComponent<Rigidbody>();
 
             // ’e‘¬‚Í©—R‚Éİ’è
-            arrowRb.AddForce(transform.forward * 500);
+            flameRb.AddForce(transform.forward * 100);
 
             //// ”­Ë‰¹‚ğo‚·
             //AudioSource.PlayClipAtPoint(sound, transform.position);
 
-            // ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
-            Destroy(arrow, 5.0f);
+            // 5•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
+            Destroy(flame, 5.0f);
         }
     }
 }
