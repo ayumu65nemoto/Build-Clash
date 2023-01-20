@@ -50,6 +50,12 @@ public class SelectUnit : MonoBehaviour
         indicater_c[2].SetActive(true);
     }
 
+    public void PushDownF()
+    {
+        selectUnitNumber = 3;
+        Debug.Log(selectUnitNumber);
+    }
+
     public void PushUpA()
     {
         push_a = false;
@@ -72,6 +78,11 @@ public class SelectUnit : MonoBehaviour
         indicater_c[0].SetActive(false);
         indicater_c[1].SetActive(false);
         indicater_c[2].SetActive(false);
+    }
+
+    public void PushUpF()
+    {
+
     }
 
     void Update()
