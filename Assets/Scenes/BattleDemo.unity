@@ -350,8 +350,8 @@ GameObject:
   - component: {fileID: 224837150}
   - component: {fileID: 224837149}
   - component: {fileID: 224837148}
-  - component: {fileID: 224837151}
   - component: {fileID: 224837152}
+  - component: {fileID: 224837153}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -465,23 +465,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224837146}
   m_CullTransparentMesh: 1
---- !u!114 &224837151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224837146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8e5aa350448444e8eb51295f9ca3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _threshold: 30
-  indicater_a: {fileID: 2122688568}
-  indicater_b: {fileID: 438768640}
-  indicater_c: {fileID: 1802597030}
-  selectUnit: {fileID: 1462813984}
 --- !u!114 &224837152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +500,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
-          m_MethodName: PushUpC
+          m_MethodName: LatePushUpC
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -527,6 +510,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &224837153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224837146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66115c691c2f8744bd23a8cb4db1c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _threshold: 30
 --- !u!1 &233306862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,10 +1242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _threshold: 30
-  indicater_a: {fileID: 316855730}
-  indicater_b: {fileID: 182387250}
-  indicater_c: {fileID: 2036551066}
-  selectUnit: {fileID: 1462813984}
 --- !u!114 &713225577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,7 +1277,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
-          m_MethodName: PushUpA
+          m_MethodName: LatePushUpA
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1446,8 +1438,8 @@ GameObject:
   - component: {fileID: 847780808}
   - component: {fileID: 847780807}
   - component: {fileID: 847780806}
-  - component: {fileID: 847780809}
   - component: {fileID: 847780810}
+  - component: {fileID: 847780811}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1561,23 +1553,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847780804}
   m_CullTransparentMesh: 1
---- !u!114 &847780809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847780804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8e5aa350448444e8eb51295f9ca3d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _threshold: 30
-  indicater_a: {fileID: 1338430238}
-  indicater_b: {fileID: 1843613110}
-  indicater_c: {fileID: 233306862}
-  selectUnit: {fileID: 1462813984}
 --- !u!114 &847780810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,7 +1588,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
-          m_MethodName: PushUpB
+          m_MethodName: LatePushUpB
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1623,6 +1598,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &847780811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847780804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea1f07336e460843a7553c1e95c34da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _threshold: 30
 --- !u!1 &938029525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6399687785816944330, guid: f80bcc8f2b77b6342ad22733b885f778, type: 3}
@@ -2443,7 +2431,7 @@ GameObject:
   - component: {fileID: 1462813985}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2483,6 +2471,18 @@ MonoBehaviour:
   push_a: 0
   push_b: 0
   push_c: 0
+  indicater_a:
+  - {fileID: 316855730}
+  - {fileID: 182387250}
+  - {fileID: 2036551066}
+  indicater_b:
+  - {fileID: 1338430238}
+  - {fileID: 1843613110}
+  - {fileID: 233306862}
+  indicater_c:
+  - {fileID: 2122688568}
+  - {fileID: 438768640}
+  - {fileID: 1802597030}
 --- !u!114 &1462813985
 MonoBehaviour:
   m_ObjectHideFlags: 0
