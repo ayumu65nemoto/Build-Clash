@@ -6,11 +6,14 @@ public class FlameShot : MonoBehaviour
 {
     public GameObject prefab;
     private int _count;
+    private GameObject _gameObject;
+    private GameManager _gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _gameObject = GameObject.FindWithTag("GameManager");
+        _gameManager = _gameObject.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -18,20 +21,23 @@ public class FlameShot : MonoBehaviour
     {
         _count += 1;
 
-        // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-        if (_count % 900 == 0)
+        if (_gameManager.battle == true)
         {
-            GameObject flame = Instantiate(prefab, transform.position, Quaternion.identity);
-            Rigidbody flameRb = flame.GetComponent<Rigidbody>();
+            // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
+            if (_count % 900 == 0)
+            {
+                GameObject flame = Instantiate(prefab, transform.position, Quaternion.identity);
+                Rigidbody flameRb = flame.GetComponent<Rigidbody>();
 
-            // ’e‘¬‚Í©—R‚Éİ’è
-            flameRb.AddForce(transform.forward * 100);
+                // ’e‘¬‚Í©—R‚Éİ’è
+                flameRb.AddForce(transform.forward * 100);
 
-            //// ”­Ë‰¹‚ğo‚·
-            //AudioSource.PlayClipAtPoint(sound, transform.position);
+                //// ”­Ë‰¹‚ğo‚·
+                //AudioSource.PlayClipAtPoint(sound, transform.position);
 
-            // 5•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
-            Destroy(flame, 5.0f);
+                // 5•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
+                Destroy(flame, 5.0f);
+            }
         }
     }
 }
