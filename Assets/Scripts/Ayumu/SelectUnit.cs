@@ -97,7 +97,6 @@ public class SelectUnit : MonoBehaviour
     public void SetUnit(int vecX, int vecY, int vecZ)
     {
         //selectUnitNumber個目のユニットを配置する
-        Debug.Log("Set");
         var set = Instantiate(units[selectUnitNumber], new Vector3(vecX, vecY, vecZ), Quaternion.Euler(0f, 0, 0f));
     }
 }
