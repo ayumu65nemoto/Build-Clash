@@ -16,17 +16,6 @@ public class BallShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    //プレハブ化した球をセット
-        //    GameObject ball = GameObject.Instantiate(prefab) as GameObject;
-        //    //マウスクリックした地点に球を飛ばす
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    Vector3 dir = ray.direction;
-        //    //球に力を加える
-        //    ball.GetComponent<Rigidbody>().AddForce(dir * 2000);
-        //}
-
         _count += 1;
 
         // ６０フレームごとに砲弾を発射する
