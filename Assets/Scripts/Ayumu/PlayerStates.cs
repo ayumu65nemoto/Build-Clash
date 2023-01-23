@@ -7,15 +7,17 @@ public class PlayerStates : MonoBehaviour
     public enum PlayerState
     {
         Normal,
-        Flame
+        Flame,
+        Wet
     }
 
     private PlayerState _state;
+    private Rigidbody _rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,13 @@ public class PlayerStates : MonoBehaviour
         {
             GetComponent<Renderer>().material.color = Color.red;
             Destroy(this.gameObject, 5f);
+        }
+
+        if (tempState == PlayerState.Wet)
+        {
+            GetComponent<Renderer>().material.color = Color.blue;
+            //Ž¿—Ê‚ð10ƒvƒ‰ƒX‚·‚é
+            _rb.mass += 10;
         }
     }
 }
