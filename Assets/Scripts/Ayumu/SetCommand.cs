@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetMeteor : MonoBehaviour
+public class SetCommand : MonoBehaviour
 {
     private GameObject _gameObject;
     private GameManager _gameManager;
     private SelectUnit _selectUnit;
+    private int _commandCount;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class SetMeteor : MonoBehaviour
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
         _selectUnit = _gameObject.GetComponent<SelectUnit>();
+        _commandCount = 1;
     }
 
     // Update is called once per frame
@@ -22,11 +24,15 @@ public class SetMeteor : MonoBehaviour
         
     }
 
-    public void Meteor()
+    public void SetShot()
     {
         if (_gameManager.battle == true)
         {
-            _selectUnit.SetUnit(0, 0, 0);
+            if (_commandCount > 0)
+            {
+                _selectUnit.SetUnit(0, 0, 0);
+                _commandCount -= 1;
+            }
         }
     }
 }

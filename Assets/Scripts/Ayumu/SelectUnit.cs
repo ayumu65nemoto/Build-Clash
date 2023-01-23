@@ -53,7 +53,6 @@ public class SelectUnit : MonoBehaviour
     public void PushDownF()
     {
         selectUnitNumber = 3;
-        Debug.Log(selectUnitNumber);
     }
 
     public void PushUpA()
@@ -92,22 +91,22 @@ public class SelectUnit : MonoBehaviour
 
     public void LatePushUpA()
     {
-        Invoke("PushUpA", 1.0f);
+        Invoke("PushUpA", 0.5f);
     }
 
     public void LatePushUpB()
     {
-        Invoke("PushUpB", 1.0f);
+        Invoke("PushUpB", 0.5f);
     }
 
     public void LatePushUpC()
     {
-        Invoke("PushUpC", 1.0f);
+        Invoke("PushUpC", 0.5f);
     }
 
-    public void SetUnit(int vecX, int vecY, int vecZ)
+    public void SetUnit(float vecX, float vecY, float vecZ)
     {
         //selectUnitNumber個目のユニットを配置する
-        var set = Instantiate(units[selectUnitNumber], new Vector3(vecX, vecY, vecZ), Quaternion.Euler(0f, 0, 0f));
+        var set = Instantiate(units[selectUnitNumber], new Vector3(vecX, vecY, vecZ), Quaternion.identity);
     }
 }

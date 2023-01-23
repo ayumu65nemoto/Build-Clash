@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeteorCommand : MonoBehaviour
 {
     public GameObject prefab;
-    private int _meteorCount;
+    private int _meteorCount = 1;
     //“G‚Ì‹’“_
     private GameObject _enemy;
     //“G‚ÌˆÊ’u

@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private GameObject _buttonC;
     //戦闘開始フラグ
     public bool battle;
+    //雨が降っているか
+    public bool rain;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
         _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
         _battleStartButton.SetActive(false);
         battle = false;
+        rain = false;
     }
 
     // Update is called once per frame

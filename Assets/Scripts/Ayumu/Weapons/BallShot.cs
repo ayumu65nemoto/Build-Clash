@@ -30,7 +30,7 @@ public class BallShot : MonoBehaviour
                 Rigidbody ballRb = ball.GetComponent<Rigidbody>();
 
                 // íeë¨ÇÕé©óRÇ…ê›íË
-                ballRb.AddForce(transform.forward * 1000);
+                ballRb.AddForce(transform.forward * 1500);
 
                 //// î≠éÀâπÇèoÇ∑
                 //AudioSource.PlayClipAtPoint(sound, transform.position);

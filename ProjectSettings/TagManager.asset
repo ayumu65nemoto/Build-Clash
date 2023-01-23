@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - GameManager
   - BattleStart
+  - Rain
   layers:
   - Default
   - TransparentFX

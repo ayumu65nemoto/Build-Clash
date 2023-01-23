@@ -11,7 +11,7 @@ public class PlayerStates : MonoBehaviour
         Wet
     }
 
-    private PlayerState _state;
+    public PlayerState _state;
     private Rigidbody _rb;
 
     // Start is called before the first frame update
