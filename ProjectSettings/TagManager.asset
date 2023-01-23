@@ -4,10 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Flame
   - Enemy
   - GameManager
   - BattleStart
+=======
+  - Bullet
+  - Spawn
+>>>>>>> 752097e (クラフト)
   layers:
   - Default
   - TransparentFX
