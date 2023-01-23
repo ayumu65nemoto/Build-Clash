@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallShot : MonoBehaviour
 {
     public GameObject prefab;
-    private int count;
+    private int _count;
 
     // Start is called before the first frame update
     void Start()
@@ -27,22 +27,22 @@ public class BallShot : MonoBehaviour
         //    ball.GetComponent<Rigidbody>().AddForce(dir * 2000);
         //}
 
-        count += 1;
+        _count += 1;
 
         // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-        if (count % 420 == 0)
+        if (_count % 420 == 0)
         {
-            GameObject shell = Instantiate(prefab, transform.position, Quaternion.identity);
-            Rigidbody shellRb = shell.GetComponent<Rigidbody>();
+            GameObject ball = Instantiate(prefab, transform.position, Quaternion.identity);
+            Rigidbody ballRb = ball.GetComponent<Rigidbody>();
 
             // ’e‘¬‚Í©—R‚Éİ’è
-            shellRb.AddForce(transform.forward * 1000);
+            ballRb.AddForce(transform.forward * 1000);
 
             //// ”­Ë‰¹‚ğo‚·
             //AudioSource.PlayClipAtPoint(sound, transform.position);
 
             // ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
-            Destroy(shell, 5.0f);
+            Destroy(ball, 5.0f);
         }
     }
 }
