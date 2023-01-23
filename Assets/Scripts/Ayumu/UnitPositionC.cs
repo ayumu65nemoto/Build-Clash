@@ -16,15 +16,12 @@ public class UnitPositionC : MonoBehaviour
     [SerializeField] float _threshold = 30;
     private GameObject _gameManager;
     private SelectUnit _selectUnit;
-    //ユニット配置完了フラグ
-    public bool setUnitC;
 
     // Start is called before the first frame update
     void Start()
     {
         _gameManager = GameObject.FindWithTag("GameManager");
         _selectUnit = _gameManager.GetComponent<SelectUnit>();
-        setUnitC = false;
     }
 
     // Update is called once per frame
@@ -74,7 +71,6 @@ public class UnitPositionC : MonoBehaviour
 
     private void Flick(FlickDirection dir)
     {
-        setUnitC = true;
         if (dir == FlickDirection.Left)
         {
             _selectUnit.SetUnit(-2, 1, -2);
