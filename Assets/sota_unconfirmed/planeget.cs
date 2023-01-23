@@ -69,6 +69,7 @@ public class planeget : MonoBehaviour
                         
                         Main = m_Hits[0].pose.position;
                         CraftMain = Main;
+                        Main.z = -0.4f;
                         for (int I = 1; I <= 9; I++)
                         {
                             Main.z -= 0.1f;
