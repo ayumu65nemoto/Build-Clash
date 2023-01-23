@@ -32,7 +32,7 @@ public class ArrowShot : MonoBehaviour
             //AudioSource.PlayClipAtPoint(sound, transform.position);
 
             // ‚T•bŒã‚É–C’e‚ð”j‰ó‚·‚é
-            Destroy(arrow, 5.0f);
+            Destroy(arrow, 2.0f);
         }
     }
 }

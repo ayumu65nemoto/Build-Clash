@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4790068151977252104}
   - component: {fileID: 4790068151977252107}
   - component: {fileID: 4790068151977252106}
-  - component: {fileID: -7127537950181762951}
   m_Layer: 0
   m_Name: ArrowShot
   m_TagString: Untagged
@@ -112,15 +111,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2536314450839890480, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
---- !u!114 &-7127537950181762951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4790068151977252109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cc5229138528440a071f5feaf8fe7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

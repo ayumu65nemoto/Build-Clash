@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3814012758514817973}
   - component: {fileID: 3814012758514817972}
   - component: {fileID: 3814012758514817975}
-  - component: {fileID: 446303187263156274}
   m_Layer: 0
   m_Name: BallShot
   m_TagString: Untagged
@@ -112,15 +111,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 934795431932439947, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
---- !u!114 &446303187263156274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3814012758514817974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cc5229138528440a071f5feaf8fe7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
