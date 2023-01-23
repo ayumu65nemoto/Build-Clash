@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Craft.unity
+    guid: 51916a4bc10a69342b517579f19742e3
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d046ce066377ac7418a311e6adf0950a, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 8cb7f34cc1b73bd4e9aa055da2ffe520, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4aaf16e9715807d429254b535b4de6b1, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 166c3c2daaa54dc4997caf60594f92e4, type: 2}
