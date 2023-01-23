@@ -30,7 +30,7 @@ public class PlayerStates : MonoBehaviour
 
         if (tempState == PlayerState.Flame)
         {
-            Debug.Log("Flame");
+            GetComponent<Renderer>().material.color = Color.red;
             Destroy(this.gameObject, 5f);
         }
     }
