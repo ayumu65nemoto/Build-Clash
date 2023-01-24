@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,21 +23,52 @@ public class GameManager : MonoBehaviour
     public bool rain;
     //雷が発動しているか
     public bool thunder;
+    //プレイヤー１
+    private GameObject _player1;
+    //接地判定
+    public bool isGround1;
+    //プレイヤー２
+    private GameObject _player2;
+    //接地判定
+    public bool isGround2;
+    //Winテキスト
+    private GameObject _textWin;
+    //Loseテキスト
+    private GameObject _textLose;
 
     // Start is called before the first frame update
     void Start()
     {
+        //バトルスタートボタン取得
         _battleStartButton = GameObject.FindWithTag("BattleStart");
+        _battleStartButton.SetActive(false);
+
+        //ユニットボタン取得
         _buttonA = GameObject.Find("ButtonA");
         _buttonB = GameObject.Find("ButtonB");
         _buttonC = GameObject.Find("ButtonC");
+        //ユニットを設置するスクリプトを取得
         _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
         _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
         _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
-        _battleStartButton.SetActive(false);
+
+        //各種フラグ
         battle = false;
         rain = false;
         thunder = false;
+        isGround1 = false;
+        isGround2 = false;
+
+        //両プレイヤーコアを取得
+        _player1 = GameObject.FindWithTag("PlayerCore");
+        _player2 = GameObject.FindWithTag("EnemyCore");
+        
+        //勝敗テキスト取得
+        _textWin = GameObject.FindWithTag("Win");
+        _textLose = GameObject.FindWithTag("Lose");
+        //テキスト非アクティブ
+        _textWin.SetActive(false);
+        _textLose.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +82,16 @@ public class GameManager : MonoBehaviour
             {
                 _battleStartButton.SetActive(true);
             }
+        }
+
+        if (isGround1 == true)
+        {
+            _textLose.SetActive(true);
+        }
+
+        if (isGround2 == true)
+        {
+            _textWin.SetActive(true);
         }
     }
 

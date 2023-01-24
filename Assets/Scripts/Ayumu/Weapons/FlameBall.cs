@@ -21,7 +21,6 @@ public class FlameBall : MonoBehaviour
         // Õ“Ë‚µ‚½‘Šè‚ÉPlayerƒ^ƒO‚ª•t‚¢‚Ä‚¢‚é‚Æ‚«
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("“G‚É“–‚½‚Á‚½");
             collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
 
         }

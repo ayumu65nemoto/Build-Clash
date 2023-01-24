@@ -10,6 +10,10 @@ TagManager:
   - BattleStart
   - Rain
   - CraftBlock
+  - PlayerCore
+  - EnemyCore
+  - Win
+  - Lose
   layers:
   - Default
   - TransparentFX
