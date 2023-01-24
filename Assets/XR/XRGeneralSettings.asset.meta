@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 4aaf16e9715807d429254b535b4de6b1
+=======
+guid: be22a79f7738aef4a82560a7f8fdffa3
+>>>>>>> 18ad6c6 (雷(Wet状態の時ランダム個数のブロックを破壊する)実装・火炎放射器の不具合改善(Playerに書いていたFlameへの遷移をFlameBallというFlame本体へアタッチするスクリプトに書き換え、OnCollisionEnterで不具合があった模様))
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public bool battle;
     //‰J‚ª~‚Á‚Ä‚¢‚é‚©
     public bool rain;
+    //—‹‚ª”­“®‚µ‚Ä‚¢‚é‚©
+    public bool thunder;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         _battleStartButton.SetActive(false);
         battle = false;
         rain = false;
+        thunder = false;
     }
 
     // Update is called once per frame

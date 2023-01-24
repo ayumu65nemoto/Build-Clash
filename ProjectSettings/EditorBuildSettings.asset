@@ -10,6 +10,10 @@ EditorBuildSettings:
     guid: 51916a4bc10a69342b517579f19742e3
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d046ce066377ac7418a311e6adf0950a, type: 2}
+<<<<<<< HEAD
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 8cb7f34cc1b73bd4e9aa055da2ffe520, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4aaf16e9715807d429254b535b4de6b1, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 166c3c2daaa54dc4997caf60594f92e4, type: 2}
+=======
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: be22a79f7738aef4a82560a7f8fdffa3, type: 2}
+>>>>>>> 18ad6c6 (雷(Wet状態の時ランダム個数のブロックを破壊する)実装・火炎放射器の不具合改善(Playerに書いていたFlameへの遷移をFlameBallというFlame本体へアタッチするスクリプトに書き換え、OnCollisionEnterで不具合があった模様))

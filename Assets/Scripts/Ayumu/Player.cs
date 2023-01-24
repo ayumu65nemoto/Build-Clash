@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private PlayerStates _playerStates;
+    private PlayerStates _playerState;
+    private GameObject _enemyObject;
     private GameObject _rain;
     //ゲームマネージャーの取得
     private GameObject _gameObject;
@@ -13,7 +15,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _playerStates = GetComponent<PlayerStates>();
+        _enemyObject = GameObject.FindWithTag("Enemy");
+        _playerStates = _enemyObject.GetComponent<PlayerStates>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
     }
@@ -22,20 +25,33 @@ public class Player : MonoBehaviour
     {
         if (_gameManager.rain == true)
         {
-            _playerStates.SetState(PlayerStates.PlayerState.Wet);
-            //_gameManager.rain = false;
+            // タグが同じオブジェクトを全て取得する
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject gameObj in gameObjects)
+            {
+                _playerState = gameObj.GetComponent<PlayerStates>();
+                _playerState.SetState(PlayerStates.PlayerState.Wet);
+            }
+            _gameManager.rain = false;
         }
     }
 
-    //　当たったら時間経過で破壊する破壊する
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (_playerStates._state != PlayerStates.PlayerState.Wet)
-        {
-            if (collision.gameObject.CompareTag("Flame"))
-            {
-                _playerStates.SetState(PlayerStates.PlayerState.Flame);
-            }
-        }
-    }
+    ////　当たったら時間経過で破壊する
+    //private void oncollisionenter(collision collision)
+    //{
+    //    //if (_playerstates.wetflag != true)
+    //    //{
+    //    //    if (collision.gameobject.comparetag("flame"))
+    //    //    {
+    //    //        gameobject[] gameobjects = gameobject.findgameobjectswithtag("enemy");
+    //    //        foreach (gameobject gameobj in gameobjects)
+    //    //        {
+    //    //            _playerstates = gameobj.getcomponent<playerstates>();
+    //    //        }
+    //    //        _playerstates.setstate(playerstates.playerstate.flame);
+    //    //    }
+    //    //}
+    //    debug.log("flame");
+    //    _playerstates.setstate(playerstates.playerstate.flame);
+    //}
 }
