@@ -16,13 +16,21 @@ public class crafter : MonoBehaviour
     [SerializeField]
     GameObject Frame;
     [SerializeField]
-    GameObject block;
+    GameObject block1;
+    [SerializeField]
+    GameObject block2;
+    [SerializeField]
+    GameObject block3;
+    [SerializeField]
+    GameObject DeleteTool;
+
     bool up;
     bool dawn;
     bool left;
     bool right;
     bool back;
     bool front;
+    int  Blocktype = 1;
 
     Vector3 Main;
     Vector3 CraftMain;
@@ -30,8 +38,12 @@ public class crafter : MonoBehaviour
 
     Camera arCam;
     GameObject spawnedObject;
+    GameObject transparent;
+    GameObject Craftframe;
+    CraftFrame craftFrame;
     bool spawanCount = false;
     public bool craftStart = false;
+    public bool craftStart2 = true;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +61,7 @@ public class crafter : MonoBehaviour
         {
 
             spawnedObject.transform.position = CraftMain;
+            //transparent.transform.position = CraftMain;
 
             foreach (ARPlane plane in _arPlaneManager.trackables)
             {
@@ -102,8 +115,9 @@ public class crafter : MonoBehaviour
                         _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
                         CraftMain.y += 0.05f;
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
+                        //transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                         spawanCount = true;
-
+                        
                     }
                 }
 
@@ -167,12 +181,41 @@ public class crafter : MonoBehaviour
     {
         CraftMain.x += 0.1f;
     }
+    public void type1()
+    {
+        Blocktype = 1;
+    }
+    public void type2()
+    {
+        Blocktype = 2;
+    }
+    public void type3()
+    {
+        Blocktype = 3;
+    }
 
     public void Craft()
     {
         if (spawanCount == true && craftStart == true)
         {
-            Instantiate(block, CraftMain, Quaternion.identity);
+            if (Blocktype == 1)
+            {
+                Instantiate(block1, CraftMain, Quaternion.identity);
+            }
+            else if(Blocktype==2)
+            {
+                Instantiate(block2, CraftMain, Quaternion.identity);
+            }
+            else if (Blocktype == 3)
+            {
+                Instantiate(block3, CraftMain, Quaternion.identity);
+            }
+            craftStart=false;
         }
     }
+    /*void masterC()
+    {
+        Craftframe = GameObject.Find("CraftFrame");
+        craftFrame = Craftframe.GetComponent<CraftFrame>();
+    }*/
 }

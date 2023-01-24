@@ -13,11 +13,9 @@ public class CraftFrame : MonoBehaviour
         script = GameObject.Find("CraftManager");
         craftOK = script.GetComponent<crafter>();
     }
-   void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
-
-        craftOK.craftStart = true;
-        
+            craftOK.craftStart = true;   
     }
     void OnTriggerExit(Collider other)
     {
