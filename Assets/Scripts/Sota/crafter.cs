@@ -127,7 +127,17 @@ public class crafter : MonoBehaviour
 
 
     }
+    /*void OnTriggerStay(Collider other)
+    {
 
+        craftStart = true;
+
+    }
+    void OnTriggerExit(Collider other)
+    {
+        craftStart = false;
+    }
+    */
 
     private void SpawnPrefab(Vector3 spawnPosition)
     {

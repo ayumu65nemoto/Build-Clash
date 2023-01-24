@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class CraftFrame : MonoBehaviour
 {
-    crafter script;
-    void Start()
+
+    GameObject script;
+    crafter craftOK;
+
+    void Awake()
     {
-        script = GameObject.Find("CraftManager").GetComponent<crafter>();
+        script = GameObject.Find("CraftManager");
+        craftOK = script.GetComponent<crafter>();
     }
    void OnTriggerStay(Collider other)
     {
-        
-            script.craftStart = true;
+
+        craftOK.craftStart = true;
         
     }
     void OnTriggerExit(Collider other)
     {
-        script.craftStart = false;
+        craftOK.craftStart = false;
     }
 
 
