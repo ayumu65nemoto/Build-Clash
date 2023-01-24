@@ -3186,6 +3186,7 @@ GameObject:
   - component: {fileID: 1462813984}
   - component: {fileID: 1462813985}
   - component: {fileID: 1462813986}
+  - component: {fileID: 1462813987}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -3266,7 +3267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462813982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e125cd883c4816479f8ab611f8a3e50, type: 3}
   m_Name: 
@@ -3276,6 +3277,18 @@ MonoBehaviour:
   - {fileID: 2006401426211103868, guid: 7a56ced01efc00f44837915fb8930111, type: 3}
   setBaseNumber: 0
   baseFlag: 0
+--- !u!114 &1462813987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462813982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca596a874f86b44b4a95d44ef28f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1478613436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4725,7 +4738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2140947301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5595,6 +5608,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8329466342943097080, guid: 7caf3f478930c8c4daccce40b1c4d679, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7199046012675889060, guid: 7caf3f478930c8c4daccce40b1c4d679, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab

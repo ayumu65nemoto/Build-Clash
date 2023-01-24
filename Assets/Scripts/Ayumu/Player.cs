@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _enemyObject = GameObject.FindWithTag("Enemy");
-        _playerStates = _enemyObject.GetComponent<PlayerStates>();
+        //_enemyObject = GameObject.FindWithTag("Enemy");
+        //_playerStates = _enemyObject.GetComponent<PlayerStates>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
     }
@@ -26,12 +26,12 @@ public class Player : MonoBehaviour
         if (_gameManager.rain == true)
         {
             // タグが同じオブジェクトを全て取得する
-            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-            foreach (GameObject gameObj in gameObjects)
-            {
-                _playerState = gameObj.GetComponent<PlayerStates>();
-                _playerState.SetState(PlayerStates.PlayerState.Wet);
-            }
+            //GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            //foreach (GameObject gameObj in gameObjects)
+            //{
+            //    _playerState = gameObj.GetComponent<PlayerStates>();
+            //    _playerState.SetState(PlayerStates.PlayerState.Wet);
+            //}
             _gameManager.rain = false;
         }
     }
