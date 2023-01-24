@@ -31,6 +31,7 @@ public class crafter : MonoBehaviour
     Camera arCam;
     GameObject spawnedObject;
     bool spawanCount = false;
+    public bool craftStart = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,7 @@ public class crafter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (spawanCount == true)
         {
 
@@ -60,7 +61,7 @@ public class crafter : MonoBehaviour
         }*/
         RaycastHit hit;
         Ray ray = arCam.ScreenPointToRay(Input.GetTouch(0).position);
-
+        
 
         if (m_RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits))
         {
@@ -70,7 +71,7 @@ public class crafter : MonoBehaviour
                 {
 
 
-                    if (hit.collider.gameObject.tag == "Spawn")
+                    if (hit.collider.gameObject.tag == "CraftBlock")
                     {
                         spawnedObject = hit.collider.gameObject;
                     }
@@ -127,6 +128,7 @@ public class crafter : MonoBehaviour
 
     }
 
+
     private void SpawnPrefab(Vector3 spawnPosition)
     {
         Instantiate(spawnablePrefab, spawnPosition, Quaternion.identity);
@@ -158,7 +160,7 @@ public class crafter : MonoBehaviour
 
     public void Craft()
     {
-        if (spawanCount == true)
+        if (spawanCount == true && craftStart == true)
         {
             Instantiate(block, CraftMain, Quaternion.identity);
         }
