@@ -52,14 +52,19 @@ public class SelectUnit : MonoBehaviour
         indicater_c[2].SetActive(true);
     }
 
-    public void PushDownE()
+    public void PushDownD()
     {
         selectUnitNumber = 3;
     }
 
-    public void PushDownF()
+    public void PushDownE()
     {
         selectUnitNumber = 4;
+    }
+
+    public void PushDownF()
+    {
+        selectUnitNumber = 5;
     }
 
     public void PushUpA()
