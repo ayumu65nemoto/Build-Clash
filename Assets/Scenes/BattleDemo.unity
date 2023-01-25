@@ -5341,7 +5341,7 @@ MonoBehaviour:
   - {fileID: 4790068151977252109, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
   - {fileID: 6127724456661904754, guid: f9eca5a82d75e8541ac90dfdbf4eaa08, type: 3}
   - {fileID: 489107533419251721, guid: f76b77b2a3077e844b70357061b380e9, type: 3}
-  - {fileID: 0}
+  - {fileID: 2143594722292911481, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
   selectUnitNumber: 0
   push_a: 0
   push_b: 0
@@ -8345,6 +8345,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3515644634469142578, guid: 95298ae3e01b15c46a2d594b0b8c323d, type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515644634469142578, guid: 95298ae3e01b15c46a2d594b0b8c323d, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95298ae3e01b15c46a2d594b0b8c323d, type: 3}
 --- !u!1001 &2006401425090533427
@@ -8465,6 +8473,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2143594722292911481, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897660797792060886, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
+      propertyPath: sceneViewId
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897660797792060886, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
+      propertyPath: ObservedComponents.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8683,6 +8699,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1396980982570208293, guid: 494624ae6e669034090c8c6a2f852265, type: 3}
+      propertyPath: sceneViewId
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -1396980982570208293, guid: 494624ae6e669034090c8c6a2f852265, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4856539655737410556, guid: 494624ae6e669034090c8c6a2f852265, type: 3}
       propertyPath: m_Name
       value: ThunderShot
