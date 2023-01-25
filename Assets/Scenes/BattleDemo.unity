@@ -5388,6 +5388,10 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3987580553510636113, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4790068151977252102, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -5455,6 +5459,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2536314450839890480, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6406019387003739956, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6406019387003739956, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
+      propertyPath: ObservedComponents.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607922426288351071, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
