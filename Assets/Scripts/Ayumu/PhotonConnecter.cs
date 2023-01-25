@@ -48,4 +48,9 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
         }
         Debug.Log(_playerId);
     }
+
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
+    {
+        Debug.Log($"{newPlayer.NickName}‚ªŽQ‰Á‚µ‚Ü‚µ‚½");
+    }
 }
