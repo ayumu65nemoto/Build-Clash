@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class BallShot : MonoBehaviour
@@ -26,7 +28,7 @@ public class BallShot : MonoBehaviour
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
             if (_count % 420 == 0)
             {
-                GameObject ball = Instantiate(prefab, transform.position, Quaternion.identity);
+                GameObject ball = PhotonNetwork.Instantiate("Ball", transform.position, Quaternion.identity);
                 Rigidbody ballRb = ball.GetComponent<Rigidbody>();
 
                 // ’e‘¬‚Í©—R‚Éİ’è

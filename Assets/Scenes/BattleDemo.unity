@@ -4937,6 +4937,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5665695008780361633, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5665695008780361633, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 934795431932439947, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -4998,6 +5006,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3172133142377173424, guid: 708cf43305b76344897c62ca8933ec57, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 973128879235273289, guid: 708cf43305b76344897c62ca8933ec57, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5355,6 +5367,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859825892805393094, guid: dc8fac6ab31c0ba46a73b6e1c9c68797, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859825892805393094, guid: dc8fac6ab31c0ba46a73b6e1c9c68797, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8fac6ab31c0ba46a73b6e1c9c68797, type: 3}
 --- !u!1001 &4790068151331671374
@@ -5364,6 +5384,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4285503253232207130, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4790068151977252102, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
       propertyPath: m_RootOrder
       value: 13
