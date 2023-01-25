@@ -11,6 +11,9 @@ EditorBuildSettings:
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: d046ce066377ac7418a311e6adf0950a, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 8cb7f34cc1b73bd4e9aa055da2ffe520, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 9d4f9ead4e446f64f97aa01b36d7a8cd, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 23e422d1816362b4f8a5d2e13d4ad8ac, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 02ed0825a11fae740afbfd31fc9d3138, type: 2}
     com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 9f23ec78f8d028546b3d667258f32678, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4aaf16e9715807d429254b535b4de6b1, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 166c3c2daaa54dc4997caf60594f92e4, type: 2}

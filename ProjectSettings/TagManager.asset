@@ -14,7 +14,9 @@ TagManager:
   - EnemyCore
   - Win
   - Lose
-  - CorePosition
+  - GridFrame
+  - CraftBlock2
+  - CraftBlock3
   layers:
   - Default
   - TransparentFX
@@ -22,9 +24,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - BaseGrid
+  - CraftBlock
+  - CraftFrame
   - 
   - 
   - 

@@ -26,14 +26,14 @@ public class Spawnlimit : MonoBehaviour
         if (other.gameObject.tag == "CraftBlock")
         {
 
-            craftOK.craftStart2 = false;
-            Trash = other.gameObject;
+           // craftOK.craftStart2 = false;
+            //Trash = other.gameObject;
             
         }
     }
     void OnTriggerExit(Collider other)
     {
-        craftOK.craftStart2 = true;
+        //craftOK.craftStart2 = true;
     }
     public void Deleted()
     {
