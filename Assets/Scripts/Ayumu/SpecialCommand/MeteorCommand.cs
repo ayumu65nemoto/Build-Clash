@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class MeteorCommand : MonoBehaviour
@@ -14,8 +16,8 @@ public class MeteorCommand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _enemy = GameObject.FindWithTag("Enemy");
-        _target = _enemy.GetComponent<Transform>();
+        //_enemy = GameObject.FindWithTag("Enemy");
+        //_target = _enemy.GetComponent<Transform>();
         _meteorCount = 1;
     }
 
@@ -24,7 +26,8 @@ public class MeteorCommand : MonoBehaviour
     {
         if (_meteorCount > 0)
         {
-            GameObject meteor = Instantiate(prefab, new Vector3(_target.position.x, 10, _target.position.z), Quaternion.identity);
+            //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target.position.x, 10, _target.position.z), Quaternion.identity);
+            GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
             Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
             _meteorCount -= 1;
 
