@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class SelectUnit : MonoBehaviour
@@ -112,6 +114,6 @@ public class SelectUnit : MonoBehaviour
     public void SetUnit(float vecX, float vecY, float vecZ)
     {
         //selectUnitNumber個目のユニットを配置する
-        var set = Instantiate(units[selectUnitNumber], new Vector3(vecX, vecY, vecZ), Quaternion.identity);
+        var set = PhotonNetwork.Instantiate(units[selectUnitNumber].name, new Vector3(vecX, vecY, vecZ), Quaternion.identity);
     }
 }
