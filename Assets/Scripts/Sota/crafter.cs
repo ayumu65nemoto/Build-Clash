@@ -51,6 +51,7 @@ public class crafter : MonoBehaviour
     bool spawanCount = false;
     public bool craftStart = false;
     public bool craftStart2 = true;
+    public bool DeleteOK = false;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +71,7 @@ public class crafter : MonoBehaviour
         {
 
             spawnedObject.transform.position = CraftMain;
-            //transparent.transform.position = CraftMain;
+            transparent.transform.position = CraftMain;
 
             foreach (ARPlane plane in _arPlaneManager.trackables)
             {
@@ -125,7 +126,7 @@ public class crafter : MonoBehaviour
                         _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
                         CraftMain.y += 0.05f;
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
-                        //transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
+                        transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                         spawanCount = true;
                         
                     }
@@ -205,11 +206,11 @@ public class crafter : MonoBehaviour
     }
     public void deleTE()
     {
-        if (CraftMain == Once)
+        if (DeleteOK==true)
         {
             Destroy(Death);
-            Once +=Once ;
             CraftCost += ReturnCost;
+            DeleteOK = false;
         }
     }
 

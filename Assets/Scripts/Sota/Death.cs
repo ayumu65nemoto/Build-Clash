@@ -4,27 +4,39 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    Rigidbody rb;
+    GameObject script;
+    crafter craftOK;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        script = GameObject.Find("CraftManager");
+        craftOK = script.GetComponent<crafter>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void OnTriggerStay(Collider other)
     {
-       
+        craftOK.DeleteOK = true;
+        if (other.gameObject.tag == "CraftBlock")
+        {
+            craftOK.Death = other.gameObject;
+            craftOK.Once = other.transform.position;
+            craftOK.ReturnCost = 1;
+        }
+        if (other.gameObject.tag == "CraftBlock2")
+        {
+            craftOK.Death = other.gameObject;
+            craftOK.Once = other.transform.position;
+            craftOK.ReturnCost = 3;
+        }
+        if (other.gameObject.tag == "CraftBlock3")
+        {
+            craftOK.Death = other.gameObject;
+            craftOK.Once = other.transform.position;
+            craftOK.ReturnCost = 5;
+        }
     }
-
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerExit(Collider other)
     {
-        rb.velocity = Vector3.zero;
-    }
-    
-
-    public void DElete()
-    {
-        
+        craftOK.DeleteOK = false;
+        craftOK.Death = null;
     }
 }
