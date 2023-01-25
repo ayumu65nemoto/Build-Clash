@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -23,6 +24,8 @@ public class crafter : MonoBehaviour
     GameObject block3;
     [SerializeField]
     GameObject DeleteTool;
+    [SerializeField] 
+    TextMeshProUGUI Cost;
 
     bool up;
     bool dawn;
@@ -31,15 +34,19 @@ public class crafter : MonoBehaviour
     bool back;
     bool front;
     int  Blocktype = 1;
+    int CraftCost;
+    public int ReturnCost;
 
     Vector3 Main;
-    Vector3 CraftMain;
+    public Vector3 CraftMain;
+    public Vector3 Once ;
 
 
     Camera arCam;
     GameObject spawnedObject;
     GameObject transparent;
     GameObject Craftframe;
+    public GameObject Death;
     CraftFrame craftFrame;
     bool spawanCount = false;
     public bool craftStart = false;
@@ -50,13 +57,15 @@ public class crafter : MonoBehaviour
     {
         spawnedObject = null;
         arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
+        CraftCost = 100;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        Cost.text = "" + CraftCost;
         if (spawanCount == true)
         {
 
@@ -93,8 +102,9 @@ public class crafter : MonoBehaviour
                     {
 
                         Main = m_Hits[0].pose.position;
-                        Main.y += 0.03f;
+                        //Main.y += 0.03f;
                         CraftMain = Main;
+                        
                         Main.z += 0.4f;
 
                         for (int I = 1; I <= 9; I++)
@@ -193,29 +203,58 @@ public class crafter : MonoBehaviour
     {
         Blocktype = 3;
     }
+    public void deleTE()
+    {
+        if (CraftMain == Once)
+        {
+            Destroy(Death);
+            Once +=Once ;
+            CraftCost += ReturnCost;
+        }
+    }
 
     public void Craft()
     {
+        
         if (spawanCount == true && craftStart == true)
         {
-            if (Blocktype == 1)
+            
+            if (Once!=CraftMain)
             {
-                Instantiate(block1, CraftMain, Quaternion.identity);
+
+                if (Blocktype == 1)
+                {
+                    if (CraftCost >= 1)
+                    {
+                        Main = CraftMain;
+                        CraftMain.y += 0.1f;
+                        Instantiate(block1, Main, Quaternion.identity);
+                        CraftCost -= 1;
+                    }
+                }
+                else if (Blocktype == 2)
+                {
+                    if (CraftCost >= 3)
+                    {
+                        Main = CraftMain;
+                        CraftMain.y += 0.1f;
+                        Instantiate(block2, Main, Quaternion.identity);
+                        CraftCost -= 3;
+                    }
+                }
+                else if (Blocktype == 3)
+                {
+                    if (CraftCost >= 5)
+                    {
+                        Main = CraftMain;
+                        CraftMain.y += 0.1f;
+                        Instantiate(block3, Main, Quaternion.identity);
+                        CraftCost -= 5;
+                    }
+                }
             }
-            else if(Blocktype==2)
-            {
-                Instantiate(block2, CraftMain, Quaternion.identity);
-            }
-            else if (Blocktype == 3)
-            {
-                Instantiate(block3, CraftMain, Quaternion.identity);
-            }
-            craftStart=false;
+            //craftStart=false;
         }
     }
-    /*void masterC()
-    {
-        Craftframe = GameObject.Find("CraftFrame");
-        craftFrame = Craftframe.GetComponent<CraftFrame>();
-    }*/
+    
 }

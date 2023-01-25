@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Rigidbody rb;
+
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+       
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        rb.velocity = Vector3.zero;
+    }
+    
+
+    public void DElete()
     {
         
     }
