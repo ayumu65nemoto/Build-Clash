@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class ArrowShot : MonoBehaviour
@@ -27,7 +29,7 @@ public class ArrowShot : MonoBehaviour
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
             if (_count % 180 == 0)
             {
-                GameObject arrow = Instantiate(prefab, transform.position, Quaternion.Euler(_angle, 0, 0));
+                GameObject arrow = PhotonNetwork.Instantiate("Arrow", transform.position, Quaternion.Euler(_angle, 0, 0));
                 Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
 
                 // ’e‘¬‚Í©—R‚Éİ’è
