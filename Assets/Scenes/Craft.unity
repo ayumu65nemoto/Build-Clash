@@ -1241,7 +1241,7 @@ MonoBehaviour:
   block1: {fileID: 7553481846362964021, guid: d1e64702308f68a49b96b2030d3f69b9, type: 3}
   block2: {fileID: 3909716441146837867, guid: 75de578753969d9478dd0be58334ed03, type: 3}
   block3: {fileID: 1982827124948028293, guid: ee8386cdaf1f52d4d907f48c2a8a5bd7, type: 3}
-  DeleteTool: {fileID: 0}
+  DeleteTool: {fileID: 2720869704056041236, guid: 4d72be3ad8b527948a6be6697e0fc294, type: 3}
   Cost: {fileID: 1902683064}
   ReturnCost: 0
   CraftMain: {x: 0, y: 0, z: 0}
@@ -1249,6 +1249,7 @@ MonoBehaviour:
   Death: {fileID: 0}
   craftStart: 0
   craftStart2: 0
+  DeleteOK: 0
 --- !u!4 &1094362438
 Transform:
   m_ObjectHideFlags: 0
