@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class FlameShot : MonoBehaviour
@@ -26,7 +28,7 @@ public class FlameShot : MonoBehaviour
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
             if (_count % 900 == 0)
             {
-                GameObject flame = Instantiate(prefab, transform.position, Quaternion.identity);
+                GameObject flame = PhotonNetwork.Instantiate("Flame", transform.position, Quaternion.identity);
                 Rigidbody flameRb = flame.GetComponent<Rigidbody>();
 
                 // ’e‘¬‚Í©—R‚Éİ’è
