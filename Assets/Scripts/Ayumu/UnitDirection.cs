@@ -14,14 +14,14 @@ public class UnitDirection : MonoBehaviour
     void Start()
     {
         _self = this.transform;
-        //_enemy = GameObject.FindWithTag("Enemy");
-        //_target = _enemy.GetComponent<Transform>();
-        //_self.LookAt(_target);
+        _enemy = GameObject.FindWithTag("Enemy");
+        _target = _enemy.GetComponent<Transform>();
+        _self.LookAt(_target);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //_self.LookAt(_target);
+        _self.LookAt(_target);
     }
 }

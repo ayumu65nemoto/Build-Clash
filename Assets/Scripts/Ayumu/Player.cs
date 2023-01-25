@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_enemyObject = GameObject.FindWithTag("Enemy");
-        //_playerStates = _enemyObject.GetComponent<PlayerStates>();
+        _enemyObject = GameObject.FindWithTag("Enemy");
+        _playerStates = _enemyObject.GetComponent<PlayerStates>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
     }
@@ -26,32 +26,13 @@ public class Player : MonoBehaviour
         if (_gameManager.rain == true)
         {
             // タグが同じオブジェクトを全て取得する
-            //GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
-            //foreach (GameObject gameObj in gameObjects)
-            //{
-            //    _playerState = gameObj.GetComponent<PlayerStates>();
-            //    _playerState.SetState(PlayerStates.PlayerState.Wet);
-            //}
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject gameObj in gameObjects)
+            {
+                _playerState = gameObj.GetComponent<PlayerStates>();
+                _playerState.SetState(PlayerStates.PlayerState.Wet);
+            }
             _gameManager.rain = false;
         }
     }
-
-    ////　当たったら時間経過で破壊する
-    //private void oncollisionenter(collision collision)
-    //{
-    //    //if (_playerstates.wetflag != true)
-    //    //{
-    //    //    if (collision.gameobject.comparetag("flame"))
-    //    //    {
-    //    //        gameobject[] gameobjects = gameobject.findgameobjectswithtag("enemy");
-    //    //        foreach (gameobject gameobj in gameobjects)
-    //    //        {
-    //    //            _playerstates = gameobj.getcomponent<playerstates>();
-    //    //        }
-    //    //        _playerstates.setstate(playerstates.playerstate.flame);
-    //    //    }
-    //    //}
-    //    debug.log("flame");
-    //    _playerstates.setstate(playerstates.playerstate.flame);
-    //}
 }
