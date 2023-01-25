@@ -1,6 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
 --- !u!114 &-2230750533574394374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: 8364962479231141778}
   m_InitManagerOnStart: 1
->>>>>>> 18ad6c6 (雷(Wet状態の時ランダム個数のブロックを破壊する)実装・火炎放射器の不具合改善(Playerに書いていたFlameへの遷移をFlameBallというFlame本体へアタッチするスクリプトに書き換え、OnCollisionEnterで不具合があった模様))
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,10 +28,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Keys: 07000000
   Values:
-<<<<<<< HEAD
   - {fileID: -2230750533574394374}
 --- !u!114 &8364962479231141778
->>>>>>> 18ad6c6 (雷(Wet状態の時ランダム個数のブロックを破壊する)実装・火炎放射器の不具合改善(Playerに書いていたFlameへの遷移をFlameBallというFlame本体へアタッチするスクリプトに書き換え、OnCollisionEnterで不具合があった模様))
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +44,6 @@ MonoBehaviour:
   m_RequiresSettingsUpdate: 0
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
-<<<<<<< HEAD
   m_Loaders:
   - {fileID: 11400000, guid: 2efb0b03e74b5784e89a4f244eeb9fa3, type: 2}
 --- !u!114 &7254811669860791127
@@ -65,4 +60,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: 7038994918437627598}
   m_InitManagerOnStart: 1
->>>>>>> 18ad6c6 (雷(Wet状態の時ランダム個数のブロックを破壊する)実装・火炎放射器の不具合改善(Playerに書いていたFlameへの遷移をFlameBallというFlame本体へアタッチするスクリプトに書き換え、OnCollisionEnterで不具合があった模様))
