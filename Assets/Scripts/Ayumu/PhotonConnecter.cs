@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PhotonConnecter : MonoBehaviourPunCallbacks
 {
-    private string _playerId;
+    private int _playerId;
     private Vector3 _position;
     private string _prefab;
     private bool _set = false;
@@ -23,52 +23,53 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
         // "Room"という名前のルームに参加する（ルームが存在しなければ作成して参加する）
         PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions(), TypedLobby.Default);
         //ユーザーID
-        if (_set == false)
-        {
-            _playerId = PhotonNetwork.LocalPlayer.UserId;
-            _set = true;
-        }
+        //if (_set == false)
+        //{
+        //    _playerId = PhotonNetwork.LocalPlayer.UserId;
+        //    _set = true;
+        //}
     }
 
     // ゲームサーバーへの接続が成功した時に呼ばれるコールバック
     public override void OnJoinedRoom()
     {
-        //foreach (var player in PhotonNetwork.PlayerList)
-        //{
-        //    _playerId = player.ActorNumber;
-        //}
-
-        //if (_playerId == 1)
-        //{
-        //    _position = new Vector3(0, 1.5f, -4);
-        //    _prefab = "PlayerPrefab";
-        //    PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
-        //    //_playerNumber += 1;
-        //    Debug.Log(_playerId);
-        //}
-        //if (_playerId == 2)
-        //{
-        //    _position = new Vector3(0, 1.5f, 4);
-        //    _prefab = "EnemyPrefab";
-        //    //_playerNumber += 1;
-        //    Debug.Log(_playerId);
-        //}
-
-        if (_playerId == PhotonNetwork.LocalPlayer.UserId)
+        foreach (var player in PhotonNetwork.PlayerList)
         {
-            Debug.Log(_playerId);
+            _playerId = player.ActorNumber;
+        }
+
+        if (_playerId == 1)
+        {
             _position = new Vector3(0, 1.5f, -4);
             _prefab = "PlayerPrefab";
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
-        }
-        if (_playerId != PhotonNetwork.LocalPlayer.UserId)
-        {
-            Debug.Log("second");
+            //_playerNumber += 1;
             Debug.Log(_playerId);
+        }
+        if (_playerId == 2)
+        {
             _position = new Vector3(0, 1.5f, 4);
             _prefab = "EnemyPrefab";
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
+            //_playerNumber += 1;
+            Debug.Log(_playerId);
         }
+
+        //if (_playerId == PhotonNetwork.LocalPlayer.UserId)
+        //{
+        //    Debug.Log(_playerId);
+        //    _position = new Vector3(0, 1.5f, -4);
+        //    _prefab = "PlayerPrefab";
+        //    PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
+        //}
+        //if (_playerId != PhotonNetwork.LocalPlayer.UserId)
+        //{
+        //    Debug.Log("second");
+        //    Debug.Log(_playerId);
+        //    _position = new Vector3(0, 1.5f, 4);
+        //    _prefab = "EnemyPrefab";
+        //    PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
+        //}
     }
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
