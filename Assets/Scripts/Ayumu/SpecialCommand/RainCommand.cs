@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class RainCommand : MonoBehaviour
@@ -19,8 +21,8 @@ public class RainCommand : MonoBehaviour
     void Start()
     {
         _rainCount = 1;
-        _enemy = GameObject.FindWithTag("Enemy");
-        _target = _enemy.GetComponent<Transform>();
+        //_enemy = GameObject.FindWithTag("Enemy");
+        //_target = _enemy.GetComponent<Transform>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
         //_targetTransform = new Vector3(_target.position.x, _target.position.y + 10, _target.position.z);
@@ -33,7 +35,7 @@ public class RainCommand : MonoBehaviour
         {
             ////ÉLÉìÉOÇÃà íuÇ…î≠ê∂
             //GameObject rain = Instantiate(prefab, _targetTransform, Quaternion.Euler(90, 0, 0));
-            GameObject rain = Instantiate(prefab, new Vector3(0, 10, 5), Quaternion.Euler(90, 0, 0));
+            GameObject rain = PhotonNetwork.Instantiate("Rain", new Vector3(0, 10, 0), Quaternion.Euler(90, 0, 0));
             //Rigidbody meteorRb = rain.GetComponent<Rigidbody>();
             _rainCount -= 1;
             _gameManager.rain = true;
