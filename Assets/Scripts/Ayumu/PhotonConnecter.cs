@@ -3,18 +3,34 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhotonConnecter : MonoBehaviourPunCallbacks
 {
-    private int _playerId;
+    //プレイヤーID(擬似取得)
+    public int playerId;
+    //拠点を置く位置
     private Vector3 _position;
+    //設置する拠点
     private string _prefab;
-    private bool _set = false;
+    //表示するUI
+    private GameObject _canvas;
+    private GameObject _canvas2;
+    //キャンバス表示フラグ
+    public bool canvasFlag;
+    public bool canvasFlag2;
 
     private void Start()
     {
         // PhotonServerSettingsの設定内容を使ってマスターサーバーへ接続する
         PhotonNetwork.ConnectUsingSettings();
+        //if (SceneManager.GetActiveScene().name == "Battle")
+        _canvas = GameObject.FindWithTag("Canvas");
+        _canvas2 = GameObject.FindWithTag("Canvas2");
+        _canvas.SetActive(false);
+        _canvas2.SetActive(false);
+        canvasFlag = false;
+        canvasFlag2 = false;
     }
 
     // マスターサーバーへの接続が成功した時に呼ばれるコールバック
@@ -22,12 +38,6 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
     {
         // "Room"という名前のルームに参加する（ルームが存在しなければ作成して参加する）
         PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions(), TypedLobby.Default);
-        //ユーザーID
-        //if (_set == false)
-        //{
-        //    _playerId = PhotonNetwork.LocalPlayer.UserId;
-        //    _set = true;
-        //}
     }
 
     // ゲームサーバーへの接続が成功した時に呼ばれるコールバック
@@ -35,41 +45,27 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
     {
         foreach (var player in PhotonNetwork.PlayerList)
         {
-            _playerId = player.ActorNumber;
+            playerId = player.ActorNumber;
         }
 
-        if (_playerId == 1)
+        if (playerId == 1)
         {
             _position = new Vector3(0, 1.5f, -10);
             _prefab = "PlayerPrefab";
+            _canvas.SetActive(true);
+            canvasFlag = true;
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
-            //_playerNumber += 1;
-            Debug.Log(_playerId);
+            Debug.Log(playerId);
         }
-        if (_playerId == 2)
+        if (playerId == 2)
         {
             _position = new Vector3(0, 1.5f, 6);
             _prefab = "EnemyPrefab";
+            _canvas2.SetActive(true);
+            canvasFlag2 = true;
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
-            //_playerNumber += 1;
-            Debug.Log(_playerId);
+            Debug.Log(playerId);
         }
-
-        //if (_playerId == PhotonNetwork.LocalPlayer.UserId)
-        //{
-        //    Debug.Log(_playerId);
-        //    _position = new Vector3(0, 1.5f, -4);
-        //    _prefab = "PlayerPrefab";
-        //    PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
-        //}
-        //if (_playerId != PhotonNetwork.LocalPlayer.UserId)
-        //{
-        //    Debug.Log("second");
-        //    Debug.Log(_playerId);
-        //    _position = new Vector3(0, 1.5f, 4);
-        //    _prefab = "EnemyPrefab";
-        //    PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
-        //}
     }
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)

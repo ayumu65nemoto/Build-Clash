@@ -17,6 +17,18 @@ TagManager:
   - GridFrame
   - CraftBlock2
   - CraftBlock3
+  - CorePosition
+  - Canvas
+  - Canvas2
+  - indicater0
+  - indicater1
+  - indicater2
+  - indicater3
+  - indicater4
+  - indicater5
+  - indicater6
+  - indicater7
+  - indicater8
   layers:
   - Default
   - TransparentFX
