@@ -18,11 +18,26 @@ public class SelectUnit : MonoBehaviour
     public GameObject[] indicater_a;
     public GameObject[] indicater_b;
     public GameObject[] indicater_c;
+    //矢印本体
+    public GameObject _indicater0;
+    public GameObject _indicater1;
+    public GameObject _indicater2;
+    public GameObject _indicater3;
+    public GameObject _indicater4;
+    public GameObject _indicater5;
+    public GameObject _indicater6;
+    public GameObject _indicater7;
+    public GameObject _indicater8;
+    //キャンバス確認のためにPhotonConnecterを取得
+    private PhotonConnecter _photonConnecter;
 
     // Start is called before the first frame update
     void Start()
     {
         selectUnitNumber = 0;
+
+        //PhotonConnecter取得
+        _photonConnecter = GetComponent<PhotonConnecter>();
     }
 
     public void PushDownA()
@@ -98,7 +113,29 @@ public class SelectUnit : MonoBehaviour
 
     void Update()
     {
-        
+        if (_photonConnecter.canvasFlag == true)
+        {
+            _indicater0 = GameObject.FindWithTag("indicater0");
+            _indicater1 = GameObject.FindWithTag("indicater1");
+            _indicater2 = GameObject.FindWithTag("indicater2");
+            _indicater3 = GameObject.FindWithTag("indicater3");
+            _indicater4 = GameObject.FindWithTag("indicater4");
+            _indicater5 = GameObject.FindWithTag("indicater5");
+            _indicater6 = GameObject.FindWithTag("indicater6");
+            _indicater7 = GameObject.FindWithTag("indicater7");
+            _indicater8 = GameObject.FindWithTag("indicater8");
+
+            indicater_a = new GameObject[] { _indicater0, _indicater1, _indicater2 };
+            indicater_b = new GameObject[] { _indicater3, _indicater4, _indicater5 };
+            indicater_c = new GameObject[] { _indicater6, _indicater7, _indicater8 };
+
+            for (int i = 0; i < indicater_a.Length; i++)
+            {
+                indicater_a[i].SetActive(false);
+                indicater_b[i].SetActive(false);
+                indicater_c[i].SetActive(false);
+            }
+        }
     }
 
     public void LatePushUpA()

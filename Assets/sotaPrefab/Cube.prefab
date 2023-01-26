@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7553481846362964023}
   - component: {fileID: 7553481846362964022}
   - component: {fileID: -4514169512178708869}
-  - component: {fileID: -5065191740952954177}
   m_Layer: 7
   m_Name: Cube
   m_TagString: CraftBlock
@@ -114,16 +113,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
-  m_CollisionDetection: 1
---- !u!114 &-5065191740952954177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7553481846362964021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd1bd63383660f40ae7700bd74900ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_CollisionDetection: 0

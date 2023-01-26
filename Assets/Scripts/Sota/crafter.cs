@@ -34,7 +34,7 @@ public class crafter : MonoBehaviour
     bool back;
     bool front;
     int  Blocktype = 1;
-    public static int  CraftCost;
+    int CraftCost;
     public int ReturnCost;
 
     Vector3 Main;
@@ -43,14 +43,14 @@ public class crafter : MonoBehaviour
 
 
     Camera arCam;
-    GameObject spawnedObject;//　フレーム移動
-    GameObject transparent;　//ブロック回収用
-    GameObject Craftframe; //未使用
+    GameObject spawnedObject;
+    GameObject transparent;
+    GameObject Craftframe;
     public GameObject Death;
     CraftFrame craftFrame;
     bool spawanCount = false;
     public bool craftStart = false;
-    public bool craftStart2 = true;　//未使用
+    public bool craftStart2 = true;
     public bool DeleteOK = false;
 
     // Start is called before the first frame update
@@ -66,16 +66,16 @@ public class crafter : MonoBehaviour
     void Update()
     {
 
-        Cost.text = "" + CraftCost;//コスト表示
+        Cost.text = "" + CraftCost;
         if (spawanCount == true)
         {
 
-            spawnedObject.transform.position = CraftMain;//フレーム移動表示
+            spawnedObject.transform.position = CraftMain;
             transparent.transform.position = CraftMain;
 
             foreach (ARPlane plane in _arPlaneManager.trackables)
             {
-                plane.gameObject.SetActive(false);　//ARプレーン非表示
+                plane.gameObject.SetActive(false);
             }
         }
         /*if (Input.touchCount == 0)
@@ -86,7 +86,7 @@ public class crafter : MonoBehaviour
         Ray ray = arCam.ScreenPointToRay(Input.GetTouch(0).position);
         
 
-        if (m_RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits))　//画面タップ時
+        if (m_RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits))
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began && spawnedObject == null)
             {
@@ -94,7 +94,7 @@ public class crafter : MonoBehaviour
                 {
 
 
-                    if (hit.collider.gameObject.tag == "CraftBlock")//無関係
+                    if (hit.collider.gameObject.tag == "CraftBlock")
                     {
                         spawnedObject = hit.collider.gameObject;
                     }
@@ -116,18 +116,18 @@ public class crafter : MonoBehaviour
                             for (int R = 1; R <= 9; R++)
                             {
                                 Main.x += 0.1f;
-                                SpawnPrefab(Main);//グリッド表示
+                                SpawnPrefab(Main);
                             }
                             Main.x += -0.4f;
                             Main.z -= 0.1f;
                         }
 
-                        
-                        _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;　//平面認識終了
-                        CraftMain.y += 0.0527f;
-                        spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);　　//フレーム表示
-                        transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);　
-                        spawanCount = true;                                                         //生成許可
+
+                        _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
+                        CraftMain.y += 0.05f;
+                        spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
+                        transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
+                        spawanCount = true;
                         
                     }
                 }
@@ -164,11 +164,11 @@ public class crafter : MonoBehaviour
     }
     */
 
-    private void SpawnPrefab(Vector3 spawnPosition)　//ブロック生成
+    private void SpawnPrefab(Vector3 spawnPosition)
     {
         Instantiate(spawnablePrefab, spawnPosition, Quaternion.identity);
     }
-    public void UP()　//フレーム移動
+    public void UP()
     {
         CraftMain.y += 0.1f;
     }
@@ -206,7 +206,7 @@ public class crafter : MonoBehaviour
     }
     public void deleTE()
     {
-        if (DeleteOK==true)　　//ブロック回収
+        if (DeleteOK==true)
         {
             Destroy(Death);
             CraftCost += ReturnCost;
@@ -223,7 +223,7 @@ public class crafter : MonoBehaviour
             if (Once!=CraftMain)
             {
 
-                if (Blocktype == 1)//ブロック判別
+                if (Blocktype == 1)
                 {
                     if (CraftCost >= 1)
                     {

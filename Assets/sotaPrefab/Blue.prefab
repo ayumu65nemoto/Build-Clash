@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4279225481930416428}
   - component: {fileID: 2383755570917206893}
   - component: {fileID: 5640923539941328054}
-  - component: {fileID: -7055997641213951039}
   m_Layer: 7
   m_Name: Blue
   m_TagString: CraftBlock2
@@ -115,15 +114,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &-7055997641213951039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3909716441146837867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd1bd63383660f40ae7700bd74900ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

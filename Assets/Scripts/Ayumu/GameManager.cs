@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     private GameObject _textWin;
     //Loseテキスト
     private GameObject _textLose;
+    //キャンバス確認のためにPhotonConnecterを取得
+    private PhotonConnecter _photonConnecter;
 
     // Start is called before the first frame update
     void Start()
@@ -69,11 +71,41 @@ public class GameManager : MonoBehaviour
         //テキスト非アクティブ
         _textWin.SetActive(false);
         _textLose.SetActive(false);
+
+        //PhotonConnecter取得
+        _photonConnecter = GetComponent<PhotonConnecter>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //キャンバスが非アクティブからアクティブになったタイミングで再度取得
+        //Start内のものはあえて残している(無いと最初に呼ばれた109行目でエラーを吐く)
+        if (_photonConnecter.canvasFlag == true)
+        {
+            //バトルスタートボタン取得
+            _battleStartButton = GameObject.FindWithTag("BattleStart");
+            _battleStartButton.SetActive(false);
+
+            //ユニットボタン取得
+            _buttonA = GameObject.Find("ButtonA");
+            _buttonB = GameObject.Find("ButtonB");
+            _buttonC = GameObject.Find("ButtonC");
+            //ユニットを設置するスクリプトを取得
+            _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
+            _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
+            _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
+
+            //勝敗テキスト取得
+            _textWin = GameObject.FindWithTag("Win");
+            _textLose = GameObject.FindWithTag("Lose");
+            //テキスト非アクティブ
+            _textWin.SetActive(false);
+            _textLose.SetActive(false);
+
+            _photonConnecter.canvasFlag = false;
+        }
+
         if (_unitPositionA.setUnitA == true && _unitPositionB.setUnitB == true && _unitPositionC.setUnitC && true)
         {
             //バトルスタートボタンがあるか確認
