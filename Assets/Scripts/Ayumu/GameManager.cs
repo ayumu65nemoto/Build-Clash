@@ -86,8 +86,8 @@ public class GameManager : MonoBehaviour
         _textWin = GameObject.FindWithTag("Win");
         _textLose = GameObject.FindWithTag("Lose");
         //テキスト非アクティブ
-        _textWin.SetActive(false);
-        _textLose.SetActive(false);
+        //_textWin.SetActive(false);
+        //_textLose.SetActive(false);
 
         //PhotonConnecter取得
         _photonConnecter = GetComponent<PhotonConnecter>();
@@ -103,20 +103,53 @@ public class GameManager : MonoBehaviour
             //バトルスタートボタン取得
             _battleStartButton = GameObject.FindWithTag("BattleStart");
             _battleStartButton.SetActive(false);
-            _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
-            _battleStartButton2.SetActive(false);
+            //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+            //_battleStartButton2.SetActive(false);
 
             //ユニットボタン取得
             _buttonA = GameObject.Find("ButtonA");
             _buttonB = GameObject.Find("ButtonB");
             _buttonC = GameObject.Find("ButtonC");
-            _buttonA2 = GameObject.Find("ButtonA2");
-            _buttonB2 = GameObject.Find("ButtonB2");
-            _buttonC2 = GameObject.Find("ButtonC2");
+            //_buttonA2 = GameObject.Find("ButtonA2");
+            //_buttonB2 = GameObject.Find("ButtonB2");
+            //_buttonC2 = GameObject.Find("ButtonC2");
             //ユニットを設置するスクリプトを取得
             _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
             _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
             _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
+            //_unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
+            //_unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
+            //_unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
+
+            //勝敗テキスト取得
+            _textWin = GameObject.FindWithTag("Win");
+            _textLose = GameObject.FindWithTag("Lose");
+            //テキスト非アクティブ
+            _textWin.SetActive(false);
+            _textLose.SetActive(false);
+
+            _photonConnecter.canvasFlag = false;
+        }
+
+        if (_photonConnecter.canvasFlag == true)
+        {
+            //バトルスタートボタン取得
+            //_battleStartButton = GameObject.FindWithTag("BattleStart");
+            //_battleStartButton.SetActive(false);
+            _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+            _battleStartButton2.SetActive(false);
+
+            //ユニットボタン取得
+            //_buttonA = GameObject.Find("ButtonA");
+            //_buttonB = GameObject.Find("ButtonB");
+            //_buttonC = GameObject.Find("ButtonC");
+            _buttonA2 = GameObject.Find("ButtonA2");
+            _buttonB2 = GameObject.Find("ButtonB2");
+            _buttonC2 = GameObject.Find("ButtonC2");
+            //ユニットを設置するスクリプトを取得
+            //_unitPositionA = _buttonA.GetComponent<UnitPositionA>();
+            //_unitPositionB = _buttonB.GetComponent<UnitPositionB>();
+            //_unitPositionC = _buttonC.GetComponent<UnitPositionC>();
             _unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
             _unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
             _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();

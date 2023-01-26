@@ -113,7 +113,7 @@ public class SelectUnit2 : MonoBehaviour
 
     void Update()
     {
-        if (_photonConnecter.canvasFlag == true)
+        if (_photonConnecter.canvasFlag2 == true)
         {
             _indicater02 = GameObject.FindWithTag("id0");
             _indicater12 = GameObject.FindWithTag("id1");
