@@ -53,23 +53,23 @@ public class GameManager : MonoBehaviour
         //バトルスタートボタン取得
         _battleStartButton = GameObject.FindWithTag("BattleStart");
         //_battleStartButton.SetActive(false);  //なぜここをfalseにしていた！と自分をぶん殴りたい
-        //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+        _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
         //_battleStartButton2.SetActive(false);
 
         //ユニットボタン取得
         _buttonA = GameObject.Find("ButtonA");
         _buttonB = GameObject.Find("ButtonB");
         _buttonC = GameObject.Find("ButtonC");
-        //_buttonA2 = GameObject.Find("ButtonA2");
-        //_buttonB2 = GameObject.Find("ButtonB2");
-        //_buttonC2 = GameObject.Find("ButtonC2");
+        _buttonA2 = GameObject.Find("ButtonA2");
+        _buttonB2 = GameObject.Find("ButtonB2");
+        _buttonC2 = GameObject.Find("ButtonC2");
         //ユニットを設置するスクリプトを取得
         _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
         _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
         _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
-        //_unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
-        //_unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
-        //_unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
+        _unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
+        _unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
+        _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
         //各種フラグ
         battle = false;
@@ -103,23 +103,23 @@ public class GameManager : MonoBehaviour
             //バトルスタートボタン取得
             _battleStartButton = GameObject.FindWithTag("BattleStart");
             _battleStartButton.SetActive(false);
-            //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
-            //_battleStartButton2.SetActive(false);
+            _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+            _battleStartButton2.SetActive(false);
 
             //ユニットボタン取得
             _buttonA = GameObject.Find("ButtonA");
             _buttonB = GameObject.Find("ButtonB");
             _buttonC = GameObject.Find("ButtonC");
-            //_buttonA2 = GameObject.Find("ButtonA2");
-            //_buttonB2 = GameObject.Find("ButtonB2");
-            //_buttonC2 = GameObject.Find("ButtonC2");
+            _buttonA2 = GameObject.Find("ButtonA2");
+            _buttonB2 = GameObject.Find("ButtonB2");
+            _buttonC2 = GameObject.Find("ButtonC2");
             //ユニットを設置するスクリプトを取得
             _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
             _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
             _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
-            //_unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
-            //_unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
-            //_unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
+            _unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
+            _unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
+            _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
             //勝敗テキスト取得
             _textWin = GameObject.FindWithTag("Win");
@@ -141,20 +141,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //if (_unitPositionA2.setUnitA2 == true && _unitPositionB2.setUnitB2 == true && _unitPositionC2.setUnitC2 && true)
-        //{
-        //    //バトルスタートボタンがあるか確認
-        //    //これがないとボタンを壊した後も永遠にアクセスし続けるため
-        //    if (_battleStartButton2 == true)
-        //    {
-        //        _battleStartButton2.SetActive(true);
-        //    }
-        //}
+        if (_unitPositionA2.setUnitA2 == true && _unitPositionB2.setUnitB2 == true && _unitPositionC2.setUnitC2 && true)
+        {
+            //バトルスタートボタンがあるか確認
+            //これがないとボタンを壊した後も永遠にアクセスし続けるため
+            if (_battleStartButton2 == true)
+            {
+                _battleStartButton2.SetActive(true);
+            }
+        }
 
-        //if (battle1 == true && battle2 == true)
-        //{
-        //    battle = true;
-        //}
+        if (battle1 == true && battle2 == true)
+        {
+            battle = true;
+        }
 
         if (isGround1 == true)
         {
@@ -169,8 +169,8 @@ public class GameManager : MonoBehaviour
 
     public void OnClick()
     {
-        battle = true;
-        //battle1 = true;
+        //battle = true;
+        battle1 = true;
         //SetActive(false)ではUpdateにあるSetActive(true)で上書きされるため
         Destroy(_battleStartButton);
     }
