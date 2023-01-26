@@ -34,7 +34,7 @@ public class crafter : MonoBehaviour
     bool back;
     bool front;
     int  Blocktype = 1;
-    int CraftCost;
+    public static int  CraftCost;
     public int ReturnCost;
 
     Vector3 Main;
