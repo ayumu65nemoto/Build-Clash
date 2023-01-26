@@ -77,15 +77,15 @@ public class UnitPositionB : MonoBehaviour
         setUnitB = true;
         if (dir == FlickDirection.Left)
         {
-            _selectUnit.SetUnit(-4, 1, -2);
+            _selectUnit.SetUnit(-10, 1, -5);
         }
         else if (dir == FlickDirection.Right)
         {
-            _selectUnit.SetUnit(4, 1, -2);
+            _selectUnit.SetUnit(10, 1, -5);
         }
         else if (dir == FlickDirection.Up)
         {
-            _selectUnit.SetUnit(0, 1, -3);
+            _selectUnit.SetUnit(0, 1, -6);
         }
     }
 }
