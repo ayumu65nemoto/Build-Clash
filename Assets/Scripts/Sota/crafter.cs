@@ -43,14 +43,14 @@ public class crafter : MonoBehaviour
 
 
     Camera arCam;
-    GameObject spawnedObject;
-    GameObject transparent;
-    GameObject Craftframe;
+    GameObject spawnedObject;//　フレーム移動
+    GameObject transparent;　//ブロック回収用
+    GameObject Craftframe; //未使用
     public GameObject Death;
     CraftFrame craftFrame;
     bool spawanCount = false;
     public bool craftStart = false;
-    public bool craftStart2 = true;
+    public bool craftStart2 = true;　//未使用
     public bool DeleteOK = false;
 
     // Start is called before the first frame update
@@ -127,7 +127,7 @@ public class crafter : MonoBehaviour
                         CraftMain.y += 0.0527f;
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);　　//フレーム表示
                         transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);　
-                        spawanCount = true;
+                        spawanCount = true;                                                         //生成許可
                         
                     }
                 }
@@ -164,11 +164,11 @@ public class crafter : MonoBehaviour
     }
     */
 
-    private void SpawnPrefab(Vector3 spawnPosition)
+    private void SpawnPrefab(Vector3 spawnPosition)　//ブロック生成
     {
         Instantiate(spawnablePrefab, spawnPosition, Quaternion.identity);
     }
-    public void UP()
+    public void UP()　//フレーム移動
     {
         CraftMain.y += 0.1f;
     }
@@ -206,7 +206,7 @@ public class crafter : MonoBehaviour
     }
     public void deleTE()
     {
-        if (DeleteOK==true)
+        if (DeleteOK==true)　　//ブロック回収
         {
             Destroy(Death);
             CraftCost += ReturnCost;
@@ -223,7 +223,7 @@ public class crafter : MonoBehaviour
             if (Once!=CraftMain)
             {
 
-                if (Blocktype == 1)
+                if (Blocktype == 1)//ブロック判別
                 {
                     if (CraftCost >= 1)
                     {
