@@ -115,15 +115,15 @@ public class SelectUnit2 : MonoBehaviour
     {
         if (_photonConnecter.canvasFlag == true)
         {
-            _indicater02 = GameObject.FindWithTag("indicater0");
-            _indicater12 = GameObject.FindWithTag("indicater1");
-            _indicater22 = GameObject.FindWithTag("indicater2");
-            _indicater32 = GameObject.FindWithTag("indicater3");
-            _indicater42 = GameObject.FindWithTag("indicater4");
-            _indicater52 = GameObject.FindWithTag("indicater5");
-            _indicater62 = GameObject.FindWithTag("indicater6");
-            _indicater72 = GameObject.FindWithTag("indicater7");
-            _indicater82 = GameObject.FindWithTag("indicater8");
+            _indicater02 = GameObject.FindWithTag("id0");
+            _indicater12 = GameObject.FindWithTag("id1");
+            _indicater22 = GameObject.FindWithTag("id2");
+            _indicater32 = GameObject.FindWithTag("id3");
+            _indicater42 = GameObject.FindWithTag("id4");
+            _indicater52 = GameObject.FindWithTag("id5");
+            _indicater62 = GameObject.FindWithTag("id6");
+            _indicater72 = GameObject.FindWithTag("id7");
+            _indicater82 = GameObject.FindWithTag("id8");
 
             indicater_a2 = new GameObject[] { _indicater02, _indicater12, _indicater22 };
             indicater_b2 = new GameObject[] { _indicater32, _indicater42, _indicater52 };

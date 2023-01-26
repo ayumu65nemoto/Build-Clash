@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 4116319}
   m_Layer: 5
   m_Name: Indicater5
-  m_TagString: indicater5
+  m_TagString: id5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 91070529}
   m_Layer: 5
   m_Name: Indicater3
-  m_TagString: indicater3
+  m_TagString: id3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 119721884}
   m_Layer: 5
   m_Name: Indicater2
-  m_TagString: indicater2
+  m_TagString: id2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2040,7 +2040,7 @@ GameObject:
   - component: {fileID: 377319400}
   m_Layer: 5
   m_Name: Indicater1
-  m_TagString: indicater1
+  m_TagString: id1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4334,7 +4334,7 @@ GameObject:
   - component: {fileID: 944142727}
   m_Layer: 5
   m_Name: Indicater7
-  m_TagString: indicater7
+  m_TagString: id7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4691,7 +4691,7 @@ GameObject:
   - component: {fileID: 1132107016}
   m_Layer: 5
   m_Name: Indicater8
-  m_TagString: indicater8
+  m_TagString: id8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6252,7 +6252,7 @@ GameObject:
   - component: {fileID: 1497609295}
   m_Layer: 5
   m_Name: Indicater4
-  m_TagString: indicater4
+  m_TagString: id4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6979,7 +6979,7 @@ GameObject:
   - component: {fileID: 1784237379}
   m_Layer: 5
   m_Name: Indicater0
-  m_TagString: indicater0
+  m_TagString: id0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8613,7 +8613,7 @@ GameObject:
   - component: {fileID: 2134049501}
   m_Layer: 5
   m_Name: Indicater6
-  m_TagString: indicater6
+  m_TagString: id6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
