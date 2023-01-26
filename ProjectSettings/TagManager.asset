@@ -29,6 +29,7 @@ TagManager:
   - indicater6
   - indicater7
   - indicater8
+  - BattleStart2
   layers:
   - Default
   - TransparentFX

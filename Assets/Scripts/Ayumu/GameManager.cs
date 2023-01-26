@@ -11,14 +11,23 @@ public class GameManager : MonoBehaviour
     private UnitPositionA _unitPositionA;
     private UnitPositionB _unitPositionB;
     private UnitPositionC _unitPositionC;
+    private UnitPositionA2 _unitPositionA2;
+    private UnitPositionB2 _unitPositionB2;
+    private UnitPositionC2 _unitPositionC2;
     //バトル開始ボタン
     private GameObject _battleStartButton;
+    private GameObject _battleStartButton2;
     //ユニット配置ボタン
     private GameObject _buttonA;
     private GameObject _buttonB;
     private GameObject _buttonC;
+    private GameObject _buttonA2;
+    private GameObject _buttonB2;
+    private GameObject _buttonC2;
     //戦闘開始フラグ
     public bool battle;
+    private bool battle1;
+    private bool battle2;
     //雨が降っているか
     public bool rain;
     //雷が発動しているか
@@ -43,16 +52,24 @@ public class GameManager : MonoBehaviour
     {
         //バトルスタートボタン取得
         _battleStartButton = GameObject.FindWithTag("BattleStart");
-        _battleStartButton.SetActive(false);
+        //_battleStartButton.SetActive(false);  //なぜここをfalseにしていた！と自分をぶん殴りたい
+        //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+        //_battleStartButton2.SetActive(false);
 
         //ユニットボタン取得
         _buttonA = GameObject.Find("ButtonA");
         _buttonB = GameObject.Find("ButtonB");
         _buttonC = GameObject.Find("ButtonC");
+        //_buttonA2 = GameObject.Find("ButtonA2");
+        //_buttonB2 = GameObject.Find("ButtonB2");
+        //_buttonC2 = GameObject.Find("ButtonC2");
         //ユニットを設置するスクリプトを取得
         _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
         _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
         _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
+        //_unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
+        //_unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
+        //_unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
         //各種フラグ
         battle = false;
@@ -86,15 +103,23 @@ public class GameManager : MonoBehaviour
             //バトルスタートボタン取得
             _battleStartButton = GameObject.FindWithTag("BattleStart");
             _battleStartButton.SetActive(false);
+            //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+            //_battleStartButton2.SetActive(false);
 
             //ユニットボタン取得
             _buttonA = GameObject.Find("ButtonA");
             _buttonB = GameObject.Find("ButtonB");
             _buttonC = GameObject.Find("ButtonC");
+            //_buttonA2 = GameObject.Find("ButtonA2");
+            //_buttonB2 = GameObject.Find("ButtonB2");
+            //_buttonC2 = GameObject.Find("ButtonC2");
             //ユニットを設置するスクリプトを取得
             _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
             _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
             _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
+            //_unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
+            //_unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
+            //_unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
             //勝敗テキスト取得
             _textWin = GameObject.FindWithTag("Win");
@@ -116,6 +141,21 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        //if (_unitPositionA2.setUnitA2 == true && _unitPositionB2.setUnitB2 == true && _unitPositionC2.setUnitC2 && true)
+        //{
+        //    //バトルスタートボタンがあるか確認
+        //    //これがないとボタンを壊した後も永遠にアクセスし続けるため
+        //    if (_battleStartButton2 == true)
+        //    {
+        //        _battleStartButton2.SetActive(true);
+        //    }
+        //}
+
+        //if (battle1 == true && battle2 == true)
+        //{
+        //    battle = true;
+        //}
+
         if (isGround1 == true)
         {
             _textLose.SetActive(true);
@@ -130,7 +170,14 @@ public class GameManager : MonoBehaviour
     public void OnClick()
     {
         battle = true;
+        //battle1 = true;
         //SetActive(false)ではUpdateにあるSetActive(true)で上書きされるため
         Destroy(_battleStartButton);
+    }
+
+    public void OnClick2()
+    {
+        battle2 = true;
+        Destroy(_battleStartButton2);
     }
 }
