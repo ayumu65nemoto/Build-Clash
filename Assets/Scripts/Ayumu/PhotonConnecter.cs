@@ -40,7 +40,7 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
 
         if (_playerId == 1)
         {
-            _position = new Vector3(0, 1.5f, -4);
+            _position = new Vector3(0, 1.5f, -10);
             _prefab = "PlayerPrefab";
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
             //_playerNumber += 1;
@@ -48,7 +48,7 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
         }
         if (_playerId == 2)
         {
-            _position = new Vector3(0, 1.5f, 0);
+            _position = new Vector3(0, 1.5f, 6);
             _prefab = "EnemyPrefab";
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
             //_playerNumber += 1;
