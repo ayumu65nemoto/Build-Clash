@@ -156,8 +156,8 @@ public class GameManager : MonoBehaviour
             _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
             //勝敗テキスト取得
-            _textWin2 = GameObject.FindWithTag("Win");
-            _textLose2 = GameObject.FindWithTag("Lose");
+            _textWin2 = GameObject.FindWithTag("Win2");
+            _textLose2 = GameObject.FindWithTag("Lose2");
             //テキスト非アクティブ
             _textWin2.SetActive(false);
             _textLose2.SetActive(false);
