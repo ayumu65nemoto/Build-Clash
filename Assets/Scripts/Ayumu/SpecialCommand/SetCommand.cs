@@ -28,11 +28,12 @@ public class SetCommand : MonoBehaviour
     {
         if (_gameManager.battle == true)
         {
-            if (_commandCount > 0)
-            {
-                _selectUnit.SetUnit(0, 0, 0);
-                _commandCount -= 1;
-            }
+            //if (_commandCount > 0)
+            //{
+            //    _selectUnit.SetUnit(0, 0, 0);
+            //    _commandCount -= 1;
+            //}
+            _selectUnit.SetUnit(0, 0, 0);
         }
     }
 }
