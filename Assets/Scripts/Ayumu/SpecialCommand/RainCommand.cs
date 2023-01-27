@@ -16,16 +16,22 @@ public class RainCommand : MonoBehaviour
     //ゲームマネージャーの取得
     private GameObject _gameObject;
     private GameManager _gameManager;
-    
+    //PhotonConnecter
+    private PhotonConnecter _photonConnecter;
+    //エラー回避フラグ
+    private bool _success;
+
     // Start is called before the first frame update
     void Start()
     {
-        _rainCount = 1;
-        //_enemy = GameObject.FindWithTag("Enemy");
-        //_target = _enemy.GetComponent<Transform>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
-        //_targetTransform = new Vector3(_target.position.x, _target.position.y + 10, _target.position.z);
+        //PhotonConnecter取得
+        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
+        _rainCount = 1;
+        _enemy = GameObject.FindWithTag("Enemy");
+        _target = _enemy.GetComponent<Transform>();
+        _targetTransform = new Vector3(_target.position.x, _target.position.y + 10, _target.position.z);
     }
 
     // Update is called once per frame
@@ -33,15 +39,26 @@ public class RainCommand : MonoBehaviour
     {
         if (_rainCount > 0)
         {
-            ////キングの位置に発生
-            //GameObject rain = Instantiate(prefab, _targetTransform, Quaternion.Euler(90, 0, 0));
-            GameObject rain = PhotonNetwork.Instantiate("Rain", new Vector3(0, 10, 0), Quaternion.Euler(90, 0, 0));
-            //Rigidbody meteorRb = rain.GetComponent<Rigidbody>();
-            _rainCount -= 1;
-            _gameManager.rain = true;
+            if (_photonConnecter.p2 == true)
+            {
+                _enemy = GameObject.FindWithTag("Enemy");
+                _target = _enemy.GetComponent<Transform>();
+                _targetTransform = new Vector3(_target.position.x, _target.position.y + 10, _target.position.z);
+                _success = true;
+            }
+            
+            if (_success == true)
+            {
+                //キングの位置に発生
+                GameObject rain = Instantiate(prefab, _targetTransform, Quaternion.Euler(90, 0, 0));
+                //GameObject rain = PhotonNetwork.Instantiate("Rain", new Vector3(0, 10, 0), Quaternion.Euler(90, 0, 0));
+                //Rigidbody meteorRb = rain.GetComponent<Rigidbody>();
+                _rainCount -= 1;
+                _gameManager.rain = true;
 
-            //// 発射音を出す
-            //AudioSource.PlayClipAtPoint(sound, transform.position);
+                //// 発射音を出す
+                //AudioSource.PlayClipAtPoint(sound, transform.position);
+            }
         }
     }
 }

@@ -10,6 +10,10 @@ public class ThunderCommand : MonoBehaviour
     //ゲームマネージャーの取得
     private GameObject _gameObject;
     private GameManager _gameManager;
+    //PhotonConnecter
+    private PhotonConnecter _photonConnecter;
+    //エラー回避フラグ
+    private bool _success;
     //コマンド回数制限
     private int _thunder;
 
@@ -18,6 +22,8 @@ public class ThunderCommand : MonoBehaviour
     {
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
+        //PhotonConnecter取得
+        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
         _enemyObject = GameObject.FindWithTag("Enemy");
         _playerStates = _enemyObject.GetComponent<PlayerStates>();
         _thunder = 1;
@@ -26,19 +32,29 @@ public class ThunderCommand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
         if (_thunder > 0)
         {
-            if (_playerStates.wetFlag == true)
+            if (_photonConnecter.p2 == true)
             {
-                _gameManager.thunder = true;
-                _thunder -= 1;
-                //Destroy(blocks[Random.Range(0, 27)]);
-                for (int i = 0; i < 5; i++)
+                _enemyObject = GameObject.FindWithTag("Enemy");
+                _playerStates = _enemyObject.GetComponent<PlayerStates>();
+                _success = true;
+            }
+
+            if (_success == true)
+            {
+                GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
+                if (_playerStates.wetFlag == true)
                 {
-                    GameObject block = blocks[Random.Range(0, 27)];
-                    Debug.Log(block);
-                    Destroy(block);
+                    _gameManager.thunder = true;
+                    _thunder -= 1;
+                    //Destroy(blocks[Random.Range(0, 27)]);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        GameObject block = blocks[Random.Range(0, 27)];
+                        Debug.Log(block);
+                        Destroy(block);
+                    }
                 }
             }
         }
