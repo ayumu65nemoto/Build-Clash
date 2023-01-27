@@ -6,6 +6,9 @@ public class ListCube : MonoBehaviour
 {
     public List<GameObject> myList = new List<GameObject>();
 
+    GameObject Listsaver;
+    ListSaver ListS;
+    Vector3 reset;
     //void ListHidden()
     //{
         //for (int i = 0; i < myList.Count; i++)
@@ -18,10 +21,12 @@ public class ListCube : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        Listsaver = GameObject.Find("ListSaver");
+        ListS = Listsaver.GetComponent<ListSaver>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position += new Vector3(1, 0, 0) * Time.deltaTime / 2;
     }
@@ -35,20 +40,27 @@ public class ListCube : MonoBehaviour
 
         if (other.gameObject.tag == "CraftBlock")
         {
-            myList.Add(other.gameObject);
+            ListS.saveList.Add(other.gameObject);
             other.gameObject.SetActive(false);
+            reset = Vector3.one;
+            other.gameObject.transform.position = reset;
         }
 
         if (other.gameObject.tag == "CraftBlock2")
         {
-            myList.Add(other.gameObject);
+            ListS.saveList.Add(other.gameObject);
             other.gameObject.SetActive(false);
+            reset = Vector3.one;
+            other.gameObject.transform.position = reset;
         }
 
         if (other.gameObject.tag == "CraftBlock3")
         {
-            myList.Add(other.gameObject);
+            ListS.saveList.Add(other.gameObject);
             other.gameObject.SetActive(false);
+            //reset = other.gameObject.transform.position;
+            reset = Vector3.one;
+            other.gameObject.transform.position = reset;
         }
     }
 
@@ -56,7 +68,7 @@ public class ListCube : MonoBehaviour
     {
         for (int i = 0; i < myList.Count; i++)
         {
-            myList[i].gameObject.SetActive(true);
+            ListS.saveList[i].gameObject.SetActive(true);
         }
     }
 

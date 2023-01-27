@@ -7,11 +7,15 @@ using UnityEngine.XR.ARSubsystems;
 
 public class crafter : MonoBehaviour
 {
+    //AR
     [SerializeField]
     ARRaycastManager m_RaycastManager;
     List<ARRaycastHit> m_Hits = new List<ARRaycastHit>();
     [SerializeField]
     ARPlaneManager _arPlaneManager;
+    Camera arCam;
+
+    //オブジェクト
     [SerializeField]
     GameObject spawnablePrefab;
     [SerializeField]
@@ -27,27 +31,24 @@ public class crafter : MonoBehaviour
     [SerializeField] 
     TextMeshProUGUI Cost;
 
-    bool up;
-    bool dawn;
-    bool left;
-    bool right;
-    bool back;
-    bool front;
+    //クラフトメイン
     int  Blocktype = 1;
     int CraftCost;
     public int ReturnCost;
-
+    float c_position = 0.1f;
     Vector3 Main;
     public Vector3 CraftMain;
     public Vector3 Once ;
 
 
-    Camera arCam;
+    
     GameObject spawnedObject;
     GameObject transparent;
     GameObject Craftframe;
     public GameObject Death;
     CraftFrame craftFrame;
+
+    //フラグ
     bool spawanCount = false;
     public bool craftStart = false;
     public bool craftStart2 = true;
@@ -106,20 +107,20 @@ public class crafter : MonoBehaviour
                         //Main.y += 0.03f;
                         CraftMain = Main;
                         
-                        Main.z += 0.4f;
+                        Main.z += (c_position*5);//9*9マスの為
 
                         for (int I = 1; I <= 9; I++)
                         {
 
-                            Main.x += -0.5f;
+                            Main.x -= (c_position*5);//9*9マスの為
 
                             for (int R = 1; R <= 9; R++)
                             {
-                                Main.x += 0.1f;
+                                Main.x += c_position;
                                 SpawnPrefab(Main);
                             }
-                            Main.x += -0.4f;
-                            Main.z -= 0.1f;
+                            Main.x -= (c_position*4);
+                            Main.z -= c_position;
                         }
 
 
@@ -170,27 +171,27 @@ public class crafter : MonoBehaviour
     }
     public void UP()
     {
-        CraftMain.y += 0.1f;
+        CraftMain.y += c_position;
     }
     public void DOWN()
     {
-        CraftMain.y += -0.1f;
+        CraftMain.y -= c_position;
     }
     public void FRONT()
     {
-        CraftMain.z += -0.1f;
+        CraftMain.z -= c_position;
     }
     public void BACK()
     {
-        CraftMain.z += 0.1f;
+        CraftMain.z += c_position;
     }
     public void LEFT()
     {
-        CraftMain.x += -0.1f;
+        CraftMain.x -= c_position;
     }
     public void RIGHT()
     {
-        CraftMain.x += 0.1f;
+        CraftMain.x += c_position;
     }
     public void type1()
     {

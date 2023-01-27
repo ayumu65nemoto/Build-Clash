@@ -27,6 +27,6 @@ public class Sample2 : MonoBehaviour
 
         //bx.isTrigger = false;
 
-        transform.parent = GameObject.Find("PrehabMaster").transform; //eŒŸõ
+        transform.parent = GameObject.Find("ListSaver").transform; //eŒŸõ
     }
 }
