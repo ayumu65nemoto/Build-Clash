@@ -772,8 +772,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813984}
-          m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+        - m_Target: {fileID: 1462813988}
+          m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: PushDownC
           m_Mode: 1
           m_Arguments:
@@ -788,8 +788,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813984}
-          m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+        - m_Target: {fileID: 1462813988}
+          m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: LatePushUpC
           m_Mode: 1
           m_Arguments:
@@ -3409,8 +3409,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813984}
-        m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+      - m_Target: {fileID: 1462813988}
+        m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
         m_MethodName: PushDownF
         m_Mode: 1
         m_Arguments:
@@ -5376,8 +5376,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813984}
-          m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+        - m_Target: {fileID: 1462813988}
+          m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: PushDownA
           m_Mode: 1
           m_Arguments:
@@ -5392,8 +5392,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813984}
-          m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+        - m_Target: {fileID: 1462813988}
+          m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: LatePushUpA
           m_Mode: 1
           m_Arguments:
@@ -5778,8 +5778,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813984}
-        m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+      - m_Target: {fileID: 1462813988}
+        m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
         m_MethodName: PushDownE
         m_Mode: 1
         m_Arguments:
@@ -5854,6 +5854,7 @@ GameObject:
   - component: {fileID: 1462813986}
   - component: {fileID: 1462813987}
   - component: {fileID: 1462813988}
+  - component: {fileID: 1462813989}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -5933,6 +5934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: 0
+  battle1: 0
+  battle2: 0
   rain: 0
   thunder: 0
   isGround1: 0
@@ -6004,6 +6007,28 @@ MonoBehaviour:
   _indicater62: {fileID: 0}
   _indicater72: {fileID: 0}
   _indicater82: {fileID: 0}
+--- !u!114 &1462813989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462813982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1472339464
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,8 +6126,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813984}
-        m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+      - m_Target: {fileID: 1462813988}
+        m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
         m_MethodName: PushDownD
         m_Mode: 1
         m_Arguments:
@@ -6552,8 +6577,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813984}
-          m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+        - m_Target: {fileID: 1462813988}
+          m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: PushDownB
           m_Mode: 1
           m_Arguments:
@@ -6568,8 +6593,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813984}
-          m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+        - m_Target: {fileID: 1462813988}
+          m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: LatePushUpB
           m_Mode: 1
           m_Arguments:

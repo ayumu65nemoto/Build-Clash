@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     private GameObject _buttonC2;
     //戦闘開始フラグ
     public bool battle;
-    private bool battle1;
-    private bool battle2;
+    public bool battle1;
+    public bool battle2;
     //雨が降っているか
     public bool rain;
     //雷が発動しているか
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
             _photonConnecter.canvasFlag = false;
         }
 
-        if (_photonConnecter.canvasFlag == true)
+        if (_photonConnecter.canvasFlag2 == true)
         {
             //バトルスタートボタン取得
             //_battleStartButton = GameObject.FindWithTag("BattleStart");
@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
             _textWin.SetActive(false);
             _textLose.SetActive(false);
 
-            _photonConnecter.canvasFlag = false;
+            //_photonConnecter.canvasFlag = false;
         }
 
         if (_unitPositionA.setUnitA == true && _unitPositionB.setUnitB == true && _unitPositionC.setUnitC && true)
@@ -202,15 +202,16 @@ public class GameManager : MonoBehaviour
 
     public void OnClick()
     {
-        //battle = true;
-        battle1 = true;
+        battle = true;
+        //battle1 = true;
         //SetActive(false)ではUpdateにあるSetActive(true)で上書きされるため
         Destroy(_battleStartButton);
     }
 
     public void OnClick2()
     {
-        battle2 = true;
+        battle = true;
+        //battle2 = true;
         Destroy(_battleStartButton2);
     }
 }

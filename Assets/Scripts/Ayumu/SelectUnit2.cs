@@ -135,6 +135,7 @@ public class SelectUnit2 : MonoBehaviour
                 indicater_b2[i].SetActive(false);
                 indicater_c2[i].SetActive(false);
             }
+            _photonConnecter.canvasFlag2 = false;
         }
     }
 
