@@ -58,7 +58,7 @@ public class UnitDirection : MonoBehaviourPunCallbacks
         //}
     }
 
-    void OnTriggerStay(Collider col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.tag == "Player")
         {
