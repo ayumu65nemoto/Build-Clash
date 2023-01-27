@@ -55,7 +55,7 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
 
         if (playerId == 1)
         {
-            _position = new Vector3(0, 1.5f, -10);
+            _position = new Vector3(0, 1.4f, -10);
             _prefab = "PlayerPrefab";
             _canvas.SetActive(true);
             canvasFlag = true;
@@ -65,7 +65,7 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
         }
         if (playerId == 2)
         {
-            _position = new Vector3(0, 1.5f, 6);
+            _position = new Vector3(0, 1.4f, 6);
             _prefab = "EnemyPrefab";
             _canvas2.SetActive(true);
             canvasFlag2 = true;
