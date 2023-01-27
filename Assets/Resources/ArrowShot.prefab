@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -7127537950181762951}
   - component: {fileID: 3987580553510636113}
   - component: {fileID: 4093022093882487052}
+  - component: {fileID: -251683350682713435}
   m_Layer: 0
   m_Name: ArrowShot
   m_TagString: Untagged
@@ -165,3 +166,16 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
+--- !u!135 &-251683350682713435
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790068151977252109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
