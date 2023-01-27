@@ -194,12 +194,16 @@ public class GameManager : MonoBehaviour
         {
             _textLose.SetActive(true);
             _textWin2.SetActive(true);
+            Destroy(_textWin);
+            Destroy(_textLose2);
         }
 
         if (isGround2 == true)
         {
             _textWin.SetActive(true);
             _textLose2.SetActive(true);
+            Destroy(_textLose);
+            Destroy(_textWin2);
         }
     }
 
