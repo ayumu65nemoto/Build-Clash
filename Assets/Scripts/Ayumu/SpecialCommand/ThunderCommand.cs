@@ -36,6 +36,7 @@ public class ThunderCommand : MonoBehaviour
         _playerStates1 = _playerObject.GetComponent<PlayerStates>();
         _playerStates2 = _enemyObject.GetComponent<PlayerStates>();
         _thunder = 1;
+        _success = false;
     }
 
     // Update is called once per frame
@@ -52,37 +53,69 @@ public class ThunderCommand : MonoBehaviour
                 _success = true;
             }
 
-            if (_success == true)
+            //if (_success == true)
+            //{
+            //    if (_selectUnit.buttonFlag1 == true)
+            //    {
+            //        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
+            //        if (_playerStates2.wetFlag == true)
+            //        {
+            //            _gameManager.thunder = true;
+            //            _thunder -= 1;
+            //            for (int i = 0; i < 5; i++)
+            //            {
+            //                GameObject block = blocks[Random.Range(0, 27)];
+            //                Debug.Log(block);
+            //                Destroy(block);
+            //            }
+            //        }
+            //    }
+
+            //    if (_selectUnit2.buttonFlag2 == true)
+            //    {
+            //        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
+            //        if (_playerStates1.wetFlag == true)
+            //        {
+            //            _gameManager.thunder = true;
+            //            _thunder -= 1;
+            //            for (int i = 0; i < 5; i++)
+            //            {
+            //                GameObject block = blocks[Random.Range(0, 27)];
+            //                Debug.Log(block);
+            //                Destroy(block);
+            //            }
+            //        }
+            //    }
+            //}
+
+            if (_selectUnit.buttonFlag1 == true)
             {
-                if (_selectUnit.buttonFlag1 == true)
+                GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
+                if (_playerStates2.wetFlag == true)
                 {
-                    GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-                    if (_playerStates2.wetFlag == true)
+                    _gameManager.thunder = true;
+                    _thunder -= 1;
+                    for (int i = 0; i < 5; i++)
                     {
-                        _gameManager.thunder = true;
-                        _thunder -= 1;
-                        for (int i = 0; i < 5; i++)
-                        {
-                            GameObject block = blocks[Random.Range(0, 27)];
-                            Debug.Log(block);
-                            Destroy(block);
-                        }
+                        GameObject block = blocks[Random.Range(0, 27)];
+                        Debug.Log(block);
+                        Destroy(block);
                     }
                 }
+            }
 
-                if (_selectUnit2.buttonFlag2 == true)
+            if (_selectUnit2.buttonFlag2 == true)
+            {
+                GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
+                if (_playerStates1.wetFlag == true)
                 {
-                    GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
-                    if (_playerStates1.wetFlag == true)
+                    _gameManager.thunder = true;
+                    _thunder -= 1;
+                    for (int i = 0; i < 5; i++)
                     {
-                        _gameManager.thunder = true;
-                        _thunder -= 1;
-                        for (int i = 0; i < 5; i++)
-                        {
-                            GameObject block = blocks[Random.Range(0, 27)];
-                            Debug.Log(block);
-                            Destroy(block);
-                        }
+                        GameObject block = blocks[Random.Range(0, 27)];
+                        Debug.Log(block);
+                        Destroy(block);
                     }
                 }
             }

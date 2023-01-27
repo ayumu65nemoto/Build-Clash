@@ -60,39 +60,73 @@ public class MeteorCommand : MonoBehaviour
                 _target2 = _enemy.GetComponent<Transform>();
                 _targetTransform1 = new Vector3(_target1.position.x, _target1.position.y + 10, _target1.position.z);
                 _targetTransform2 = new Vector3(_target2.position.x, _target2.position.y + 10, _target2.position.z);
+                _success = true;
             }
 
-            if (_success == true)
+            //if (_success == true)
+            //{
+            //    if (_selectUnit.buttonFlag1 == true)
+            //    {
+            //        GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target2.position.x, 10, _target2.position.z), Quaternion.identity);
+            //        //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
+            //        Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
+            //        _meteorCount -= 1;
+
+            //        //// î≠éÀâπÇèoÇ∑
+            //        //AudioSource.PlayClipAtPoint(sound, transform.position);
+
+            //        // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
+            //        Destroy(meteor, 2.0f);
+            //        _selectUnit.buttonFlag1 = false;
+            //        Debug.Log("a");
+            //    }
+
+            //    if (_selectUnit2.buttonFlag2 == true)
+            //    {
+            //        GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target1.position.x, 10, _target1.position.z), Quaternion.identity);
+            //        //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
+            //        Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
+            //        _meteorCount -= 1;
+
+            //        //// î≠éÀâπÇèoÇ∑
+            //        //AudioSource.PlayClipAtPoint(sound, transform.position);
+
+            //        // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
+            //        Destroy(meteor, 2.0f);
+            //        _selectUnit2.buttonFlag2 = false;
+            //    }
+            //    Debug.Log(_meteorCount);
+            //}
+
+            if (_selectUnit.buttonFlag1 == true)
             {
-                if (_selectUnit.buttonFlag1 == true)
-                {
-                    GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target2.position.x, 10, _target2.position.z), Quaternion.identity);
-                    //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
-                    Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
-                    _meteorCount -= 1;
+                GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target2.position.x, 10, _target2.position.z), Quaternion.identity);
+                //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
+                Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
+                _meteorCount -= 1;
 
-                    //// î≠éÀâπÇèoÇ∑
-                    //AudioSource.PlayClipAtPoint(sound, transform.position);
+                //// î≠éÀâπÇèoÇ∑
+                //AudioSource.PlayClipAtPoint(sound, transform.position);
 
-                    // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
-                    Destroy(meteor, 2.0f);
-                    _selectUnit.buttonFlag1 = false;
-                }
+                // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
+                Destroy(meteor, 2.0f);
+                _selectUnit.buttonFlag1 = false;
+                Debug.Log("a");
+            }
 
-                if (_selectUnit2.buttonFlag2 == true)
-                {
-                    GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target1.position.x, 10, _target1.position.z), Quaternion.identity);
-                    //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
-                    Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
-                    _meteorCount -= 1;
+            if (_selectUnit2.buttonFlag2 == true)
+            {
+                GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target1.position.x, 10, _target1.position.z), Quaternion.identity);
+                //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
+                Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
+                _meteorCount -= 1;
 
-                    //// î≠éÀâπÇèoÇ∑
-                    //AudioSource.PlayClipAtPoint(sound, transform.position);
+                //// î≠éÀâπÇèoÇ∑
+                //AudioSource.PlayClipAtPoint(sound, transform.position);
 
-                    // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
-                    Destroy(meteor, 2.0f);
-                    _selectUnit2.buttonFlag2 = false;
-                }
+                // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
+                Destroy(meteor, 2.0f);
+                _selectUnit2.buttonFlag2 = false;
             }
         }
     }
