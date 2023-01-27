@@ -1,19 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
-public class UnitDirection : MonoBehaviour
+public class UnitDirection : MonoBehaviourPunCallbacks
 {
+    //自分の拠点
+    private GameObject _player;
     //敵の拠点
     private GameObject _enemy;
-    //自分の位置
+    //ユニットの位置
     private Transform _self;
+    //設置するゲームオブジェクト
+    private GameObject _myObject;
+    //自分の位置
+    private Transform _target1;
     //敵の位置
-    private Transform _target;
+    private Transform _target2;
     //ゲームマネージャー
     private GameObject _gameManager;
     //PhotonConnecter
     private PhotonConnecter _photonConnecter;
+    //PhotonView
+    private PhotonView _photonView;
     //エラー回避フラグ
     private bool _success;
 
@@ -25,6 +35,7 @@ public class UnitDirection : MonoBehaviour
         //PhotonConnecter取得
         _photonConnecter = _gameManager.GetComponent<PhotonConnecter>();
         _self = this.transform;
+        _myObject = this.gameObject;
         _success = false;
     }
 
@@ -33,13 +44,24 @@ public class UnitDirection : MonoBehaviour
     {
         if (_photonConnecter.p2 == true)
         {
+            _player = GameObject.FindWithTag("Player");
             _enemy = GameObject.FindWithTag("Enemy");
-            _target = _enemy.GetComponent<Transform>();
+            _target1 = _player.GetComponent<Transform>();
+            _target2 = _enemy.GetComponent<Transform>();
+            _photonView = _myObject.GetComponent<PhotonView>();
+
             _success = true;
         }
         if (_success == true)
         {
-            _self.LookAt(_target);
+            if (_photonView.IsMine == true)
+            {
+                _self.LookAt(_target2);
+            }
+            else
+            {
+                _self.LookAt(_target1);
+            }
         }
     }
 }
