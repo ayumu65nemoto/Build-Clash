@@ -32,7 +32,7 @@ public class FlameShot : MonoBehaviour
                 Rigidbody flameRb = flame.GetComponent<Rigidbody>();
 
                 // íeë¨ÇÕé©óRÇ…ê›íË
-                flameRb.AddForce(transform.forward * 200);
+                flameRb.AddForce(transform.forward * 10, ForceMode.Impulse);
 
                 //// î≠éÀâπÇèoÇ∑
                 //AudioSource.PlayClipAtPoint(sound, transform.position);

@@ -33,7 +33,7 @@ public class ArrowShot : MonoBehaviour
                 Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
 
                 // íeë¨ÇÕé©óRÇ…ê›íË
-                arrowRb.AddForce(transform.forward * 500);
+                arrowRb.AddForce(transform.forward * 20, ForceMode.Impulse);
 
                 //// î≠éÀâπÇèoÇ∑
                 //AudioSource.PlayClipAtPoint(sound, transform.position);

@@ -25,14 +25,14 @@ public class BallShot : MonoBehaviour
 
         if (_gameManager.battle == true)
         {
-            // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
+            // 420ƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
             if (_count % 420 == 0)
             {
                 GameObject ball = PhotonNetwork.Instantiate("Ball", transform.position, Quaternion.identity);
                 Rigidbody ballRb = ball.GetComponent<Rigidbody>();
 
                 // ’e‘¬‚Í©—R‚Éİ’è
-                ballRb.AddForce(transform.forward * 1500);
+                ballRb.AddForce(transform.forward * 40, ForceMode.Impulse);
 
                 //// ”­Ë‰¹‚ğo‚·
                 //AudioSource.PlayClipAtPoint(sound, transform.position);
