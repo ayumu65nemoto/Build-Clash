@@ -12,12 +12,23 @@ public class MeteorCommand : MonoBehaviour
     private GameObject _enemy;
     //“G‚ÌˆÊ’u
     private Transform _target;
+    //ƒQ[ƒ€ƒ}ƒl[ƒWƒƒ[
+    private GameObject _gameManager;
+    //PhotonConnecter
+    private PhotonConnecter _photonConnecter;
+    //ƒGƒ‰[‰ñ”ğƒtƒ‰ƒO
+    private bool _success;
 
     // Start is called before the first frame update
     void Start()
     {
-        //_enemy = GameObject.FindWithTag("Enemy");
-        //_target = _enemy.GetComponent<Transform>();
+        //GameManageræ“¾
+        _gameManager = GameObject.FindWithTag("GameManager");
+        //PhotonConnecteræ“¾
+        _photonConnecter = _gameManager.GetComponent<PhotonConnecter>();
+        _enemy = GameObject.FindWithTag("Enemy");
+        _target = _enemy.GetComponent<Transform>();
+        _success = false;
         _meteorCount = 1;
     }
 
@@ -26,16 +37,26 @@ public class MeteorCommand : MonoBehaviour
     {
         if (_meteorCount > 0)
         {
-            //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target.position.x, 10, _target.position.z), Quaternion.identity);
-            GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
-            Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
-            _meteorCount -= 1;
+            if (_photonConnecter.p2 == true)
+            {
+                _enemy = GameObject.FindWithTag("Enemy");
+                _target = _enemy.GetComponent<Transform>();
+                _success = true;
+            }
 
-            //// ”­Ë‰¹‚ğo‚·
-            //AudioSource.PlayClipAtPoint(sound, transform.position);
+            if (_success == true)
+            {
+                GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target.position.x, 10, _target.position.z), Quaternion.identity);
+                //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
+                Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
+                _meteorCount -= 1;
 
-            // ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
-            Destroy(meteor, 2.0f);
+                //// ”­Ë‰¹‚ğo‚·
+                //AudioSource.PlayClipAtPoint(sound, transform.position);
+
+                // ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
+                Destroy(meteor, 2.0f);
+            }
         }
     }
 }

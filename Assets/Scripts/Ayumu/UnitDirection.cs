@@ -10,18 +10,36 @@ public class UnitDirection : MonoBehaviour
     private Transform _self;
     //敵の位置
     private Transform _target;
+    //ゲームマネージャー
+    private GameObject _gameManager;
+    //PhotonConnecter
+    private PhotonConnecter _photonConnecter;
+    //エラー回避フラグ
+    private bool _success;
+
     // Start is called before the first frame update
     void Start()
     {
+        //GameManager取得
+        _gameManager = GameObject.FindWithTag("GameManager");
+        //PhotonConnecter取得
+        _photonConnecter = _gameManager.GetComponent<PhotonConnecter>();
         _self = this.transform;
-        //_enemy = GameObject.FindWithTag("Enemy");
-        //_target = _enemy.GetComponent<Transform>();
-        //_self.LookAt(_target);
+        _success = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //_self.LookAt(_target);
+        if (_photonConnecter.p2 == true)
+        {
+            _enemy = GameObject.FindWithTag("Enemy");
+            _target = _enemy.GetComponent<Transform>();
+            _success = true;
+        }
+        if (_success == true)
+        {
+            _self.LookAt(_target);
+        }
     }
 }

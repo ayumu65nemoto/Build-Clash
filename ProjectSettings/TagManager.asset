@@ -39,6 +39,8 @@ TagManager:
   - id6
   - id7
   - id8
+  - Win2
+  - Lose2
   layers:
   - Default
   - TransparentFX

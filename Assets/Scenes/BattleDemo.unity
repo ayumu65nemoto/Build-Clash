@@ -3643,7 +3643,7 @@ GameObject:
   - component: {fileID: 807126826}
   m_Layer: 5
   m_Name: Lose
-  m_TagString: Lose
+  m_TagString: Lose2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5972,6 +5972,8 @@ MonoBehaviour:
   playerId: 0
   canvasFlag: 0
   canvasFlag2: 0
+  p1: 0
+  p2: 0
 --- !u!114 &1462813988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7550,7 +7552,7 @@ GameObject:
   - component: {fileID: 1921298614}
   m_Layer: 5
   m_Name: Win
-  m_TagString: Win
+  m_TagString: Win2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

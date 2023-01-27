@@ -19,6 +19,9 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
     //キャンバス表示フラグ
     public bool canvasFlag;
     public bool canvasFlag2;
+    //相手プレイヤー出現フラグ
+    public bool p1;
+    public bool p2;
 
     private void Start()
     {
@@ -31,6 +34,8 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
         _canvas2.SetActive(false);
         canvasFlag = false;
         canvasFlag2 = false;
+        p1 = false;
+        p2 = false;
     }
 
     // マスターサーバーへの接続が成功した時に呼ばれるコールバック
@@ -54,6 +59,7 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
             _prefab = "PlayerPrefab";
             _canvas.SetActive(true);
             canvasFlag = true;
+            p1 = true;
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
             Debug.Log(playerId);
         }
@@ -63,6 +69,7 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
             _prefab = "EnemyPrefab";
             _canvas2.SetActive(true);
             canvasFlag2 = true;
+            p2 = true;
             PhotonNetwork.Instantiate(_prefab, _position, Quaternion.identity);
             Debug.Log(playerId);
         }

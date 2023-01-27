@@ -42,8 +42,10 @@ public class GameManager : MonoBehaviour
     public bool isGround2;
     //Winテキスト
     private GameObject _textWin;
+    private GameObject _textWin2;
     //Loseテキスト
     private GameObject _textLose;
+    private GameObject _textLose2;
     //キャンバス確認のためにPhotonConnecterを取得
     private PhotonConnecter _photonConnecter;
 
@@ -85,9 +87,8 @@ public class GameManager : MonoBehaviour
         //勝敗テキスト取得
         _textWin = GameObject.FindWithTag("Win");
         _textLose = GameObject.FindWithTag("Lose");
-        //テキスト非アクティブ
-        //_textWin.SetActive(false);
-        //_textLose.SetActive(false);
+        _textWin2 = GameObject.FindWithTag("Win2");
+        _textLose2 = GameObject.FindWithTag("Lose2");
 
         //PhotonConnecter取得
         _photonConnecter = GetComponent<PhotonConnecter>();
@@ -155,11 +156,11 @@ public class GameManager : MonoBehaviour
             _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
             //勝敗テキスト取得
-            _textWin = GameObject.FindWithTag("Win");
-            _textLose = GameObject.FindWithTag("Lose");
+            _textWin2 = GameObject.FindWithTag("Win");
+            _textLose2 = GameObject.FindWithTag("Lose");
             //テキスト非アクティブ
-            _textWin.SetActive(false);
-            _textLose.SetActive(false);
+            _textWin2.SetActive(false);
+            _textLose2.SetActive(false);
 
             //_photonConnecter.canvasFlag = false;
         }
@@ -192,11 +193,13 @@ public class GameManager : MonoBehaviour
         if (isGround1 == true)
         {
             _textLose.SetActive(true);
+            _textWin2.SetActive(true);
         }
 
         if (isGround2 == true)
         {
             _textWin.SetActive(true);
+            _textLose2.SetActive(true);
         }
     }
 
