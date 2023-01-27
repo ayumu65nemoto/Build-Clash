@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private PlayerStates _playerStates;
-    private PlayerStates _playerState;
+    private PlayerStates _playerStates2;
     private GameObject _enemyObject;
     private GameObject _rain;
     //ゲームマネージャーの取得
@@ -37,16 +37,28 @@ public class Player : MonoBehaviour
             _success = true;
         }
 
-        if (_gameManager.rain == true)
+        if (_gameManager.rain1 == true)
+        {
+            // タグが同じオブジェクトを全て取得する
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject gameObj in gameObjects)
+            {
+                _playerStates = gameObj.GetComponent<PlayerStates>();
+                _playerStates.SetState(PlayerStates.PlayerState.Wet);
+            }
+            _gameManager.rain1 = false;
+        }
+
+        if (_gameManager.rain2 == true)
         {
             // タグが同じオブジェクトを全て取得する
             GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject gameObj in gameObjects)
             {
-                _playerState = gameObj.GetComponent<PlayerStates>();
-                _playerState.SetState(PlayerStates.PlayerState.Wet);
+                _playerStates2 = gameObj.GetComponent<PlayerStates>();
+                _playerStates2.SetState(PlayerStates.PlayerState.Wet);
             }
-            _gameManager.rain = false;
+            _gameManager.rain2 = false;
         }
     }
 }

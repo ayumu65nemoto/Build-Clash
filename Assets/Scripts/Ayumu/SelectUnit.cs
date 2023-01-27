@@ -30,6 +30,8 @@ public class SelectUnit : MonoBehaviour
     public GameObject _indicater8;
     //キャンバス確認のためにPhotonConnecterを取得
     private PhotonConnecter _photonConnecter;
+    //1Pと2Pを区別するためのフラグ
+    public bool buttonFlag1;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,8 @@ public class SelectUnit : MonoBehaviour
 
         //PhotonConnecter取得
         _photonConnecter = GetComponent<PhotonConnecter>();
+
+        buttonFlag1 = false;
     }
 
     public void PushDownA()
@@ -70,16 +74,19 @@ public class SelectUnit : MonoBehaviour
     public void PushDownD()
     {
         selectUnitNumber = 3;
+        buttonFlag1 = true;
     }
 
     public void PushDownE()
     {
         selectUnitNumber = 4;
+        buttonFlag1 = true;
     }
 
     public void PushDownF()
     {
         selectUnitNumber = 5;
+        buttonFlag1 = true;
     }
 
     public void PushUpA()

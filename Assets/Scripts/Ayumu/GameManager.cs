@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     public bool battle1;
     public bool battle2;
     //雨が降っているか
-    public bool rain;
+    public bool rain1;
+    public bool rain2;
     //雷が発動しているか
     public bool thunder;
     //プレイヤー１
@@ -75,7 +76,8 @@ public class GameManager : MonoBehaviour
 
         //各種フラグ
         battle = false;
-        rain = false;
+        rain1 = false;
+        rain2 = false;
         thunder = false;
         isGround1 = false;
         isGround2 = false;
