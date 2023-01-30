@@ -19,9 +19,16 @@ public class FlameBall : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // 衝突した相手にPlayerタグが付いているとき
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
+
+        }
+
+        // 衝突した相手にPlayerタグが付いているとき
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
 
         }
     }

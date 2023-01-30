@@ -3324,7 +3324,7 @@ GameObject:
   - component: {fileID: 727860184}
   - component: {fileID: 727860183}
   - component: {fileID: 727860182}
-  - component: {fileID: 727860181}
+  - component: {fileID: 727860185}
   m_Layer: 5
   m_Name: ButtonF
   m_TagString: Untagged
@@ -3353,18 +3353,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &727860181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727860179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57260df16d866064c8540ca5472ce5f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &727860182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3421,8 +3409,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 727860181}
-        m_TargetAssemblyTypeName: SetCommand, Assembly-CSharp
+      - m_Target: {fileID: 727860185}
+        m_TargetAssemblyTypeName: SetCommand2, Assembly-CSharp
         m_MethodName: SetShot
         m_Mode: 1
         m_Arguments:
@@ -3471,6 +3459,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727860179}
   m_CullTransparentMesh: 1
+--- !u!114 &727860185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727860179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2b82eb4645272419ff611f22de8440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &739630694
 GameObject:
   m_ObjectHideFlags: 0
@@ -5693,7 +5693,7 @@ GameObject:
   - component: {fileID: 1372070348}
   - component: {fileID: 1372070347}
   - component: {fileID: 1372070346}
-  - component: {fileID: 1372070345}
+  - component: {fileID: 1372070349}
   m_Layer: 5
   m_Name: ButtonE
   m_TagString: Untagged
@@ -5722,18 +5722,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1372070345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372070343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57260df16d866064c8540ca5472ce5f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1372070346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5790,8 +5778,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1372070345}
-        m_TargetAssemblyTypeName: SetCommand, Assembly-CSharp
+      - m_Target: {fileID: 1372070349}
+        m_TargetAssemblyTypeName: SetCommand2, Assembly-CSharp
         m_MethodName: SetShot
         m_Mode: 1
         m_Arguments:
@@ -5840,6 +5828,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372070343}
   m_CullTransparentMesh: 1
+--- !u!114 &1372070349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372070343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2b82eb4645272419ff611f22de8440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1462813982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5921,6 +5921,7 @@ MonoBehaviour:
   _indicater6: {fileID: 0}
   _indicater7: {fileID: 0}
   _indicater8: {fileID: 0}
+  buttonFlag1: 0
 --- !u!114 &1462813985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5936,10 +5937,17 @@ MonoBehaviour:
   battle: 0
   battle1: 0
   battle2: 0
-  rain: 0
+  rain1: 0
+  rain2: 0
   thunder: 0
   isGround1: 0
   isGround2: 0
+  center1: 0
+  right1: 0
+  left1: 0
+  center2: 0
+  right2: 0
+  left2: 0
 --- !u!114 &1462813986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6009,6 +6017,7 @@ MonoBehaviour:
   _indicater62: {fileID: 0}
   _indicater72: {fileID: 0}
   _indicater82: {fileID: 0}
+  buttonFlag2: 0
 --- !u!114 &1462813989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6043,7 +6052,7 @@ GameObject:
   - component: {fileID: 1472339469}
   - component: {fileID: 1472339468}
   - component: {fileID: 1472339467}
-  - component: {fileID: 1472339466}
+  - component: {fileID: 1472339470}
   m_Layer: 5
   m_Name: ButtonD
   m_TagString: Untagged
@@ -6072,18 +6081,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1472339466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472339464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57260df16d866064c8540ca5472ce5f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1472339467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6140,8 +6137,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1472339466}
-        m_TargetAssemblyTypeName: SetCommand, Assembly-CSharp
+      - m_Target: {fileID: 1472339470}
+        m_TargetAssemblyTypeName: SetCommand2, Assembly-CSharp
         m_MethodName: SetShot
         m_Mode: 1
         m_Arguments:
@@ -6190,6 +6187,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472339464}
   m_CullTransparentMesh: 1
+--- !u!114 &1472339470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472339464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2b82eb4645272419ff611f22de8440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1487310284
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,7 +6376,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513123775}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

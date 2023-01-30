@@ -6,7 +6,7 @@ public class ThunderCommand : MonoBehaviour
 {
     private GameObject[] blocks;
     private PlayerStates _playerStates1;
-    private PlayerStates _playerStates2;
+    private PlayerStates2 _playerStates2;
     private GameObject _playerObject;
     private GameObject _enemyObject;
     //ゲームマネージャーの取得
@@ -34,7 +34,7 @@ public class ThunderCommand : MonoBehaviour
         _playerObject = GameObject.FindWithTag("Player");
         _enemyObject = GameObject.FindWithTag("Enemy");
         _playerStates1 = _playerObject.GetComponent<PlayerStates>();
-        _playerStates2 = _enemyObject.GetComponent<PlayerStates>();
+        _playerStates2 = _enemyObject.GetComponent<PlayerStates2>();
         _thunder = 1;
         _success = false;
     }
@@ -49,8 +49,9 @@ public class ThunderCommand : MonoBehaviour
                 _playerObject = GameObject.FindWithTag("Player");
                 _enemyObject = GameObject.FindWithTag("Enemy");
                 _playerStates1 = _playerObject.GetComponent<PlayerStates>();
-                _playerStates2 = _enemyObject.GetComponent<PlayerStates>();
+                _playerStates2 = _enemyObject.GetComponent<PlayerStates2>();
                 _success = true;
+                Debug.Log("thunder0");
             }
 
             //if (_success == true)
@@ -91,7 +92,7 @@ public class ThunderCommand : MonoBehaviour
             if (_selectUnit.buttonFlag1 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-                if (_playerStates2.wetFlag == true)
+                if (_playerStates2.wetFlag2 == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
@@ -102,6 +103,7 @@ public class ThunderCommand : MonoBehaviour
                         Destroy(block);
                     }
                 }
+                Debug.Log("thunder");
             }
 
             if (_selectUnit2.buttonFlag2 == true)
@@ -118,6 +120,7 @@ public class ThunderCommand : MonoBehaviour
                         Destroy(block);
                     }
                 }
+                Debug.Log("thunder2");
             }
         }
     }
