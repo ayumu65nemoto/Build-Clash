@@ -3973,7 +3973,6 @@ GameObject:
   - component: {fileID: 2006401426211103843}
   - component: {fileID: 1220928707592556102}
   - component: {fileID: -2961601972710295413}
-  - component: {fileID: -1165686355525491094}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -4044,6 +4043,34 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2961601972710295413}
+  - {fileID: 0}
+  - {fileID: 2006401425135910759}
+  - {fileID: 2006401424962177760}
+  - {fileID: 2006401424902286756}
+  - {fileID: 2006401424695319066}
+  - {fileID: 2006401424601059374}
+  - {fileID: 2006401424425131098}
+  - {fileID: 2006401424404820464}
+  - {fileID: 2006401424465138734}
+  - {fileID: 2006401424285540913}
+  - {fileID: 2006401424247116650}
+  - {fileID: 2006401424307710440}
+  - {fileID: 2006401424135333282}
+  - {fileID: 2006401424117458659}
+  - {fileID: 2006401426111599467}
+  - {fileID: 2006401426034777991}
+  - {fileID: 2006401425982805602}
+  - {fileID: 2006401425985178240}
+  - {fileID: 2006401426099022357}
+  - {fileID: 2006401426059812212}
+  - {fileID: 2006401425818303210}
+  - {fileID: 2006401425607727400}
+  - {fileID: 2006401425689070397}
+  - {fileID: 2006401425702367283}
+  - {fileID: 2006401425458551390}
+  - {fileID: 2006401425565418995}
+  - {fileID: 2006401425381632821}
+  - {fileID: 2006401425733251117}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -4063,15 +4090,3 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &-1165686355525491094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006401426211103868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a71c466d64ee4548b735b9e710b8719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
