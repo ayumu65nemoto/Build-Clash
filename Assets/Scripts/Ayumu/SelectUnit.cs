@@ -4,7 +4,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class SelectUnit : MonoBehaviour
+public class SelectUnit : MonoBehaviourPunCallbacks
 {
     //ƒ†ƒjƒbƒgŠi”[
     [SerializeField] public GameObject[] units;
