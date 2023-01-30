@@ -10,6 +10,8 @@ public class BallShot : MonoBehaviour
     private int _count;
     private GameObject _gameObject;
     private GameManager _gameManager;
+    //”­Ë‰¹
+    [SerializeField] private AudioClip cannon;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class BallShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // 420ƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-            if (_count % 420 == 0)
+            if (_count % 900 == 0)
             {
                 GameObject ball = PhotonNetwork.Instantiate("Ball", transform.position, Quaternion.identity);
                 Rigidbody ballRb = ball.GetComponent<Rigidbody>();
@@ -34,8 +36,8 @@ public class BallShot : MonoBehaviour
                 // ’e‘¬‚Í©—R‚Éİ’è
                 ballRb.AddForce(transform.forward * 40, ForceMode.Impulse);
 
-                //// ”­Ë‰¹‚ğo‚·
-                //AudioSource.PlayClipAtPoint(sound, transform.position);
+                // ”­Ë‰¹‚ğo‚·
+                AudioSource.PlayClipAtPoint(cannon, transform.position);
 
                 // ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
                 Destroy(ball, 2.0f);

@@ -10,6 +10,8 @@ public class FlameShot : MonoBehaviour
     private int _count;
     private GameObject _gameObject;
     private GameManager _gameManager;
+    //”­Ë‰¹
+    [SerializeField] private AudioClip flameSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class FlameShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-            if (_count % 900 == 0)
+            if (_count % 1200 == 0)
             {
                 GameObject flame = PhotonNetwork.Instantiate("Flame", transform.position, Quaternion.identity);
                 Rigidbody flameRb = flame.GetComponent<Rigidbody>();
@@ -34,8 +36,8 @@ public class FlameShot : MonoBehaviour
                 // ’e‘¬‚Í©—R‚Éİ’è
                 flameRb.AddForce(transform.forward * 10, ForceMode.Impulse);
 
-                //// ”­Ë‰¹‚ğo‚·
-                //AudioSource.PlayClipAtPoint(sound, transform.position);
+                // ”­Ë‰¹‚ğo‚·
+                AudioSource.PlayClipAtPoint(flameSound, transform.position);
 
                 // 5•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
                 Destroy(flame, 5.0f);

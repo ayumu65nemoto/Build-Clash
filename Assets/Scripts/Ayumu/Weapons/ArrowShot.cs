@@ -11,6 +11,8 @@ public class ArrowShot : MonoBehaviour
     private int _angle = 90;
     private GameObject _gameObject;
     private GameManager _gameManager;
+    //”­Ë‰¹
+    [SerializeField] private AudioClip barista;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,7 @@ public class ArrowShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-            if (_count % 180 == 0)
+            if (_count % 540 == 0)
             {
                 GameObject arrow = PhotonNetwork.Instantiate("Arrow", transform.position, Quaternion.Euler(_angle, 0, 0));
                 Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
@@ -35,8 +37,8 @@ public class ArrowShot : MonoBehaviour
                 // ’e‘¬‚Í©—R‚Éİ’è
                 arrowRb.AddForce(transform.forward * 20, ForceMode.Impulse);
 
-                //// ”­Ë‰¹‚ğo‚·
-                //AudioSource.PlayClipAtPoint(sound, transform.position);
+                // ”­Ë‰¹‚ğo‚·
+                AudioSource.PlayClipAtPoint(barista, transform.position);
 
                 // ‚T•bŒã‚É–C’e‚ğ”j‰ó‚·‚é
                 Destroy(arrow, 2.0f);

@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2536314450839890480, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
+  barista: {fileID: 8300000, guid: 35b786b5e31b41b44add1f2ff1f8f405, type: 3}
 --- !u!114 &-7127537950181762951
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 973128879235273301, guid: 708cf43305b76344897c62ca8933ec57, type: 3}
+  flameSound: {fileID: 8300000, guid: bb7b08c555261ad4d907f362bc63fc2e, type: 3}
 --- !u!114 &1229402881545062060
 MonoBehaviour:
   m_ObjectHideFlags: 0
