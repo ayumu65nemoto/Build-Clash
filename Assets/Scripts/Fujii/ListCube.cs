@@ -28,7 +28,7 @@ public class ListCube : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += new Vector3(1, 0, 0) * Time.deltaTime / 2;
+        transform.position += new Vector3(10, 0, 0) * Time.deltaTime / 2;
     }
 
     void OnTriggerEnter(Collider other)
@@ -38,30 +38,14 @@ public class ListCube : MonoBehaviour
             //Debug.Log(CUBE);
         //}
 
-        if (other.gameObject.tag == "CraftBlock")
+        if (other.gameObject.layer == 7) //CraftBlock
         {
             ListS.saveList.Add(other.gameObject);
             other.gameObject.SetActive(false);
             reset = Vector3.one;
-            other.gameObject.transform.position = reset;
+            other.gameObject.transform.position += reset;
         }
 
-        if (other.gameObject.tag == "CraftBlock2")
-        {
-            ListS.saveList.Add(other.gameObject);
-            other.gameObject.SetActive(false);
-            reset = Vector3.one;
-            other.gameObject.transform.position = reset;
-        }
-
-        if (other.gameObject.tag == "CraftBlock3")
-        {
-            ListS.saveList.Add(other.gameObject);
-            other.gameObject.SetActive(false);
-            //reset = other.gameObject.transform.position;
-            reset = Vector3.one;
-            other.gameObject.transform.position = reset;
-        }
     }
 
     void ListActive()

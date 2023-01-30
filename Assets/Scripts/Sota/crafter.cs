@@ -39,6 +39,7 @@ public class crafter : MonoBehaviour
     Vector3 Main;
     public Vector3 CraftMain;
     public Vector3 Once ;
+    public Vector3 F_Pos;
 
 
     
@@ -49,7 +50,7 @@ public class crafter : MonoBehaviour
     CraftFrame craftFrame;
 
     //フラグ
-    bool spawanCount = false;
+    public bool spawnCount = false;
     public bool craftStart = false;
     public bool craftStart2 = true;
     public bool DeleteOK = false;
@@ -68,7 +69,7 @@ public class crafter : MonoBehaviour
     {
 
         Cost.text = "" + CraftCost;
-        if (spawanCount == true)
+        if (spawnCount == true)
         {
 
             spawnedObject.transform.position = CraftMain;
@@ -100,14 +101,15 @@ public class crafter : MonoBehaviour
                         spawnedObject = hit.collider.gameObject;
                     }
 
-                    else if (spawanCount == false)
+                    else if (spawnCount == false)
                     {
-
+                       
                         Main = m_Hits[0].pose.position;
+                        F_Pos = Main;
                         //Main.y += 0.03f;
                         CraftMain = Main;
                         
-                        Main.z += (c_position*5);//9*9マスの為
+                        Main.z += (c_position*4);//9*9マスの為
 
                         for (int I = 1; I <= 9; I++)
                         {
@@ -128,7 +130,7 @@ public class crafter : MonoBehaviour
                         CraftMain.y += 0.05f;
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
                         transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
-                        spawanCount = true;
+                        spawnCount = true;
                         
                     }
                 }
@@ -218,7 +220,7 @@ public class crafter : MonoBehaviour
     public void Craft()
     {
         
-        if (spawanCount == true && craftStart == true)
+        if (spawnCount == true && craftStart == true)
         {
             
             if (Once!=CraftMain)
