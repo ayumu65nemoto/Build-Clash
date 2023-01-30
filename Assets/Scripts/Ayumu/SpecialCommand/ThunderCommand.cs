@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
-public class ThunderCommand : MonoBehaviour
+public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
 {
     private GameObject[] blocks;
     private PlayerStates _playerStates1;
@@ -21,6 +23,9 @@ public class ThunderCommand : MonoBehaviour
     //SelectUnit取得
     private SelectUnit _selectUnit;
     private SelectUnit2 _selectUnit2;
+    //wetFlag
+    public bool wetFlag;
+    public bool wetFlag2;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +41,8 @@ public class ThunderCommand : MonoBehaviour
         _playerStates1 = _playerObject.GetComponent<PlayerStates>();
         _playerStates2 = _enemyObject.GetComponent<PlayerStates2>();
         _thunder = 1;
-        _success = false;
+        wetFlag = false;
+        wetFlag2 = false;
     }
 
     // Update is called once per frame
@@ -53,45 +59,10 @@ public class ThunderCommand : MonoBehaviour
                 _success = true;
             }
 
-            //if (_success == true)
-            //{
-            //    if (_selectUnit.buttonFlag1 == true)
-            //    {
-            //        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-            //        if (_playerStates2.wetFlag == true)
-            //        {
-            //            _gameManager.thunder = true;
-            //            _thunder -= 1;
-            //            for (int i = 0; i < 5; i++)
-            //            {
-            //                GameObject block = blocks[Random.Range(0, 27)];
-            //                Debug.Log(block);
-            //                Destroy(block);
-            //            }
-            //        }
-            //    }
-
-            //    if (_selectUnit2.buttonFlag2 == true)
-            //    {
-            //        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
-            //        if (_playerStates1.wetFlag == true)
-            //        {
-            //            _gameManager.thunder = true;
-            //            _thunder -= 1;
-            //            for (int i = 0; i < 5; i++)
-            //            {
-            //                GameObject block = blocks[Random.Range(0, 27)];
-            //                Debug.Log(block);
-            //                Destroy(block);
-            //            }
-            //        }
-            //    }
-            //}
-
             if (_selectUnit.buttonFlag1 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-                if (_gameManager.wetFlag2 == true)
+                if (wetFlag2 == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
@@ -108,7 +79,7 @@ public class ThunderCommand : MonoBehaviour
             if (_selectUnit2.buttonFlag2 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
-                if (_gameManager.wetFlag == true)
+                if (wetFlag == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
@@ -122,5 +93,24 @@ public class ThunderCommand : MonoBehaviour
                 }
             }
         }
+    }
+
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //if (stream.IsWriting)
+        //{
+        //    //データの送信
+        //    //stream.SendNext(wetFlag);
+        //}
+        //else
+        //{
+        //    //データの受信
+        //    wetFlag = (bool)stream.ReceiveNext();
+        //    wetFlag2 = (bool)stream.ReceiveNext();
+        //}
+
+        //データの受信
+        wetFlag = (bool)stream.ReceiveNext();
+        wetFlag2 = (bool)stream.ReceiveNext();
     }
 }
