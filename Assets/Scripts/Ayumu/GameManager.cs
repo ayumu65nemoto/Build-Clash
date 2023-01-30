@@ -49,6 +49,13 @@ public class GameManager : MonoBehaviour
     private GameObject _textLose2;
     //キャンバス確認のためにPhotonConnecterを取得
     private PhotonConnecter _photonConnecter;
+    //その位置にユニットが配置されているか
+    public bool center1;
+    public bool right1;
+    public bool left1;
+    public bool center2;
+    public bool right2;
+    public bool left2;
 
     // Start is called before the first frame update
     void Start()
@@ -94,6 +101,14 @@ public class GameManager : MonoBehaviour
 
         //PhotonConnecter取得
         _photonConnecter = GetComponent<PhotonConnecter>();
+
+        //配置確認フラグ
+        center1 = false;
+        right1 = false;
+        left1 = false;
+        center2 = false;
+        right2 = false;
+        left2 = false;
     }
 
     // Update is called once per frame

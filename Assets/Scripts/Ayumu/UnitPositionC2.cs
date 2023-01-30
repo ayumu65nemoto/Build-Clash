@@ -14,17 +14,22 @@ public class UnitPositionC2 : MonoBehaviour
     Vector3 _clickStartPosition = Vector2.zero;
     //閾値
     [SerializeField] float _threshold = 30;
-    private GameObject _gameManager;
+    private GameObject _gameObject;
+    private GameManager _gameManager;
     private SelectUnit2 _selectUnit2;
     //ユニット配置完了フラグ
     public bool setUnitC2;
+    //ユニット配置回数
+    private int _unit;
 
     // Start is called before the first frame update
     void Start()
     {
-        _gameManager = GameObject.FindWithTag("GameManager");
-        _selectUnit2 = _gameManager.GetComponent<SelectUnit2>();
+        _gameObject = GameObject.FindWithTag("GameManager");
+        _gameManager = _gameObject.GetComponent<GameManager>();
+        _selectUnit2 = _gameObject.GetComponent<SelectUnit2>();
         setUnitC2 = false;
+        _unit = 1;
     }
 
     // Update is called once per frame
@@ -55,17 +60,26 @@ public class UnitPositionC2 : MonoBehaviour
                         //Flick(dif.x > 0 ? FlickDirection.Right : FlickDirection.Left);
                         if (dif.x > 0)
                         {
-                            Flick(FlickDirection.Right);
+                            if (_gameManager.right2 != true && _unit > 0)
+                            {
+                                Flick(FlickDirection.Right);
+                            }
                         }
                         else
                         {
-                            Flick(FlickDirection.Left);
+                            if (_gameManager.left2 != true && _unit > 0)
+                            {
+                                Flick(FlickDirection.Left);
+                            }
                         }
                     }
                     // 縦方向
                     else
                     {
-                        Flick(FlickDirection.Up);
+                        if (_gameManager.center2 != true && _unit > 0)
+                        {
+                            Flick(FlickDirection.Up);
+                        }
                     }
                 }
             }
@@ -78,14 +92,20 @@ public class UnitPositionC2 : MonoBehaviour
         if (dir == FlickDirection.Left)
         {
             _selectUnit2.SetUnit(-10, 1, -7);
+            _gameManager.left2 = true;
+            _unit -= 1;
         }
         else if (dir == FlickDirection.Right)
         {
             _selectUnit2.SetUnit(10, 1, -7);
+            _gameManager.right2 = true;
+            _unit -= 1;
         }
         else if (dir == FlickDirection.Up)
         {
             _selectUnit2.SetUnit(0, 1, -6);
+            _gameManager.center2 = true;
+            _unit -= 1;
         }
     }
 }
