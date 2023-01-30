@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 934795431932439947, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
+  cannon: {fileID: 0}
 --- !u!1 &316855730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3243,16 @@ MonoBehaviour:
   - {fileID: 2122688568}
   - {fileID: 438768640}
   - {fileID: 1802597030}
+  _indicater0: {fileID: 0}
+  _indicater1: {fileID: 0}
+  _indicater2: {fileID: 0}
+  _indicater3: {fileID: 0}
+  _indicater4: {fileID: 0}
+  _indicater5: {fileID: 0}
+  _indicater6: {fileID: 0}
+  _indicater7: {fileID: 0}
+  _indicater8: {fileID: 0}
+  buttonFlag1: 0
 --- !u!114 &1462813985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3255,10 +3266,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: 0
-  rain: 0
+  battle1: 0
+  battle2: 0
+  rain1: 0
+  rain2: 0
   thunder: 0
   isGround1: 0
   isGround2: 0
+  center1: 0
+  right1: 0
+  left1: 0
+  center2: 0
+  right2: 0
+  left2: 0
 --- !u!114 &1462813986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3587,6 +3607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2536314450839890480, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
+  barista: {fileID: 0}
 --- !u!1 &1790951793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 973128879235273301, guid: 708cf43305b76344897c62ca8933ec57, type: 3}
+  flameSound: {fileID: 0}
 --- !u!1 &2057855399
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,6 +4937,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5667564347208768169, guid: f76b77b2a3077e844b70357061b380e9, type: 3}
+      propertyPath: sceneViewId
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f76b77b2a3077e844b70357061b380e9, type: 3}
 --- !u!1001 &934795432873682368
@@ -4924,6 +4950,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5665695008780361633, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
+      propertyPath: sceneViewId
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 934795431932439947, guid: 9962f0ca035fd38439ee5e476dbeb2ae, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -5037,6 +5067,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5221688172851591076, guid: 708cf43305b76344897c62ca8933ec57, type: 3}
+      propertyPath: sceneViewId
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 708cf43305b76344897c62ca8933ec57, type: 3}
 --- !u!1001 &1159201877949953075
@@ -5046,6 +5080,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2456657687379636635, guid: 74ab48ef9effdb54dbc57e435d4f28fa, type: 3}
+      propertyPath: sceneViewId
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 903370967660908977, guid: 74ab48ef9effdb54dbc57e435d4f28fa, type: 3}
       propertyPath: m_Name
       value: Meteor
@@ -5158,6 +5196,10 @@ PrefabInstance:
     - target: {fileID: 1524651913793478650, guid: 95298ae3e01b15c46a2d594b0b8c323d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3515644634469142578, guid: 95298ae3e01b15c46a2d594b0b8c323d, type: 3}
+      propertyPath: sceneViewId
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95298ae3e01b15c46a2d594b0b8c323d, type: 3}
@@ -5281,6 +5323,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8897660797792060886, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
+      propertyPath: sceneViewId
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
 --- !u!1001 &3814012756613878122
@@ -5342,6 +5388,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5859825892805393094, guid: dc8fac6ab31c0ba46a73b6e1c9c68797, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8fac6ab31c0ba46a73b6e1c9c68797, type: 3}
 --- !u!1001 &4790068151331671374
@@ -5351,6 +5401,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3987580553510636113, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
+      propertyPath: sceneViewId
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4790068151977252102, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -5420,6 +5474,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6406019387003739956, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7607922426288351071, guid: ed37af96053dc1048929ccc1d1276ab5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -5473,6 +5531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1396980982570208293, guid: 494624ae6e669034090c8c6a2f852265, type: 3}
+      propertyPath: sceneViewId
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4856539655737410556, guid: 494624ae6e669034090c8c6a2f852265, type: 3}
       propertyPath: m_Name
       value: ThunderShot
@@ -5586,6 +5648,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6876435179848342074, guid: f9eca5a82d75e8541ac90dfdbf4eaa08, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9eca5a82d75e8541ac90dfdbf4eaa08, type: 3}
 --- !u!1001 &8691637769108199192
@@ -5595,6 +5661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8329466342943097080, guid: 7caf3f478930c8c4daccce40b1c4d679, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7199046012675889060, guid: 7caf3f478930c8c4daccce40b1c4d679, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
