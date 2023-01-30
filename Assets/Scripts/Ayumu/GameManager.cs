@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
     public bool center2;
     public bool right2;
     public bool left2;
+    //WetFlag
+    public bool wetFlag;
+    public bool wetFlag2;
 
     // Start is called before the first frame update
     void Start()
@@ -147,6 +150,8 @@ public class GameManager : MonoBehaviour
             _textLose.SetActive(false);
 
             _photonConnecter.canvasFlag = false;
+            wetFlag = false;
+            wetFlag2 = false;
         }
 
         if (_photonConnecter.canvasFlag2 == true)

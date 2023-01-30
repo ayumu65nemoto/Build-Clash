@@ -18,8 +18,6 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
     //ゲームマネージャーの取得
     private GameObject _gameObject;
     private GameManager _gameManager;
-    //WetFlag
-    public bool wetFlag;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +25,6 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
         _rb = GetComponent<Rigidbody>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
-        wetFlag = false;
     }
 
     // Update is called once per frame
@@ -51,7 +48,7 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
             GetComponent<Renderer>().material.color = Color.blue;
             //質量を10プラスする
             _rb.mass += 100;
-            wetFlag = true;
+            _gameManager.wetFlag = true;
         }
     }
 

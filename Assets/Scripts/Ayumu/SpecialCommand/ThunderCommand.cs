@@ -51,7 +51,6 @@ public class ThunderCommand : MonoBehaviour
                 _playerStates1 = _playerObject.GetComponent<PlayerStates>();
                 _playerStates2 = _enemyObject.GetComponent<PlayerStates2>();
                 _success = true;
-                Debug.Log("thunder0");
             }
 
             //if (_success == true)
@@ -92,7 +91,7 @@ public class ThunderCommand : MonoBehaviour
             if (_selectUnit.buttonFlag1 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-                if (_playerStates2.wetFlag2 == true)
+                if (_gameManager.wetFlag2 == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
@@ -102,14 +101,14 @@ public class ThunderCommand : MonoBehaviour
                         Debug.Log(block);
                         Destroy(block);
                     }
+                    Debug.Log("thunder");
                 }
-                Debug.Log("thunder");
             }
 
             if (_selectUnit2.buttonFlag2 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
-                if (_playerStates1.wetFlag == true)
+                if (_gameManager.wetFlag == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
@@ -119,8 +118,8 @@ public class ThunderCommand : MonoBehaviour
                         Debug.Log(block);
                         Destroy(block);
                     }
+                    Debug.Log("thunder2");
                 }
-                Debug.Log("thunder2");
             }
         }
     }
