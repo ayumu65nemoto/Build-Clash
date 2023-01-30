@@ -97,20 +97,17 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
 
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        //if (stream.IsWriting)
-        //{
-        //    //データの送信
-        //    //stream.SendNext(wetFlag);
-        //}
-        //else
-        //{
-        //    //データの受信
-        //    wetFlag = (bool)stream.ReceiveNext();
-        //    wetFlag2 = (bool)stream.ReceiveNext();
-        //}
-
-        //データの受信
-        wetFlag = (bool)stream.ReceiveNext();
-        wetFlag2 = (bool)stream.ReceiveNext();
+        if (stream.IsWriting)
+        {
+            //データの送信
+            stream.SendNext(wetFlag);
+            stream.SendNext(wetFlag2);
+        }
+        else
+        {
+            //データの受信
+            wetFlag = (bool)stream.ReceiveNext();
+            wetFlag2 = (bool)stream.ReceiveNext();
+        }
     }
 }

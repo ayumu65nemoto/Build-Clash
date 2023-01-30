@@ -72,6 +72,7 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
             float g = (float)stream.ReceiveNext();
             float b = (float)stream.ReceiveNext();
             float a = (float)stream.ReceiveNext();
+            wetFlag = (bool)stream.ReceiveNext();
             gameObject.GetComponent<Renderer>().material.color = new Vector4(r, g, b, a);
         }
     }

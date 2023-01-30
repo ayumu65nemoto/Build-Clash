@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426dcba48a524ce4095bf42d08d6c5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wetFlag: 0
+  wetFlag2: 0
 --- !u!114 &-1396980982570208293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +67,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 7125485027138633121}
   - {fileID: 3000409972808576348}
   sceneViewId: 0
   InstantiationId: 0
