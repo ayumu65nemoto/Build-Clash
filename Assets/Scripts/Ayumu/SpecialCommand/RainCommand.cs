@@ -4,7 +4,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
-public class RainCommand : MonoBehaviour
+public class RainCommand : MonoBehaviourPunCallbacks
 {
     public GameObject prefab;
     private int _rainCount;
@@ -28,6 +28,8 @@ public class RainCommand : MonoBehaviour
     //SelectUnit取得
     private SelectUnit _selectUnit;
     private SelectUnit2 _selectUnit2;
+    //Rainコマンド制限
+    private bool _rains;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,7 @@ public class RainCommand : MonoBehaviour
         _targetTransform1 = new Vector3(_target1.position.x, _target1.position.y + 10, _target1.position.z);
         _targetTransform2 = new Vector3(_target2.position.x, _target2.position.y + 10, _target2.position.z);
         _success = false;
+        _rains = true;
     }
 
     // Update is called once per frame
@@ -64,55 +67,36 @@ public class RainCommand : MonoBehaviour
                 _success = true;
             }
 
-            //if (_success == true)
-            //{
-            //    if (_selectUnit.buttonFlag1 == true)
-            //    {
-            //        //キングの位置に発生
-            //        GameObject rain = Instantiate(prefab, _targetTransform1, Quaternion.Euler(90, 0, 0));
-            //        _rainCount -= 1;
-            //        _gameManager.rain1 = true;
-
-            //        //// 発射音を出す
-            //        //AudioSource.PlayClipAtPoint(sound, transform.position);
-            //        _selectUnit.buttonFlag1 = false;
-            //    }
-
-            //    if (_selectUnit2.buttonFlag2 == true)
-            //    {
-            //        //キングの位置に発生
-            //        GameObject rain = Instantiate(prefab, _targetTransform2, Quaternion.Euler(90, 0, 0));
-            //        _rainCount -= 1;
-            //        _gameManager.rain2 = true;
-
-            //        //// 発射音を出す
-            //        //AudioSource.PlayClipAtPoint(sound, transform.position);
-            //        _selectUnit2.buttonFlag2 = false;
-            //    }
-            //}
-
             if (_selectUnit.buttonFlag1 == true)
             {
-                //キングの位置に発生
-                GameObject rain = Instantiate(prefab, _targetTransform1, Quaternion.Euler(90, 0, 0));
-                _rainCount -= 1;
-                _gameManager.rain1 = true;
+                if (_rains == true)
+                {
+                    //キングの位置に発生
+                    GameObject rain = PhotonNetwork.Instantiate("Rain", _targetTransform1, Quaternion.Euler(90, 0, 0));
+                    _rainCount -= 1;
+                    _gameManager.rain1 = true;
 
-                //// 発射音を出す
-                //AudioSource.PlayClipAtPoint(sound, transform.position);
-                _selectUnit.buttonFlag1 = false;
+                    //// 発射音を出す
+                    //AudioSource.PlayClipAtPoint(sound, transform.position);
+                    _selectUnit.buttonFlag1 = false;
+                    _rains = false;
+                }
             }
 
             if (_selectUnit2.buttonFlag2 == true)
             {
-                //キングの位置に発生
-                GameObject rain = Instantiate(prefab, _targetTransform2, Quaternion.Euler(90, 0, 0));
-                _rainCount -= 1;
-                _gameManager.rain2 = true;
+                if (_rains == true)
+                {
+                    //キングの位置に発生
+                    GameObject rain = PhotonNetwork.Instantiate("Rain", _targetTransform2, Quaternion.Euler(90, 0, 0));
+                    _rainCount -= 1;
+                    _gameManager.rain2 = true;
 
-                //// 発射音を出す
-                //AudioSource.PlayClipAtPoint(sound, transform.position);
-                _selectUnit2.buttonFlag2 = false;
+                    //// 発射音を出す
+                    //AudioSource.PlayClipAtPoint(sound, transform.position);
+                    _selectUnit2.buttonFlag2 = false;
+                    _rains = false;
+                }
             }
         }
     }
