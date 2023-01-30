@@ -62,7 +62,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
             if (_selectUnit.buttonFlag1 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-                if (wetFlag2 == true)
+                if (_playerStates2.wetFlag2 == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
@@ -79,7 +79,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
             if (_selectUnit2.buttonFlag2 == true)
             {
                 GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
-                if (wetFlag == true)
+                if (_playerStates1.wetFlag == true)
                 {
                     _gameManager.thunder = true;
                     _thunder -= 1;
