@@ -229,24 +229,14 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (thunder1 == true)
         {
-            GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
-            for (int i = 0; i < 5; i++)
-            {
-                GameObject block = blocks[i];
-                Debug.Log(block);
-                Destroy(block);
-            }
+            photonView.RPC("ThunderDestroy1", RpcTarget.All);
+            thunder1 = false;
         }
 
         if (thunder2 == true)
         {
-            GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
-            for (int i = 0; i < 5; i++)
-            {
-                GameObject block = blocks[i];
-                Debug.Log(block);
-                Destroy(block);
-            }
+            photonView.RPC("ThunderDestroy2", RpcTarget.All);
+            thunder2 = false;
         }
     }
 
@@ -263,5 +253,29 @@ public class GameManager : MonoBehaviourPunCallbacks
         battle = true;
         //battle2 = true;
         Destroy(_battleStartButton2);
+    }
+
+    [PunRPC]
+    void ThunderDestroy1()
+    {
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject block = blocks[i];
+            Debug.Log(block);
+            Destroy(block);
+        }
+    }
+
+    [PunRPC]
+    void ThunderDestroy2()
+    {
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < 5; i++)
+        {
+            GameObject block = blocks[i];
+            Debug.Log(block);
+            Destroy(block);
+        }
     }
 }
