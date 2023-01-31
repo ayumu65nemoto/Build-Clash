@@ -92,4 +92,13 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             gameObject.GetComponent<Renderer>().material.color = new Vector4(r, g, b, a);
         }
     }
+
+    [PunRPC]
+    void ThunderDestroy2()
+    {
+        if (_number <= 20)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

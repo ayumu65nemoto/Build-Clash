@@ -101,7 +101,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     //    PhotonNetwork.Destroy(block);
                     //}
                     //Debug.Log("thunder2");
-                    //キングの位置に発生
+                    //キングの位置に発生 
                     GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform1, Quaternion.Euler(0, 0, 0));
                 }
             }
