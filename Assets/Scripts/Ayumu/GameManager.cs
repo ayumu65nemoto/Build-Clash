@@ -226,6 +226,28 @@ public class GameManager : MonoBehaviourPunCallbacks
             Destroy(_textLose);
             Destroy(_textWin2);
         }
+
+        if (thunder1 == true)
+        {
+            GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject block = blocks[i];
+                Debug.Log(block);
+                PhotonNetwork.Destroy(block);
+            }
+        }
+
+        if (thunder2 == true)
+        {
+            GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject block = blocks[i];
+                Debug.Log(block);
+                PhotonNetwork.Destroy(block);
+            }
+        }
     }
 
     public void OnClick()

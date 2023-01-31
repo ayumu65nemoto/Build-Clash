@@ -73,7 +73,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                 //GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
                 if (_playerStates2.wetFlag2 == true)
                 {
-                    //_gameManager.thunder1 = true;
+                    _gameManager.thunder1 = true;
                     _thunder -= 1;
                     //for (int i = 0; i < 5; i++)
                     //{
@@ -83,7 +83,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     //}
                     //Debug.Log("thunder");
                     //ƒLƒ“ƒO‚ÌˆÊ’u‚É”­¶
-                    GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform2, Quaternion.Euler(0, 0, 0));
+                    //GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform2, Quaternion.Euler(0, 0, 0));
                 }
             }
 
@@ -92,7 +92,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                 //GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
                 if (_playerStates1.wetFlag == true)
                 {
-                    //_gameManager.thunder2 = true;
+                    _gameManager.thunder2 = true;
                     _thunder -= 1;
                     //for (int i = 0; i < 5; i++)
                     //{
