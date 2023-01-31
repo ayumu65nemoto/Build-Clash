@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
             foreach (GameObject gameObj in gameObjects)
             {
                 _playerStates2 = gameObj.GetComponent<PlayerStates2>();
-                _playerStates2.SetState(PlayerStates2.PlayerState.Wet);
+                _playerStates2.SetState(PlayerStates2.PlayerState.Thunder);
             }
             _gameManager.thunder1 = false;
         }
@@ -83,7 +85,7 @@ public class Player : MonoBehaviour
             foreach (GameObject gameObj in gameObjects)
             {
                 _playerStates = gameObj.GetComponent<PlayerStates>();
-                _playerStates.SetState(PlayerStates.PlayerState.Wet);
+                _playerStates.SetState(PlayerStates.PlayerState.Thunder);
             }
             _gameManager.thunder2 = false;
         }

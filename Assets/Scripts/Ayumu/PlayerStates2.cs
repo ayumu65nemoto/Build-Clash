@@ -64,6 +64,7 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             {
                 Destroy(this.gameObject);
             }
+            Debug.Log("thunder");
         }
     }
 
