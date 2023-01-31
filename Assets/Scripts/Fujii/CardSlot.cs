@@ -9,6 +9,8 @@ public class CardSlot : MonoBehaviour
 {
     public static bool inSlotFlag;
 
+    int SlotFlag = 0;
+
     void Start()
     {
         inSlotFlag = false;
@@ -27,9 +29,17 @@ public class CardSlot : MonoBehaviour
         if (CardDrag.boxFlag == false)
         {
             //吸い込む（位置を合わせる）
-            other.transform.position = this.transform.position;
+            //other.transform.position = this.transform.position;
             //吸い込み終わったらフラグ解放
-            CardDrag.boxFlag = true;
+
+            //CardDrag.boxFlag = true;
+
+            if(SlotFlag <= 3)
+            {
+                other.transform.position = this.transform.position;
+            }
+
+            SlotFlag++;
         }
     }
 
