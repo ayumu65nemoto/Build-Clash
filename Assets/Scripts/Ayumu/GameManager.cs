@@ -234,7 +234,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             {
                 GameObject block = blocks[i];
                 Debug.Log(block);
-                PhotonNetwork.Destroy(block);
+                Destroy(block);
             }
         }
 
@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             {
                 GameObject block = blocks[i];
                 Debug.Log(block);
-                PhotonNetwork.Destroy(block);
+                Destroy(block);
             }
         }
     }

@@ -57,11 +57,6 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             _rb.mass += 100;
             wetFlag2 = true;
         }
-
-        if (tempState == PlayerState.Thunder)
-        {
-            photonView.RPC("ThunderDestroy2", RpcTarget.AllBuffered);
-        }
     }
 
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -86,15 +81,6 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             wetFlag2 = (bool)stream.ReceiveNext();
             state2 = (PlayerState)stream.ReceiveNext();
             gameObject.GetComponent<Renderer>().material.color = new Vector4(r, g, b, a);
-        }
-    }
-
-    [PunRPC]
-    void ThunderDestroy2()
-    {
-        if (_number <= 20)
-        {
-            Destroy(this.gameObject);
         }
     }
 }
