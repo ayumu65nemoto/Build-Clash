@@ -102,7 +102,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     //}
                     //Debug.Log("thunder2");
                     //ÉLÉìÉOÇÃà íuÇ…î≠ê∂ 
-                    GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform1, Quaternion.Euler(0, 0, 0));
+                    //GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform1, Quaternion.Euler(0, 0, 0));
                 }
             }
         }
