@@ -6,6 +6,7 @@ public class ListSaver : MonoBehaviour
 {
 
     public List<GameObject> saveList = new List<GameObject>();
+    public List<Vector3> PosList = new List<Vector3>();
     // Start is called before the first frame update
     void Start()
     {

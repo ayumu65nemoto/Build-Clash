@@ -27,12 +27,15 @@ public class crafter : MonoBehaviour
     [SerializeField]
     GameObject block3;
     [SerializeField]
+    GameObject King;
+    [SerializeField]
     GameObject DeleteTool;
     [SerializeField] 
     TextMeshProUGUI Cost;
 
     //クラフトメイン
     int  Blocktype = 1;
+    public bool king = false;
     int CraftCost;
     public int ReturnCost;
     float c_position = 0.1f;
@@ -40,7 +43,9 @@ public class crafter : MonoBehaviour
     public Vector3 CraftMain;
     public Vector3 Once ;
     public Vector3 F_Pos;
-
+    int x = 0;
+    int y = 0;
+    int z = 0;
 
     
     GameObject spawnedObject;
@@ -127,7 +132,7 @@ public class crafter : MonoBehaviour
 
 
                         _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
-                        CraftMain.y += 0.05f;
+                        CraftMain.y += 0.075f;
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
                         transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                         spawnCount = true;
@@ -173,27 +178,51 @@ public class crafter : MonoBehaviour
     }
     public void UP()
     {
-        CraftMain.y += c_position;
+        if (y < 8)
+        {
+            CraftMain.y += c_position;
+            y++;
+        }
     }
     public void DOWN()
     {
-        CraftMain.y -= c_position;
+        if (0 < y)
+        {
+            CraftMain.y -= c_position;
+            y--;
+        }
     }
     public void FRONT()
     {
-        CraftMain.z -= c_position;
+        if (-4 < z)
+        {
+            z--;
+            CraftMain.z -= c_position;
+        }
     }
     public void BACK()
     {
-        CraftMain.z += c_position;
+        if (z < 4)
+        {
+            CraftMain.z += c_position;
+            z++;
+        }
     }
     public void LEFT()
     {
-        CraftMain.x -= c_position;
+        if (-4 < x)
+        {
+            CraftMain.x -= c_position;
+            x--;
+        }
     }
     public void RIGHT()
     {
-        CraftMain.x += c_position;
+        if (x < 4)
+        {
+            CraftMain.x += c_position;
+            x++;
+        }
     }
     public void type1()
     {
@@ -207,13 +236,21 @@ public class crafter : MonoBehaviour
     {
         Blocktype = 3;
     }
+    public void _king()
+    {     
+        Blocktype = 4;     
+    }
     public void deleTE()
     {
         if (DeleteOK==true)
         {
+            if (ReturnCost == 0)
+            {
+                king = false;
+            }
             Destroy(Death);
             CraftCost += ReturnCost;
-            DeleteOK = false;
+            DeleteOK = false; 
         }
     }
 
@@ -231,19 +268,37 @@ public class crafter : MonoBehaviour
                     if (CraftCost >= 1)
                     {
                         Main = CraftMain;
-                        CraftMain.y += 0.1f;
-                        Instantiate(block1, Main, Quaternion.identity);
-                        CraftCost -= 1;
+                        if (y < 8)
+                        {
+                            y++;
+                            CraftMain.y += c_position;
+                            Instantiate(block1, Main, Quaternion.identity);
+                            CraftCost -= 1;
+                        }
+                        if (y == 8)
+                        {
+                            Instantiate(block1, Main, Quaternion.identity);
+                            CraftCost -= 1;
+                        }
                     }
                 }
                 else if (Blocktype == 2)
                 {
                     if (CraftCost >= 3)
                     {
-                        Main = CraftMain;
-                        CraftMain.y += 0.1f;
-                        Instantiate(block2, Main, Quaternion.identity);
-                        CraftCost -= 3;
+                        Main = CraftMain; 
+                        if (y < 8)
+                        {
+                            y++;
+                            CraftMain.y += c_position;
+                            Instantiate(block2, Main, Quaternion.identity);
+                            CraftCost -= 3;
+                        }
+                        if (y == 8)
+                        {
+                            Instantiate(block2, Main, Quaternion.identity);
+                            CraftCost -= 3;
+                        }
                     }
                 }
                 else if (Blocktype == 3)
@@ -251,9 +306,37 @@ public class crafter : MonoBehaviour
                     if (CraftCost >= 5)
                     {
                         Main = CraftMain;
-                        CraftMain.y += 0.1f;
-                        Instantiate(block3, Main, Quaternion.identity);
-                        CraftCost -= 5;
+                        if (y < 8)
+                        {
+                            y++;
+                            CraftMain.y += c_position;
+                            Instantiate(block3, Main, Quaternion.identity);
+                            CraftCost -= 5;
+                        }
+                        if (y == 8)
+                        {
+                            Instantiate(block3, Main, Quaternion.identity);
+                            CraftCost -= 5;
+                        }
+                    }
+                }
+                else if (Blocktype == 4)
+                {
+                    if (king == false)
+                    {
+                        Main = CraftMain;
+                        if (y < 8)
+                        {
+                            y++;
+                            CraftMain.y += c_position;
+                            Instantiate(King, Main, Quaternion.identity);
+                            king = true;
+                        }
+                        if (y == 8)
+                        {
+                            Instantiate(King, Main, Quaternion.identity);
+                            king = true;
+                        }
                     }
                 }
             }

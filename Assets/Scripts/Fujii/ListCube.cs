@@ -41,6 +41,7 @@ public class ListCube : MonoBehaviour
         if (other.gameObject.layer == 7) //CraftBlock
         {
             ListS.saveList.Add(other.gameObject);
+            ListS.PosList.Add(other.gameObject.transform.position);
             other.gameObject.SetActive(false);
             reset = Vector3.one;
             other.gameObject.transform.position += reset;

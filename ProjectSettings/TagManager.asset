@@ -41,6 +41,8 @@ TagManager:
   - id8
   - Win2
   - Lose2
+  - Target
+  - KING
   layers:
   - Default
   - TransparentFX

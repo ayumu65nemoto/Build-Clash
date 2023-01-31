@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Sample2 : MonoBehaviour
 {
-    Vector3 force = new Vector3(0.0f, -5.0f, 0.0f);
+    Vector3 force = new Vector3(0.0f, -500.0f, 0.0f);
     Rigidbody rd;
     BoxCollider bx;
     Vector3 reset;
@@ -41,7 +41,7 @@ public class Sample2 : MonoBehaviour
     {
         if (moveOFF == false)
         {
-            rd.AddForce(force);
+            rd.AddForce(force, ForceMode.Force);
         }
     }
 
@@ -54,8 +54,9 @@ public class Sample2 : MonoBehaviour
             //use guravity ÇÃéÊìæ
             //rd.useGravity = true; //èdóÕÇÃóLñ≥
             rd.constraints = RigidbodyConstraints.None;
+            rd.constraints = RigidbodyConstraints.FreezeRotation|RigidbodyConstraints.FreezePositionX| RigidbodyConstraints.FreezePositionZ;
         }
-        else
+        else if(nextScene.name =="ScanScene")
         {
 
             Me = transform.position;
@@ -84,6 +85,7 @@ public class Sample2 : MonoBehaviour
         }
         else
         {
+            moveOFF = true;
             this.gameObject.transform.position = stop;
         }
     }
@@ -93,6 +95,7 @@ public class Sample2 : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
+
         moveOFF = false;
     }
 }
