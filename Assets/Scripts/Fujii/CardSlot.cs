@@ -9,12 +9,12 @@ public class CardSlot : MonoBehaviour
 {
     public static bool inSlotFlag;
 
-    void start()
+    void Start()
     {
         inSlotFlag = false;
     }
 
-    void update()
+    void Update()
     {
         inSlotFlag = false;
     }

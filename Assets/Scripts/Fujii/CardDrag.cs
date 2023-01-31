@@ -13,12 +13,9 @@ public class CardDrag : MonoBehaviour
     public Vector3 objPos;
     public Vector3 StartPos;
 
-    //public RectTransform rectTransform;
-
     void Start()
     {
         StartPos = this.transform.localPosition;
-        Debug.Log(this.transform.localPosition);
     }
 
     void OnMouseDrag()
@@ -30,20 +27,17 @@ public class CardDrag : MonoBehaviour
 
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, objPos.z);
 
-        //StartPos = new Vector3(objPos.x, objPos.y, objPos.z);
-
         transform.position = Camera.main.ScreenToWorldPoint(mousePos);
-
-        Debug.Log(this.transform.localPosition);
     }
 
     void OnMouseUp()
     {
         //ドラッグ終了、吸い込んでよし
         boxFlag = false;
-        //StartPos.z = objPos.z;
-        this.transform.localPosition = StartPos;
-        //transform.localPosition = Camera.main.ScreenToWorldPoint(StartPos);
 
+        if(CardSlot.inSlotFlag == false)
+        {
+            this.transform.localPosition = StartPos;
+        }
     }
 }
