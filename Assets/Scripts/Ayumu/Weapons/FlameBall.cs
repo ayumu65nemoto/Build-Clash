@@ -21,15 +21,22 @@ public class FlameBall : MonoBehaviour
         // 衝突した相手にPlayerタグが付いているとき
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
+            //collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
+            if (collision.gameObject.GetComponent<PlayerStates>()._state != PlayerStates.PlayerState.Wet)
+            {
+                collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
+            }
 
         }
 
         // 衝突した相手にPlayerタグが付いているとき
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
-
+            //collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
+            if (collision.gameObject.GetComponent<PlayerStates2>()._state != PlayerStates2.PlayerState.Wet)
+            {
+                collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
+            }
         }
     }
 }
