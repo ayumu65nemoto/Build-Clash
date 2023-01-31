@@ -5922,6 +5922,7 @@ MonoBehaviour:
   _indicater7: {fileID: 0}
   _indicater8: {fileID: 0}
   buttonFlag1: 0
+  rainShot1: 0
 --- !u!114 &1462813985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5939,7 +5940,8 @@ MonoBehaviour:
   battle2: 0
   rain1: 0
   rain2: 0
-  thunder: 0
+  thunder1: 0
+  thunder2: 0
   isGround1: 0
   isGround2: 0
   center1: 0
@@ -6018,6 +6020,7 @@ MonoBehaviour:
   _indicater72: {fileID: 0}
   _indicater82: {fileID: 0}
   buttonFlag2: 0
+  rainShot2: 0
 --- !u!114 &1462813989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8922,6 +8925,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a56ced01efc00f44837915fb8930111, type: 3}
+--- !u!1001 &2151230174336040286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2169501163265515306, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: sceneViewId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479802201801330220, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774788403734445917, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_Name
+      value: ThunderPlane
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774788403734445917, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 276d85d0e52c7e74fbd2a10d4d56e0b7, type: 3}
 --- !u!1001 &7938795682409546417
 PrefabInstance:
   m_ObjectHideFlags: 0

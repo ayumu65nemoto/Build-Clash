@@ -26,6 +26,12 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
     //wetFlag
     public bool wetFlag;
     public bool wetFlag2;
+    //プレイヤー１の位置
+    private Transform _target1;
+    private Vector3 _targetTransform1;
+    //プレイヤー２の位置
+    private Transform _target2;
+    private Vector3 _targetTransform2;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +62,10 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                 _enemyObject = GameObject.FindWithTag("Enemy");
                 _playerStates1 = _playerObject.GetComponent<PlayerStates>();
                 _playerStates2 = _enemyObject.GetComponent<PlayerStates2>();
-                _success = true;
+                _target1 = _playerObject.GetComponent<Transform>();
+                _target2 = _enemyObject.GetComponent<Transform>();
+                _targetTransform1 = new Vector3(_target1.position.x, _target1.position.y + 10, _target1.position.z);
+                _targetTransform2 = new Vector3(_target2.position.x, _target2.position.y + 10, _target2.position.z);
             }
 
             if (_selectUnit.buttonFlag1 == true)
@@ -64,7 +73,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                 //GameObject[] blocks = GameObject.FindGameObjectsWithTag("Enemy");
                 if (_playerStates2.wetFlag2 == true)
                 {
-                    _gameManager.thunder1 = true;
+                    //_gameManager.thunder1 = true;
                     _thunder -= 1;
                     //for (int i = 0; i < 5; i++)
                     //{
@@ -73,6 +82,8 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     //    PhotonNetwork.Destroy(block);
                     //}
                     //Debug.Log("thunder");
+                    //キングの位置に発生
+                    GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform2, Quaternion.Euler(0, 0, 0));
                 }
             }
 
@@ -81,7 +92,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                 //GameObject[] blocks = GameObject.FindGameObjectsWithTag("Player");
                 if (_playerStates1.wetFlag == true)
                 {
-                    _gameManager.thunder2 = true;
+                    //_gameManager.thunder2 = true;
                     _thunder -= 1;
                     //for (int i = 0; i < 5; i++)
                     //{
@@ -90,6 +101,8 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     //    PhotonNetwork.Destroy(block);
                     //}
                     //Debug.Log("thunder2");
+                    //キングの位置に発生
+                    GameObject thunder = PhotonNetwork.Instantiate("ThunderPlane", _targetTransform1, Quaternion.Euler(0, 0, 0));
                 }
             }
         }
