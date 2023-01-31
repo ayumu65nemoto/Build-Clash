@@ -13,7 +13,7 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
         Wet,
     }
 
-    public PlayerState _state;
+    public PlayerState state2;
     private Rigidbody _rb;
     //ゲームマネージャーの取得
     private GameObject _gameObject;
@@ -37,7 +37,7 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
 
     public void SetState(PlayerState tempState, Transform targetObj = null)
     {
-        _state = tempState;
+        state2 = tempState;
 
         if (tempState == PlayerState.Flame)
         {
@@ -64,6 +64,7 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.b);
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.a);
             stream.SendNext(wetFlag2);
+            stream.SendNext(state2);
         }
         else
         {
@@ -73,6 +74,7 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             float b = (float)stream.ReceiveNext();
             float a = (float)stream.ReceiveNext();
             wetFlag2 = (bool)stream.ReceiveNext();
+            state2 = (PlayerState)stream.ReceiveNext();
             gameObject.GetComponent<Renderer>().material.color = new Vector4(r, g, b, a);
         }
     }

@@ -70,7 +70,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     {
                         GameObject block = blocks[Random.Range(0, 27)];
                         Debug.Log(block);
-                        Destroy(block);
+                        PhotonNetwork.Destroy(block);
                     }
                     Debug.Log("thunder");
                 }
@@ -87,7 +87,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
                     {
                         GameObject block = blocks[Random.Range(0, 27)];
                         Debug.Log(block);
-                        Destroy(block);
+                        PhotonNetwork.Destroy(block);
                     }
                     Debug.Log("thunder2");
                 }

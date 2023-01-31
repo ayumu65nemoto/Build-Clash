@@ -22,7 +22,7 @@ public class FlameBall : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
-            if (collision.gameObject.GetComponent<PlayerStates>()._state != PlayerStates.PlayerState.Wet)
+            if (collision.gameObject.GetComponent<PlayerStates>().state != PlayerStates.PlayerState.Wet)
             {
                 collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
             }
@@ -33,7 +33,7 @@ public class FlameBall : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             //collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
-            if (collision.gameObject.GetComponent<PlayerStates2>()._state != PlayerStates2.PlayerState.Wet)
+            if (collision.gameObject.GetComponent<PlayerStates2>().state2 != PlayerStates2.PlayerState.Wet)
             {
                 collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
             }

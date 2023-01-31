@@ -74,7 +74,6 @@ public class RainCommand : MonoBehaviourPunCallbacks
                 //// î≠éÀâπÇèoÇ∑
                 //AudioSource.PlayClipAtPoint(sound, transform.position);
                 _selectUnit.buttonFlag1 = false;
-                Debug.Log(_rainCount);
             }
 
             if (_selectUnit2.buttonFlag2 == true && _selectUnit2.rainShot2 == true)
@@ -87,7 +86,6 @@ public class RainCommand : MonoBehaviourPunCallbacks
                 //// î≠éÀâπÇèoÇ∑
                 //AudioSource.PlayClipAtPoint(sound, transform.position);
                 _selectUnit2.buttonFlag2 = false;
-                Debug.Log(_rainCount);
             }
         }
     }
