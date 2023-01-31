@@ -47,14 +47,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Card
   - Water
   - UI
   - BaseGrid
   - CraftBlock
   - CraftFrame
   - DeleteTool
-  - 
+  - Shadow
   - 
   - 
   - 
@@ -79,4 +79,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Shadow
+    uniqueID: 813761051
     locked: 0
