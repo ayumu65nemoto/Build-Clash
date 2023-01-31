@@ -64,7 +64,7 @@ public class RainCommand : MonoBehaviourPunCallbacks
                 _success = true;
             }
 
-            if (_selectUnit.buttonFlag1 == true)
+            if (_selectUnit.buttonFlag1 == true && _selectUnit.rainShot1 == true)
             {
                 //キングの位置に発生
                 GameObject rain = PhotonNetwork.Instantiate("Rain", _targetTransform1, Quaternion.Euler(90, 0, 0));
@@ -74,9 +74,10 @@ public class RainCommand : MonoBehaviourPunCallbacks
                 //// 発射音を出す
                 //AudioSource.PlayClipAtPoint(sound, transform.position);
                 _selectUnit.buttonFlag1 = false;
+                Debug.Log(_rainCount);
             }
 
-            if (_selectUnit2.buttonFlag2 == true)
+            if (_selectUnit2.buttonFlag2 == true && _selectUnit2.rainShot2 == true)
             {
                 //キングの位置に発生
                 GameObject rain = PhotonNetwork.Instantiate("Rain", _targetTransform2, Quaternion.Euler(90, 0, 0));
@@ -86,6 +87,7 @@ public class RainCommand : MonoBehaviourPunCallbacks
                 //// 発射音を出す
                 //AudioSource.PlayClipAtPoint(sound, transform.position);
                 _selectUnit2.buttonFlag2 = false;
+                Debug.Log(_rainCount);
             }
         }
     }

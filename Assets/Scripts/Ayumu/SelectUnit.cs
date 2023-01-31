@@ -32,6 +32,8 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     private PhotonConnecter _photonConnecter;
     //1Pと2Pを区別するためのフラグ
     public bool buttonFlag1;
+    //雨のコマンドをどちらが押したのか
+    public bool rainShot1;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class SelectUnit : MonoBehaviourPunCallbacks
         _photonConnecter = GetComponent<PhotonConnecter>();
 
         buttonFlag1 = false;
+        rainShot1 = false;
     }
 
     public void PushDownA()
@@ -81,6 +84,7 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     {
         selectUnitNumber = 4;
         buttonFlag1 = true;
+        rainShot1 = true;
     }
 
     public void PushDownF()
