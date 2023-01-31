@@ -4045,6 +4045,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2961601972710295413}
+  - {fileID: -15397087715106560}
   - {fileID: 890519702396437373}
   - {fileID: 373790903174989962}
   - {fileID: 5051504564364130166}
@@ -4120,6 +4121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 0
+  m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
