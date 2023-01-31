@@ -11,6 +11,7 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
         Normal,
         Flame,
         Wet,
+        Thunder
     }
 
     public PlayerState state;
@@ -19,6 +20,8 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
     private GameObject _gameObject;
     private GameManager _gameManager;
     public bool wetFlag;
+    //Šm—¦—p•Ï”
+    private int _number;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,8 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
         wetFlag = false;
+        //‚P‚©‚ç‚P‚O‚O‚Ìƒ‰ƒ“ƒ_ƒ€‚È”š‚ğæ‚é
+        _number = Random.Range(1, 100);
     }
 
     // Update is called once per frame
@@ -51,6 +56,14 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
             //¿—Ê‚ğ10ƒvƒ‰ƒX‚·‚é
             _rb.mass += 100;
             wetFlag = true;
+        }
+
+        if (tempState == PlayerState.Thunder)
+        {
+            if (_number <= 20)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 

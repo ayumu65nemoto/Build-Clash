@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool rain1;
     public bool rain2;
     //雷が発動しているか
-    public bool thunder;
+    public bool thunder1;
+    public bool thunder2;
     //プレイヤー１
     private GameObject _player1;
     //接地判定
@@ -87,7 +88,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         battle = false;
         rain1 = false;
         rain2 = false;
-        thunder = false;
+        thunder1 = false;
+        thunder2 = false;
         isGround1 = false;
         isGround2 = false;
 

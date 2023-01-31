@@ -63,5 +63,29 @@ public class Player : MonoBehaviour
             }
             _gameManager.rain2 = false;
         }
+
+        if (_gameManager.thunder1 == true)
+        {
+            // タグが同じオブジェクトを全て取得する
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject gameObj in gameObjects)
+            {
+                _playerStates2 = gameObj.GetComponent<PlayerStates2>();
+                _playerStates2.SetState(PlayerStates2.PlayerState.Wet);
+            }
+            _gameManager.thunder1 = false;
+        }
+
+        if (_gameManager.thunder2 == true)
+        {
+            // タグが同じオブジェクトを全て取得する
+            GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject gameObj in gameObjects)
+            {
+                _playerStates = gameObj.GetComponent<PlayerStates>();
+                _playerStates.SetState(PlayerStates.PlayerState.Wet);
+            }
+            _gameManager.thunder2 = false;
+        }
     }
 }
