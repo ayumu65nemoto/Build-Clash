@@ -18,12 +18,12 @@ public class CardSlot : MonoBehaviour
 
     void Update()
     {
-        inSlotFlag = false;
+
     }
 
     void OnTriggerStay(Collider other)
     {
-        inSlotFlag = true;
+        inSlotFlag = false;
 
         //ƒhƒ‰ƒbƒO‚µ‚Ä‚È‚¢Žž‚Í
         if (CardDrag.boxFlag == false)
@@ -34,13 +34,18 @@ public class CardSlot : MonoBehaviour
 
             //CardDrag.boxFlag = true;
 
-            if(SlotFlag <= 3)
-            {
+            //if(SlotFlag <= 3)
+           // {
+                SlotFlag++;
                 other.transform.position = this.transform.position;
-            }
-
-            SlotFlag++;
+                //inSlotFlag = false;
+            //}
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        inSlotFlag = false;
     }
 
 }
