@@ -25,14 +25,7 @@ public class ThunderPlane : MonoBehaviourPunCallbacks
             //collision.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Flame);
             if (collider.gameObject.GetComponent<PlayerStates>().state == PlayerStates.PlayerState.Wet)
             {
-                //collider.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Thunder);
-                //Debug.Log("sander");
-                //int number = Random.Range(1, 100);
-                //if (number <= 20)
-                //{
-                //    Destroy(collider.gameObject);
-                //}
-                photonView.RPC("ThunderDestroy1", RpcTarget.AllBuffered);
+                collider.gameObject.GetComponent<PlayerStates>().SetState(PlayerStates.PlayerState.Thunder);
             }
 
         }
@@ -43,14 +36,7 @@ public class ThunderPlane : MonoBehaviourPunCallbacks
             //collision.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Flame);
             if (collider.gameObject.GetComponent<PlayerStates2>().state2 == PlayerStates2.PlayerState.Wet)
             {
-                //collider.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Thunder);
-                //Debug.Log("sander");
-                //int number = Random.Range(1, 100);
-                //if (number <= 20)
-                //{
-                //    Destroy(collider.gameObject);
-                //}
-                photonView.RPC("ThunderDestroy1", RpcTarget.AllBuffered);
+                collider.gameObject.GetComponent<PlayerStates2>().SetState(PlayerStates2.PlayerState.Thunder);
             }
         }
     }

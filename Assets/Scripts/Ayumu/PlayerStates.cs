@@ -60,11 +60,7 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
 
         if (tempState == PlayerState.Thunder)
         {
-            if (_number <= 20)
-            {
-                Destroy(this.gameObject);
-            }
-            Debug.Log("thunder");
+            photonView.RPC("ThunderDestroy1", RpcTarget.AllBuffered);
         }
     }
 
