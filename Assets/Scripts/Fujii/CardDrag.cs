@@ -8,7 +8,7 @@ using UnityEngine.UI;           // 追加
 public class CardDrag : MonoBehaviour
 {
     //ボックスの中にオブジェクトを吸い込んでいい時はFalse
-    public static bool boxFlag;
+    public static bool DragFlag;
 
     public Vector3 objPos;
     public Vector3 StartPos;
@@ -21,7 +21,7 @@ public class CardDrag : MonoBehaviour
     void OnMouseDrag()
     {
         //ドラッグ中は吸い込んではだめ
-        boxFlag = true;
+       DragFlag = true;
 
         objPos = Camera.main.WorldToScreenPoint(transform.position);
 
@@ -33,7 +33,7 @@ public class CardDrag : MonoBehaviour
     void OnMouseUp()
     {
         //ドラッグ終了、吸い込んでよし
-        boxFlag = false;
+        DragFlag = false;
 
         if(CardSlot.inSlotFlag == false)
         {
