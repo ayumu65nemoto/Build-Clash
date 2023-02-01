@@ -21,6 +21,8 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
     public bool wetFlag;
     //Šm—¦—p•Ï”
     private int _number;
+    //ƒuƒƒbƒN‘Ï‹v’l
+    public int hp;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +32,16 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
         wetFlag = false;
         //‚P‚©‚ç‚P‚O‚O‚Ìƒ‰ƒ“ƒ_ƒ€‚È”š‚ğæ‚é
         _number = Random.Range(1, 100);
+        hp = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void SetState(PlayerState tempState, Transform targetObj = null)
