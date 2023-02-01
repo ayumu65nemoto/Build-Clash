@@ -11,36 +11,74 @@ public class CardSlot : MonoBehaviour
 
     public int SlotCount;
 
+    public CardDrag carddrag;
+    public CardDrag1 carddrag1;
+
     void Start()
     {
-        //inSlotFlag = false;
+        inSlotFlag = false;
         SlotCount = 0;
     }
 
     void Update()
     {
-        //inSlotFlag = false;
+        inSlotFlag = false;
         Debug.Log(SlotCount);
-        SlotCount = 0;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (SlotCount == 0)
+        {
+            SlotCount++;
+        }
+
+        if (SlotCount == 3)
+        {
+            SlotCount -= 3;
+        }
     }
 
     void OnTriggerStay(Collider other)
     {
-        //inSlotFlag = true;
-            
+        if (SlotCount == 1)
+        {
+            inSlotFlag = true;
+        }
+                   
         //ドラッグをやめたら
         if (CardDrag.DragFlag == false)
         {
             //吸い込む（位置を合わせる）
             other.transform.position = this.transform.position;
             //吸い込み終わったらフラグ解放
-            //CardDrag.DragFlag = true;
-            SlotCount = 1;
+            CardDrag.DragFlag = true;
+
+            SlotCount = 3;
+        }
+
+        //ドラッグをやめたら
+        if (CardDrag1.DragFlag1 == false)
+        {
+            //吸い込む（位置を合わせる）
+            other.transform.position = this.transform.position;
+            //吸い込み終わったらフラグ解放
+            CardDrag1.DragFlag1 = true;
+
+            SlotCount = 3;
         }
     }
 
     void OnTriggerExit()
-    {       
-        
+    {
+        if(SlotCount == 1)
+        {
+            SlotCount--;
+        }
+
+        if (SlotCount == 3)
+        {
+            SlotCount -= 3;
+        }
     }
 }

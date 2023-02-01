@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 90607919}
   - component: {fileID: 90607921}
   - component: {fileID: 90607920}
+  - component: {fileID: 90607925}
   - component: {fileID: 90607924}
   - component: {fileID: 90607923}
-  - component: {fileID: 90607925}
   m_Layer: 5
   m_Name: Card-Barista
   m_TagString: Untagged
@@ -240,11 +240,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 90607918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0584fbe456628b74680a169328c308f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7761ca061a8a44840931c1eb7782515e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objPos: {x: 0, y: 0, z: 0}
   StartPos: {x: 0, y: 0, z: 0}
+  cardslot: {fileID: 0}
 --- !u!1 &170725058
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacf88823ea376b4e92036380012105f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SlotCount: 0
 --- !u!212 &868281471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1793,6 +1795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPos: {x: 0, y: 0, z: 0}
   StartPos: {x: 0, y: 0, z: 0}
+  cardslot: {fileID: 0}
 --- !u!65 &1571701632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1820,7 +1823,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &1737689454
 GameObject:

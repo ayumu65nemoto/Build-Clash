@@ -5,17 +5,15 @@ using System.Text;              // 追加
 using UnityEngine.InputSystem;  // 追加
 using UnityEngine.UI;           // 追加
 
-public class CardDrag : MonoBehaviour
+public class CardDrag1 : MonoBehaviour
 {
     //ボックスの中にオブジェクトを吸い込んでいい時はFalse
-    public static bool DragFlag;
+    public static bool DragFlag1;
 
     public Vector3 objPos;
     public Vector3 StartPos;
 
     public CardSlot cardslot;
-
-    public static bool Click;
 
     void Start()
     {
@@ -24,18 +22,13 @@ public class CardDrag : MonoBehaviour
 
     void Update()
     {
-        
-    }
 
-    void OnMouseDown()
-    {
-        Click = true;
     }
 
     void OnMouseDrag()
     {
         //ドラッグ中は吸い込んではだめ
-        DragFlag = true;
+        DragFlag1 = true;
 
         objPos = Camera.main.WorldToScreenPoint(transform.position);
 
@@ -47,13 +40,11 @@ public class CardDrag : MonoBehaviour
     void OnMouseUp()
     {
         //ドラッグ終了、吸い込んでよし
-        DragFlag = false;
+        DragFlag1 = false;
 
         if(CardSlot.inSlotFlag == false)
         {
-            this.transform.localPosition = StartPos;
+            this.transform.localPosition = StartPos;     
         }
-
-        //Click = false;
     }
 }
