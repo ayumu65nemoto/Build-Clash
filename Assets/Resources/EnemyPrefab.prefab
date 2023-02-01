@@ -4043,61 +4043,34 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2961601972710295413}
-  - {fileID: 0}
+  - {fileID: 2006401425929578404}
   - {fileID: 890519702396437373}
-  - {fileID: 0}
   - {fileID: 373790903174989962}
-  - {fileID: 0}
   - {fileID: 5051504564364130166}
-  - {fileID: 0}
   - {fileID: 6819542823114862998}
-  - {fileID: 0}
   - {fileID: 8952742004384633885}
-  - {fileID: 0}
   - {fileID: 1793081696099783430}
-  - {fileID: 0}
   - {fileID: 7297384025812387026}
-  - {fileID: 0}
   - {fileID: 3653234846006591631}
-  - {fileID: 0}
   - {fileID: 6080257937552812779}
-  - {fileID: 0}
   - {fileID: 805921686432073042}
-  - {fileID: 0}
   - {fileID: 2556930523762867893}
-  - {fileID: 0}
   - {fileID: 5966315162989357273}
-  - {fileID: 0}
   - {fileID: 7487450469676717654}
-  - {fileID: 0}
   - {fileID: 1797810604440776671}
-  - {fileID: 0}
   - {fileID: 1365190678728662686}
-  - {fileID: 0}
   - {fileID: 8097790390188955952}
-  - {fileID: 0}
   - {fileID: 4302222114592982782}
-  - {fileID: 0}
   - {fileID: 7797683342199601728}
-  - {fileID: 0}
   - {fileID: 964840631212714197}
-  - {fileID: 0}
   - {fileID: 7772354118875106917}
-  - {fileID: 0}
   - {fileID: 2811096993896106855}
-  - {fileID: 0}
   - {fileID: 8799783647013117658}
-  - {fileID: 0}
   - {fileID: 3715670959062061483}
-  - {fileID: 0}
   - {fileID: 240985294045744294}
-  - {fileID: 0}
   - {fileID: 3003470501781411925}
-  - {fileID: 0}
   - {fileID: 7072652955520432445}
-  - {fileID: 0}
   - {fileID: 2547178092916148724}
-  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

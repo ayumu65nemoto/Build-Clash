@@ -68,8 +68,10 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.g);
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.b);
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.a);
+
             stream.SendNext(wetFlag2);
             stream.SendNext(state2);
+
             stream.SendNext(_rb.position);
             stream.SendNext(_rb.rotation);
             stream.SendNext(_rb.velocity);
@@ -81,8 +83,10 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             float g = (float)stream.ReceiveNext();
             float b = (float)stream.ReceiveNext();
             float a = (float)stream.ReceiveNext();
+
             wetFlag2 = (bool)stream.ReceiveNext();
             state2 = (PlayerState)stream.ReceiveNext();
+
             _rb.position = (Vector3)stream.ReceiveNext();
             _rb.rotation = (Quaternion)stream.ReceiveNext();
             _rb.velocity = (Vector3)stream.ReceiveNext();
