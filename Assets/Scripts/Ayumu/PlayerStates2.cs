@@ -70,6 +70,9 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.a);
             stream.SendNext(wetFlag2);
             stream.SendNext(state2);
+            stream.SendNext(_rb.position);
+            stream.SendNext(_rb.rotation);
+            stream.SendNext(_rb.velocity);
         }
         else
         {
@@ -80,6 +83,12 @@ public class PlayerStates2 : MonoBehaviourPunCallbacks, IPunObservable
             float a = (float)stream.ReceiveNext();
             wetFlag2 = (bool)stream.ReceiveNext();
             state2 = (PlayerState)stream.ReceiveNext();
+            _rb.position = (Vector3)stream.ReceiveNext();
+            _rb.rotation = (Quaternion)stream.ReceiveNext();
+            _rb.velocity = (Vector3)stream.ReceiveNext();
+
+            float lag = Mathf.Abs((float)(PhotonNetwork.Time - info.timestamp));
+            _rb.position += _rb.velocity * lag;
             gameObject.GetComponent<Renderer>().material.color = new Vector4(r, g, b, a);
         }
     }
