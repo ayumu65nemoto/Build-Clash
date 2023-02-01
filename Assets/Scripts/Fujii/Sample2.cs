@@ -49,7 +49,7 @@ public class Sample2 : MonoBehaviour
     {
 
 
-        if (nextScene.name == "PlayScene")
+        if (nextScene.name == "ARbattle")
         {
             //use guravity ‚Ìæ“¾
             //rd.useGravity = true; //d—Í‚Ì—L–³

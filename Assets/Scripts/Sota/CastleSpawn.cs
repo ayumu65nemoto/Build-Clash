@@ -20,7 +20,7 @@ public class CastleSpawn : MonoBehaviour
     GameObject Listsaver;
     ListSaver ListS;
 
-    Vector3 CastleMain;
+    public Vector3 CastleMain;
     Vector3 SC_pos;
 
     bool castlespawn = false;
@@ -61,7 +61,7 @@ public class CastleSpawn : MonoBehaviour
                     
                     Instantiate(Plane, CastleMain, Quaternion.identity);
                     CastleMain = m_Hits[0].pose.position;
-                    CastleCreate(CastleMain);
+                    CastleCreate(CastleMain,1);
                     castlespawn = true;
                     _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
 
@@ -73,13 +73,16 @@ public class CastleSpawn : MonoBehaviour
         }
     }
 
-    void CastleCreate(Vector3 P_cas)
+    void CastleCreate(Vector3 P_cas,int Qi)
     {
         
         for (int i = 0; i < ListS.saveList.Count; i++)
         {
             Vector3 sss = ListS.PosList[i];
             sss += P_cas;
+            sss.x=sss.x* Qi;
+            sss.z=sss.z* Qi;
+            sss.y += 10f;
             
 //            sss.x += P_cas.x;
   //          sss.z += P_cas.z;
