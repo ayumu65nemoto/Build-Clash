@@ -27,7 +27,7 @@ public class Arrow : MonoBehaviour
         // Õ“Ë‚µ‚½‘Šè‚ÉPlayerƒ^ƒO‚ª•t‚¢‚Ä‚¢‚é‚Æ‚«
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<PlayerStates>().hp -= 10;
+            collision.gameObject.GetComponent<PlayerStates2>().hp -= 10;
         }
     }
 }

@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011528292801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011598884030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011769593459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011794110783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011844139575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011884216497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046011925025256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,6 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012021806394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,6 +1121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012075759225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,6 +1247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012138447861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,6 +1373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012270176245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1488,6 +1499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012330700673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +1625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012343140911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,6 +1751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012548663601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,6 +1877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012566078452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,6 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012707758258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,6 +2256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012759617187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2365,6 +2382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012795836876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2490,6 +2508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012849202617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2615,6 +2634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012851485023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2740,6 +2760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012868537438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2865,6 +2886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046012918225132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2990,6 +3012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046013193271524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3115,6 +3138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046013205136362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,6 +3264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046013279333111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3365,6 +3390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046013337826858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3490,6 +3516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   wetFlag: 0
+  hp: 0
 --- !u!114 &7199046013365004677
 MonoBehaviour:
   m_ObjectHideFlags: 0

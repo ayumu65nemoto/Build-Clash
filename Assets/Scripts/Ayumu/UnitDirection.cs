@@ -35,14 +35,16 @@ public class UnitDirection : MonoBehaviourPunCallbacks
 
         if (_photonView.IsMine)
         {
-            if (col.tag == "Player")
+            if (col.tag == "PlayerCore")
             {
                 _self.LookAt(col.transform);
+                Debug.Log("a");
             }
 
-            if (col.tag == "Enemy")
+            if (col.tag == "EnemyCore")
             {
                 _self.LookAt(col.transform);
+                Debug.Log("a");
             }
         }
     }
