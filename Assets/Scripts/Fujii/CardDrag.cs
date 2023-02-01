@@ -13,6 +13,8 @@ public class CardDrag : MonoBehaviour
     public Vector3 objPos;
     public Vector3 StartPos;
 
+    public CardSlot cardslot;
+
     void Start()
     {
         StartPos = this.transform.localPosition;
@@ -35,7 +37,7 @@ public class CardDrag : MonoBehaviour
         //ドラッグ終了、吸い込んでよし
         DragFlag = false;
 
-        if(CardSlot.inSlotFlag == false)
+        if(/*CardSlot.inSlotFlag == false*/ cardslot.SlotCount == 0)
         {
             this.transform.localPosition = StartPos;
         }

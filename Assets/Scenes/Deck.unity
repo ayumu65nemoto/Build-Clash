@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 90607920}
   - component: {fileID: 90607924}
   - component: {fileID: 90607923}
+  - component: {fileID: 90607925}
   m_Layer: 5
   m_Name: Card-Barista
   m_TagString: Untagged
@@ -230,6 +231,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 200, y: 250, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &90607925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90607918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0584fbe456628b74680a169328c308f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objPos: {x: 0, y: 0, z: 0}
+  StartPos: {x: 0, y: 0, z: 0}
 --- !u!1 &170725058
 GameObject:
   m_ObjectHideFlags: 0
