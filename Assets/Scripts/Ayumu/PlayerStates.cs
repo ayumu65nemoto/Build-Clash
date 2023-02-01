@@ -15,7 +15,6 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     public PlayerState state;
-    private Rigidbody _rb;
     //ゲームマネージャーの取得
     private GameObject _gameObject;
     private GameManager _gameManager;
@@ -26,7 +25,6 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
     // Start is called before the first frame update
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
         wetFlag = false;
@@ -53,8 +51,6 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
         if (tempState == PlayerState.Wet)
         {
             GetComponent<Renderer>().material.color = Color.blue;
-            //質量を10プラスする
-            _rb.mass += 100;
             wetFlag = true;
         }
     }
@@ -70,9 +66,6 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(gameObject.GetComponent<Renderer>().material.color.a);
             stream.SendNext(wetFlag);
             stream.SendNext(state);
-            stream.SendNext(_rb.position);
-            stream.SendNext(_rb.rotation);
-            stream.SendNext(_rb.velocity);
         }
         else
         {
@@ -83,12 +76,7 @@ public class PlayerStates : MonoBehaviourPunCallbacks, IPunObservable
             float a = (float)stream.ReceiveNext();
             wetFlag = (bool)stream.ReceiveNext();
             state = (PlayerState)stream.ReceiveNext();
-            _rb.position = (Vector3)stream.ReceiveNext();
-            _rb.rotation = (Quaternion)stream.ReceiveNext();
-            _rb.velocity = (Vector3)stream.ReceiveNext();
-
-            float lag = Mathf.Abs((float)(PhotonNetwork.Time - info.timestamp));
-            _rb.position += _rb.velocity * lag;
+            
             gameObject.GetComponent<Renderer>().material.color = new Vector4(r, g, b, a);
         }
     }

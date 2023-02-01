@@ -125,24 +125,16 @@ public class GameManager : MonoBehaviourPunCallbacks
             //バトルスタートボタン取得
             _battleStartButton = GameObject.FindWithTag("BattleStart");
             _battleStartButton.SetActive(false);
-            //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
-            //_battleStartButton2.SetActive(false);
 
             //ユニットボタン取得
             _buttonA = GameObject.Find("ButtonA");
             _buttonB = GameObject.Find("ButtonB");
             _buttonC = GameObject.Find("ButtonC");
-            //_buttonA2 = GameObject.Find("ButtonA2");
-            //_buttonB2 = GameObject.Find("ButtonB2");
-            //_buttonC2 = GameObject.Find("ButtonC2");
             //ユニットを設置するスクリプトを取得
             _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
             _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
             _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
-            //_unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
-            //_unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
-            //_unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
-
+            
             //勝敗テキスト取得
             _textWin = GameObject.FindWithTag("Win");
             _textLose = GameObject.FindWithTag("Lose");
@@ -156,22 +148,14 @@ public class GameManager : MonoBehaviourPunCallbacks
         if (_photonConnecter.canvasFlag2 == true)
         {
             //バトルスタートボタン取得
-            //_battleStartButton = GameObject.FindWithTag("BattleStart");
-            //_battleStartButton.SetActive(false);
             _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
             _battleStartButton2.SetActive(false);
 
             //ユニットボタン取得
-            //_buttonA = GameObject.Find("ButtonA");
-            //_buttonB = GameObject.Find("ButtonB");
-            //_buttonC = GameObject.Find("ButtonC");
             _buttonA2 = GameObject.Find("ButtonA2");
             _buttonB2 = GameObject.Find("ButtonB2");
             _buttonC2 = GameObject.Find("ButtonC2");
             //ユニットを設置するスクリプトを取得
-            //_unitPositionA = _buttonA.GetComponent<UnitPositionA>();
-            //_unitPositionB = _buttonB.GetComponent<UnitPositionB>();
-            //_unitPositionC = _buttonC.GetComponent<UnitPositionC>();
             _unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
             _unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
             _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
@@ -182,8 +166,6 @@ public class GameManager : MonoBehaviourPunCallbacks
             //テキスト非アクティブ
             _textWin2.SetActive(false);
             _textLose2.SetActive(false);
-
-            //_photonConnecter.canvasFlag = false;
         }
 
         if (_unitPositionA.setUnitA == true && _unitPositionB.setUnitB == true && _unitPositionC.setUnitC && true)
