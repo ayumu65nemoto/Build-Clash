@@ -477,7 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RaycastManager: {fileID: 0}
   _arPlaneManager: {fileID: 0}
-  Plane: {fileID: 0}
+  Plane: {fileID: 5316372436907622127, guid: e4ab5a880b1c26a4ebcdfc2543b12943, type: 3}
   CastleMain: {x: 0, y: 0, z: 0}
 --- !u!114 &576564915
 MonoBehaviour:
