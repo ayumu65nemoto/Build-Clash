@@ -23,12 +23,16 @@ public class CardDrag : MonoBehaviour
 
     public GameObject[] units = new GameObject[3];
 
-    //public GameObject[] units = new GameObject[3];
+    //public GameObject unit;
+
+    //GameObject[] units;
 
     void Start()
     {
         //‰ŠúˆÊ’u‚Ì‘ã“ü
         StartPos = this.transform.localPosition;
+
+        //units = new GameObject[] { unit };
     }
 
     void Update()
