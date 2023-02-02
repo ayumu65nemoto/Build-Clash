@@ -21,6 +21,8 @@ public class CardSlot : MonoBehaviour
     private GameObject GameManager; //
     private GameManager gamemanager; //
 
+    
+
     void Start()
     {
         inSlotFlag = false;
@@ -73,7 +75,9 @@ public class CardSlot : MonoBehaviour
                     deckmanager.DeckArrays[0] = other.gameObject; 
                     DeckCount++;
 
-                    gamemanager.decks[0] = other.gameObject; //
+                    gamemanager.decks[0] = other.gameObject.GetComponent<CardDrag>().units[0]; //
+
+
                 }
             }
         }

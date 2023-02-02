@@ -21,6 +21,8 @@ public class CardDrag : MonoBehaviour
     public CardSlot2 cardslot2;
     public CardSlot3 cardslot3;
 
+    public GameObject[] units = new GameObject[3];
+
     void Start()
     {
         //‰ŠúˆÊ’u‚Ì‘ã“ü

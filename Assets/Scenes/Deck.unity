@@ -248,6 +248,10 @@ MonoBehaviour:
   cardslot: {fileID: 0}
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
+  units:
+  - {fileID: 4790068151977252109, guid: 978f676dcad632e4880b5aa4138699e3, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &170725058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1597,10 @@ MonoBehaviour:
   cardslot: {fileID: 0}
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
+  units:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1415283692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1882,10 @@ MonoBehaviour:
   cardslot: {fileID: 0}
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
+  units:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1543467243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,6 +2142,10 @@ MonoBehaviour:
   cardslot: {fileID: 0}
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
+  units:
+  - {fileID: 3814012758514817974, guid: dc8fac6ab31c0ba46a73b6e1c9c68797, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!65 &1571701632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2284,6 +2300,10 @@ MonoBehaviour:
   cardslot: {fileID: 0}
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
+  units:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1760387011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,6 +2581,10 @@ MonoBehaviour:
   cardslot: {fileID: 0}
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
+  units:
+  - {fileID: 6127724456661904754, guid: f9eca5a82d75e8541ac90dfdbf4eaa08, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2051120022
 GameObject:
   m_ObjectHideFlags: 0

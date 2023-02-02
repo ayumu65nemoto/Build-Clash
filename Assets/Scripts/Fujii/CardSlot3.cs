@@ -70,7 +70,7 @@ public class CardSlot3 : MonoBehaviour
                     deckmanager.DeckArrays[2] = other.gameObject;
                     DeckCount++;
 
-                    gamemanager.decks[2] = other.gameObject; //
+                    gamemanager.decks[2] = other.gameObject.GetComponent<CardDrag>().units[0]; //
                 }
             }
         }
