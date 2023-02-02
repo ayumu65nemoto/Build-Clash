@@ -18,8 +18,8 @@ public class CardSlot : MonoBehaviour
     private GameObject DeckManager;
     private DeckManager deckmanager;
 
-    private GameObject GameManager;
-    private GameManager gamemanager;
+    private GameObject GameManager; //
+    private GameManager gamemanager; //
 
     void Start()
     {
@@ -28,8 +28,8 @@ public class CardSlot : MonoBehaviour
         DeckManager = GameObject.Find("DeckManager");
         deckmanager = DeckManager.GetComponent<DeckManager>();
 
-        DeckManager = GameObject.Find("DeckManager");
-        deckmanager = DeckManager.GetComponent<DeckManager>();
+        GameManager = GameObject.Find("GameManager"); //
+        gamemanager = GameManager.GetComponent<GameManager>(); //
     }
 
     void Update()
@@ -70,8 +70,10 @@ public class CardSlot : MonoBehaviour
 
                 if (DeckCount == 0)
                 {
-                    deckmanager.DeckArrays[0] = other.gameObject;
+                    deckmanager.DeckArrays[0] = other.gameObject; 
                     DeckCount++;
+
+                    gamemanager.decks[0] = other.gameObject; //
                 }
             }
         }

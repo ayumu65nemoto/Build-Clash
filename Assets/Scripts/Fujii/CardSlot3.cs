@@ -15,12 +15,18 @@ public class CardSlot3 : MonoBehaviour
     private GameObject DeckManager;
     private DeckManager deckmanager;
 
+    private GameObject GameManager; //
+    private GameManager gamemanager; //
+
     void Start()
     {
         inSlotFlag = false;
 
         DeckManager = GameObject.Find("DeckManager");
         deckmanager = DeckManager.GetComponent<DeckManager>();
+
+        GameManager = GameObject.Find("GameManager"); //
+        gamemanager = GameManager.GetComponent<GameManager>(); //
     }
 
     void Update()
@@ -63,6 +69,8 @@ public class CardSlot3 : MonoBehaviour
                 {
                     deckmanager.DeckArrays[2] = other.gameObject;
                     DeckCount++;
+
+                    gamemanager.decks[2] = other.gameObject; //
                 }
             }
         }
