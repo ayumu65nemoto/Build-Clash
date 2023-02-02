@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     //‹’“_Ši”[
     public List<GameObject> myList = new List<GameObject>();
     //ƒ†ƒjƒbƒgŠi”[
-    public GameObject[] decks;
+    public GameObject[] decks = new GameObject[3];
 
     void Awake()
     {
