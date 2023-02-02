@@ -9,15 +9,11 @@ public class CardSlot3 : MonoBehaviour
 {
     public static bool inSlotFlag;
 
-    public int SlotCount;
-
     public int DeckCount = 0;
 
     public CardDrag carddrag;
     private GameObject DeckManager;
     private DeckManager deckmanager;
-
-
 
     void Start()
     {
@@ -30,7 +26,6 @@ public class CardSlot3 : MonoBehaviour
     void Update()
     {
         inSlotFlag = false;
-        Debug.Log(SlotCount);
     }
 
     void OnTriggerEnter(Collider other)

@@ -7,21 +7,26 @@ using UnityEngine.UI;           // 追加
 
 public class CardSlot : MonoBehaviour
 {
+    //スロットにカードが入っているかどうかのフラグ
     public static bool inSlotFlag;
 
-    public int SlotCount;
-
+    //カードがスロットに1枚しか入らないようにするための変数
     public int DeckCount = 0;
 
     public CardDrag carddrag;
+
     private GameObject DeckManager;
     private DeckManager deckmanager;
 
-
+    private GameObject GameManager;
+    private GameManager gamemanager;
 
     void Start()
     {
         inSlotFlag = false;
+
+        DeckManager = GameObject.Find("DeckManager");
+        deckmanager = DeckManager.GetComponent<DeckManager>();
 
         DeckManager = GameObject.Find("DeckManager");
         deckmanager = DeckManager.GetComponent<DeckManager>();
@@ -30,7 +35,6 @@ public class CardSlot : MonoBehaviour
     void Update()
     {
         inSlotFlag = false;
-        Debug.Log(SlotCount);
     }
 
     void OnTriggerEnter(Collider other)
