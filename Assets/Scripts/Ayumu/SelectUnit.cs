@@ -181,5 +181,6 @@ public class SelectUnit : MonoBehaviourPunCallbacks
         Qii += UnitSpawn.CastleMain;
         //selectUnitNumber個目のユニットを配置する
         var set = PhotonNetwork.Instantiate(_gameManager.decks[selectUnitNumber].name, Qii, Quaternion.identity);
+        Debug.Log("unit");
     }
 }

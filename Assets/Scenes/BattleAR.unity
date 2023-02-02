@@ -638,8 +638,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813985}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1913422871}
+        m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -974,12 +974,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1354312425}
+          m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
+          m_MethodName: PushDownC
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1462813988}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
+          m_MethodName: LatePushUpC
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1354312425}
+          m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
           m_MethodName: LatePushUpC
           m_Mode: 1
           m_Arguments:
@@ -1382,6 +1406,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1913422871}
+          m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
+          m_MethodName: PushDownC
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: PushDownC
@@ -1398,6 +1434,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1913422871}
+          m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
+          m_MethodName: LatePushUpC
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: LatePushUpC
@@ -2012,8 +2060,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813985}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1354312425}
+        m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
         m_MethodName: OnClick2
         m_Mode: 1
         m_Arguments:
@@ -3398,6 +3446,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1913422871}
+          m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
+          m_MethodName: PushDownA
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: PushDownA
@@ -3414,6 +3474,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1913422871}
+          m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
+          m_MethodName: LatePushUpA
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: LatePushUpA
@@ -3611,6 +3683,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1354312425}
+        m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
+        m_MethodName: PushDownF
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &727860183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3746,8 +3830,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813984}
-        m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+      - m_Target: {fileID: 1913422871}
+        m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
         m_MethodName: PushDownD
         m_Mode: 1
         m_Arguments:
@@ -4234,6 +4318,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1913422871}
+          m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
+          m_MethodName: PushDownB
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: PushDownB
@@ -4250,6 +4346,18 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1913422871}
+          m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
+          m_MethodName: LatePushUpB
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1462813984}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: LatePushUpB
@@ -4437,8 +4545,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813984}
-        m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+      - m_Target: {fileID: 1913422871}
+        m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
         m_MethodName: PushDownE
         m_Mode: 1
         m_Arguments:
@@ -5626,12 +5734,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1354312425}
+          m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
+          m_MethodName: PushDownA
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1462813988}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
+          m_MethodName: LatePushUpA
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1354312425}
+          m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
           m_MethodName: LatePushUpA
           m_Mode: 1
           m_Arguments:
@@ -5826,6 +5958,7 @@ GameObject:
   - component: {fileID: 1354312423}
   - component: {fileID: 1354312422}
   - component: {fileID: 1354312421}
+  - component: {fileID: 1354312425}
   m_Layer: 5
   m_Name: Canvas2
   m_TagString: Canvas2
@@ -5919,6 +6052,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1354312425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354312420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc3e9a86517d6c4db3b15a04796f14d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1372070343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6019,6 +6164,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1372070349}
         m_TargetAssemblyTypeName: SetCommand2, Assembly-CSharp
         m_MethodName: SetShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1354312425}
+        m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
+        m_MethodName: PushDownE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6405,6 +6562,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1472339470}
         m_TargetAssemblyTypeName: SetCommand2, Assembly-CSharp
         m_MethodName: SetShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1354312425}
+        m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
+        m_MethodName: PushDownD
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6865,12 +7034,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1354312425}
+          m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
+          m_MethodName: PushDownB
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1462813988}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
+          m_MethodName: LatePushUpB
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1354312425}
+          m_TargetAssemblyTypeName: SelectUnitAlt2, Assembly-CSharp
           m_MethodName: LatePushUpB
           m_Mode: 1
           m_Arguments:
@@ -7795,6 +7988,7 @@ GameObject:
   - component: {fileID: 1913422869}
   - component: {fileID: 1913422868}
   - component: {fileID: 1913422867}
+  - component: {fileID: 1913422871}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -7888,6 +8082,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1913422871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913422866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad66cff39de668499bbe5d131d0a3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921298612
 GameObject:
   m_ObjectHideFlags: 0
@@ -8902,8 +9108,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462813984}
-        m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
+      - m_Target: {fileID: 1913422871}
+        m_TargetAssemblyTypeName: SelectUnitAlt, Assembly-CSharp
         m_MethodName: PushDownF
         m_Mode: 1
         m_Arguments:

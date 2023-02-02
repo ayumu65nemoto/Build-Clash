@@ -25,9 +25,9 @@ public class UnitPositionA : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _gameObject = GameObject.FindWithTag("GameManager");
-        _selectUnit = _gameObject.GetComponent<SelectUnit>();
-        _gameManager = _gameObject.GetComponent<GameManager>();
+        //_gameObject = GameObject.FindWithTag("GameManager");
+        //_selectUnit = _gameObject.GetComponent<SelectUnit>();
+        //_gameManager = _gameObject.GetComponent<GameManager>();
         setUnitA = false;
         _unit = 1;
     }
@@ -39,6 +39,10 @@ public class UnitPositionA : MonoBehaviour
         {
             //タップした点を取得
             _clickStartPosition = Input.mousePosition;
+
+            _gameObject = GameObject.FindWithTag("GameManager");
+            _selectUnit = _gameObject.GetComponent<SelectUnit>();
+            _gameManager = _gameObject.GetComponent<GameManager>();
         }
         else if (Input.GetMouseButtonUp(0))
         {
