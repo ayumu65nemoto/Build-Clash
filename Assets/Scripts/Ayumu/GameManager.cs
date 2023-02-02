@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
+    //シングルトン
+    public static GameManager instance;
     //プレイヤー数
     const int PLAYER_MAX = 2;
     //ユニット設置スクリプト

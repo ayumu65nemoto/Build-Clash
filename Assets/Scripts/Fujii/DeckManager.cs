@@ -10,7 +10,7 @@ public class DeckManager : MonoBehaviour
 
     public void OnClickHomeButton()
     {
-        SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("Craft");
     }
 
     // Start is called before the first frame update
