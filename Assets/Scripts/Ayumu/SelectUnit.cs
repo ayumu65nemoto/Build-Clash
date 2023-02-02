@@ -156,6 +156,7 @@ public class SelectUnit : MonoBehaviourPunCallbacks
                 indicater_b[i].SetActive(false);
                 indicater_c[i].SetActive(false);
             }
+            _photonConnecter.canvasFlag = false;
         }
     }
 

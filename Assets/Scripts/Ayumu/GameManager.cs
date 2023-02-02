@@ -62,14 +62,21 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool left2;
     //拠点格納
     public List<GameObject> myList = new List<GameObject>();
+    //スタート処理を一度だけ行う
+    private bool _start;
 
     public List<Vector3> PosList = new List<Vector3>();
     //ユニット格納
     public GameObject[] decks = new GameObject[3];
 
+    //表示するUI
+    private GameObject _canvas;
+    private GameObject _canvas2;
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        _start = true;
     }
 
     // Start is called before the first frame update
@@ -133,6 +140,87 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "BattleAR" && _start == true)
+        {
+            //バトルスタートボタン取得
+            _battleStartButton = GameObject.FindWithTag("BattleStart");
+            //_battleStartButton.SetActive(false);  //なぜここをfalseにしていた！と自分をぶん殴りたい
+            _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+            //_battleStartButton2.SetActive(false);
+
+            //ユニットボタン取得
+            _buttonA = GameObject.Find("ButtonA");
+            _buttonB = GameObject.Find("ButtonB");
+            _buttonC = GameObject.Find("ButtonC");
+            _buttonA2 = GameObject.Find("ButtonA2");
+            _buttonB2 = GameObject.Find("ButtonB2");
+            _buttonC2 = GameObject.Find("ButtonC2");
+            //ユニットを設置するスクリプトを取得
+            _unitPositionA = _buttonA.GetComponent<UnitPositionA>();
+            _unitPositionB = _buttonB.GetComponent<UnitPositionB>();
+            _unitPositionC = _buttonC.GetComponent<UnitPositionC>();
+            _unitPositionA2 = _buttonA2.GetComponent<UnitPositionA2>();
+            _unitPositionB2 = _buttonB2.GetComponent<UnitPositionB2>();
+            _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
+
+            //各種フラグ
+            battle = false;
+            rain1 = false;
+            rain2 = false;
+            thunder1 = false;
+            thunder2 = false;
+            isGround1 = false;
+            isGround2 = false;
+
+            //両プレイヤーコアを取得
+            _player1 = GameObject.FindWithTag("PlayerCore");
+            _player2 = GameObject.FindWithTag("EnemyCore");
+
+            //勝敗テキスト取得
+            _textWin = GameObject.FindWithTag("Win");
+            _textLose = GameObject.FindWithTag("Lose");
+            _textWin2 = GameObject.FindWithTag("Win2");
+            _textLose2 = GameObject.FindWithTag("Lose2");
+
+            //PhotonConnecter取得
+            _photonConnecter = GetComponent<PhotonConnecter>();
+
+            //配置確認フラグ
+            center1 = false;
+            right1 = false;
+            left1 = false;
+            center2 = false;
+            right2 = false;
+            left2 = false;
+
+            _start = false;
+            _canvas = GameObject.FindWithTag("Canvas");
+            _canvas2 = GameObject.FindWithTag("Canvas2");
+            _canvas.SetActive(false);
+            _canvas2.SetActive(false);
+
+            if (_photonConnecter.playerId == 1)
+            {
+                var position = new Vector3(0, 1.4f, -10);
+                var prefab = "PlayerPrefab";
+                _canvas.SetActive(true);
+                _photonConnecter.canvasFlag = true;
+                _photonConnecter.p1 = true;
+                PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
+                Debug.Log(_photonConnecter.playerId);
+            }
+            if (_photonConnecter.playerId == 2)
+            {
+                var position = new Vector3(0, 1.4f, 6);
+                var prefab = "EnemyPrefab";
+                _canvas2.SetActive(true);
+                _photonConnecter.canvasFlag2 = true;
+                _photonConnecter.p2 = true;
+                PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
+                Debug.Log(_photonConnecter.playerId);
+            }
+        }
+
         if (SceneManager.GetActiveScene().name == "BattleAR")
         {
             //キャンバスが非アクティブからアクティブになったタイミングで再度取得
@@ -159,7 +247,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 _textWin.SetActive(false);
                 _textLose.SetActive(false);
 
-                _photonConnecter.canvasFlag = false;
+                //_photonConnecter.canvasFlag = false;
             }
 
             if (_photonConnecter.canvasFlag2 == true)
