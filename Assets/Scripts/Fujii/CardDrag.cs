@@ -10,15 +10,20 @@ public class CardDrag : MonoBehaviour
     //ボックスの中にオブジェクトを吸い込んでいい時はFalse
     public static bool DragFlag;
 
+    //カメラから見たワールド座標
     public Vector3 objPos;
+
+    //カードの初期座標
     public Vector3 StartPos;
 
+    //スロットのスクリプト取得
     public CardSlot cardslot;
-
-    public static bool Click;
+    public CardSlot2 cardslot2;
+    public CardSlot3 cardslot3;
 
     void Start()
     {
+        //初期位置の代入
         StartPos = this.transform.localPosition;
     }
 
@@ -27,33 +32,26 @@ public class CardDrag : MonoBehaviour
         
     }
 
-    void OnMouseDown()
-    {
-        Click = true;
-    }
-
     void OnMouseDrag()
     {
-        //ドラッグ中は吸い込んではだめ
+        //ドラッグしてるよフラグ
         DragFlag = true;
 
+        //マウス操作（Z軸以外）
         objPos = Camera.main.WorldToScreenPoint(transform.position);
-
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, objPos.z);
-
         transform.position = Camera.main.ScreenToWorldPoint(mousePos);
     }
 
     void OnMouseUp()
     {
-        //ドラッグ終了、吸い込んでよし
+        //ドラッグしてないよフラグ
         DragFlag = false;
 
-        if(CardSlot.inSlotFlag == false)
+        if(CardSlot.inSlotFlag == false && CardSlot2.inSlotFlag == false && CardSlot3.inSlotFlag == false)
         {
+            //どのスロットにも触れていなければ初期座標に戻る
             this.transform.localPosition = StartPos;
         }
-
-        //Click = false;
     }
 }

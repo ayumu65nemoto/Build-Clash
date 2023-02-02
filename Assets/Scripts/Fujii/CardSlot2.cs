@@ -5,7 +5,7 @@ using System.Text;              // ’Ç‰Á
 using UnityEngine.InputSystem;  // ’Ç‰Á
 using UnityEngine.UI;           // ’Ç‰Á
 
-public class CardSlot : MonoBehaviour
+public class CardSlot2 : MonoBehaviour
 {
     public static bool inSlotFlag;
 
@@ -43,7 +43,7 @@ public class CardSlot : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(DeckCount == 0)
+        if (DeckCount == 0)
         {
             inSlotFlag = true;
         }
@@ -66,7 +66,7 @@ public class CardSlot : MonoBehaviour
 
                 if (DeckCount == 0)
                 {
-                    deckmanager.DeckArrays[0] = other.gameObject;
+                    deckmanager.DeckArrays[1] = other.gameObject;
                     DeckCount++;
                 }
             }
@@ -86,3 +86,4 @@ public class CardSlot : MonoBehaviour
         }
     }
 }
+
