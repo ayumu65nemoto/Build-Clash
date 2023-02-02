@@ -508,14 +508,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d39b0c0078c4f4aa2e92fc5c5d8006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  units2: []
+  units2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   selectUnitNumber2: 0
   push_a2: 0
   push_b2: 0
   push_c2: 0
-  indicater_a2: []
-  indicater_b2: []
-  indicater_c2: []
+  indicater_a2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  indicater_b2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  indicater_c2:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _indicater02: {fileID: 0}
   _indicater12: {fileID: 0}
   _indicater22: {fileID: 0}
@@ -539,14 +552,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ffe4f38f3da054a93928e436ed8380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  units: []
+  units:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   selectUnitNumber: 0
   push_a: 0
   push_b: 0
   push_c: 0
-  indicater_a: []
-  indicater_b: []
-  indicater_c: []
+  indicater_a:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  indicater_b:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  indicater_c:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _indicater0: {fileID: 0}
   _indicater1: {fileID: 0}
   _indicater2: {fileID: 0}
@@ -587,6 +613,7 @@ MonoBehaviour:
   right2: 0
   left2: 0
   myList: []
+  PosList: []
   decks:
   - {fileID: 0}
   - {fileID: 0}
