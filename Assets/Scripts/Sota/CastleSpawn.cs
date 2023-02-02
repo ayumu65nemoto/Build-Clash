@@ -18,7 +18,7 @@ public class CastleSpawn : MonoBehaviour
     GameObject Plane;
 
     GameObject Listsaver;
-    ListSaver ListS;
+    GameManager _GM;
 
     public Vector3 CastleMain;
     Vector3 SC_pos;
@@ -28,8 +28,8 @@ public class CastleSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Listsaver = GameObject.Find("ListSaver");
-        ListS = Listsaver.GetComponent<ListSaver>();
+        Listsaver = GameObject.Find("GameManager");
+        _GM = Listsaver.GetComponent<GameManager>();
         arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
     }
 
@@ -76,9 +76,9 @@ public class CastleSpawn : MonoBehaviour
     void CastleCreate(Vector3 P_cas,int Qi)
     {
         
-        for (int i = 0; i < ListS.saveList.Count; i++)
+        for (int i = 0; i < _GM.myList.Count; i++)
         {
-            Vector3 sss = ListS.PosList[i];
+            Vector3 sss = _GM.PosList[i];
             sss += P_cas;
             sss.x=sss.x* Qi;
             sss.z=sss.z* Qi;
@@ -86,8 +86,8 @@ public class CastleSpawn : MonoBehaviour
             
 //            sss.x += P_cas.x;
   //          sss.z += P_cas.z;
-            ListS.saveList[i].gameObject.SetActive(true);
-            ListS.saveList[i].gameObject.transform.position = sss;        
+            _GM.myList[i].gameObject.SetActive(true);
+            _GM.myList[i].gameObject.transform.position = sss;        
         }
     }
 }

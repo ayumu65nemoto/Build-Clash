@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool left2;
     //‹’“_Ši”[
     public List<GameObject> myList = new List<GameObject>();
+
+    public List<Vector3> PosList = new List<Vector3>();
     //ƒ†ƒjƒbƒgŠi”[
     public GameObject[] decks = new GameObject[3];
 
