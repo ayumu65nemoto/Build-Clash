@@ -15,4 +15,9 @@ public class ButtonBlink1 : MonoBehaviour
     {
         SceneManager.LoadScene("Craft");
     }
+
+    public void OnClickStartButtonToDeck()
+    {
+        SceneManager.LoadScene("Deck");
+    }
 }
