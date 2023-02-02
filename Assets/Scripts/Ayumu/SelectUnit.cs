@@ -34,6 +34,8 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     public bool buttonFlag1;
     //雨のコマンドをどちらが押したのか
     public bool rainShot1;
+    //GameManager
+    private GameManager _gameManager;
 
     //AR用に追加
     CastleSpawn UnitSpawn;
@@ -51,6 +53,8 @@ public class SelectUnit : MonoBehaviourPunCallbacks
 
         buttonFlag1 = false;
         rainShot1 = false;
+
+        _gameManager = GetComponent<GameManager>();
     }
 
     public void PushDownA()
@@ -175,6 +179,6 @@ public class SelectUnit : MonoBehaviourPunCallbacks
         Qii = new Vector3(vecX, vecY, vecZ);
         Qii += UnitSpawn.CastleMain;
         //selectUnitNumber個目のユニットを配置する
-        var set = PhotonNetwork.Instantiate(units[selectUnitNumber].name, Qii, Quaternion.identity);
+        var set = PhotonNetwork.Instantiate(_gameManager.decks[selectUnitNumber].name, Qii, Quaternion.identity);
     }
 }
