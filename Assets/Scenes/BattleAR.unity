@@ -6052,7 +6052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1462813983
 Transform:
   m_ObjectHideFlags: 0
@@ -6114,6 +6114,7 @@ MonoBehaviour:
   _indicater8: {fileID: 0}
   buttonFlag1: 0
   rainShot1: 0
+  Qii: {x: 0, y: 0, z: 0}
 --- !u!114 &1462813985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6141,6 +6142,12 @@ MonoBehaviour:
   center2: 0
   right2: 0
   left2: 0
+  myList: []
+  PosList: []
+  decks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1462813986
 MonoBehaviour:
   m_ObjectHideFlags: 0
