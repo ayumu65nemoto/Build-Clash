@@ -7,6 +7,6 @@ public class SceneChange3 : MonoBehaviour
 {
 	public void OnClickStartButton()
 	{
-		SceneManager.LoadScene("PlayScene");
+		SceneManager.LoadScene("BattleAR");
 	}
 }

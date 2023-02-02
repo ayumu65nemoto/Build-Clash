@@ -30,24 +30,24 @@ public class crafter : MonoBehaviour
     GameObject King;
     [SerializeField]
     GameObject DeleteTool;
-    [SerializeField] 
+    [SerializeField]
     TextMeshProUGUI Cost;
 
     //クラフトメイン
-    int  Blocktype = 1;
+    int Blocktype = 1;
     public bool king = false;
     int CraftCost;
     public int ReturnCost;
     float c_position = 0.1f;
     Vector3 Main;
     public Vector3 CraftMain;
-    public Vector3 Once ;
+    public Vector3 Once;
     public Vector3 F_Pos;
     int x = 0;
     int y = 0;
     int z = 0;
 
-    
+
     GameObject spawnedObject;
     GameObject transparent;
     GameObject Craftframe;
@@ -91,7 +91,7 @@ public class crafter : MonoBehaviour
         }*/
         RaycastHit hit;
         Ray ray = arCam.ScreenPointToRay(Input.GetTouch(0).position);
-        
+
 
         if (m_RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits))
         {
@@ -108,35 +108,35 @@ public class crafter : MonoBehaviour
 
                     else if (spawnCount == false)
                     {
-                       
+
                         Main = m_Hits[0].pose.position;
                         F_Pos = Main;
                         //Main.y += 0.03f;
                         CraftMain = Main;
-                        
-                        Main.z += (c_position*4);//9*9マスの為
+
+                        Main.z += (c_position * 4);//9*9マスの為
 
                         for (int I = 1; I <= 9; I++)
                         {
 
-                            Main.x -= (c_position*5);//9*9マスの為
+                            Main.x -= (c_position * 5);//9*9マスの為
 
                             for (int R = 1; R <= 9; R++)
                             {
                                 Main.x += c_position;
                                 SpawnPrefab(Main);
                             }
-                            Main.x -= (c_position*4);
+                            Main.x -= (c_position * 4);
                             Main.z -= c_position;
                         }
 
 
                         _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
-                        CraftMain.y += 0.075f;
+                        CraftMain.y += 0.05f;
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
                         transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                         spawnCount = true;
-                        
+
                     }
                 }
 
@@ -237,12 +237,12 @@ public class crafter : MonoBehaviour
         Blocktype = 3;
     }
     public void _king()
-    {     
-        Blocktype = 4;     
+    {
+        Blocktype = 4;
     }
     public void deleTE()
     {
-        if (DeleteOK==true)
+        if (DeleteOK == true)
         {
             if (ReturnCost == 0)
             {
@@ -250,98 +250,96 @@ public class crafter : MonoBehaviour
             }
             Destroy(Death);
             CraftCost += ReturnCost;
-            DeleteOK = false; 
+            DeleteOK = false;
+            craftStart = true;
         }
     }
 
     public void Craft()
     {
-        
+
         if (spawnCount == true && craftStart == true)
         {
-            
-            if (Once!=CraftMain)
-            {
 
-                if (Blocktype == 1)
+            if (Blocktype == 1)
+            {
+                if (CraftCost >= 1)
                 {
-                    if (CraftCost >= 1)
+                    Main = CraftMain;
+                    if (y < 8)
                     {
-                        Main = CraftMain;
-                        if (y < 8)
-                        {
-                            y++;
-                            CraftMain.y += c_position;
-                            Instantiate(block1, Main, Quaternion.identity);
-                            CraftCost -= 1;
-                        }
-                        if (y == 8)
-                        {
-                            Instantiate(block1, Main, Quaternion.identity);
-                            CraftCost -= 1;
-                        }
+                        y++;
+                        CraftMain.y += c_position;
+                        Instantiate(block1, Main, Quaternion.identity);
+                        CraftCost -= 1;
                     }
-                }
-                else if (Blocktype == 2)
-                {
-                    if (CraftCost >= 3)
+                    if (y == 8)
                     {
-                        Main = CraftMain; 
-                        if (y < 8)
-                        {
-                            y++;
-                            CraftMain.y += c_position;
-                            Instantiate(block2, Main, Quaternion.identity);
-                            CraftCost -= 3;
-                        }
-                        if (y == 8)
-                        {
-                            Instantiate(block2, Main, Quaternion.identity);
-                            CraftCost -= 3;
-                        }
-                    }
-                }
-                else if (Blocktype == 3)
-                {
-                    if (CraftCost >= 5)
-                    {
-                        Main = CraftMain;
-                        if (y < 8)
-                        {
-                            y++;
-                            CraftMain.y += c_position;
-                            Instantiate(block3, Main, Quaternion.identity);
-                            CraftCost -= 5;
-                        }
-                        if (y == 8)
-                        {
-                            Instantiate(block3, Main, Quaternion.identity);
-                            CraftCost -= 5;
-                        }
-                    }
-                }
-                else if (Blocktype == 4)
-                {
-                    if (king == false)
-                    {
-                        Main = CraftMain;
-                        if (y < 8)
-                        {
-                            y++;
-                            CraftMain.y += c_position;
-                            Instantiate(King, Main, Quaternion.identity);
-                            king = true;
-                        }
-                        if (y == 8)
-                        {
-                            Instantiate(King, Main, Quaternion.identity);
-                            king = true;
-                        }
+                        Instantiate(block1, Main, Quaternion.identity);
+                        CraftCost -= 1;
                     }
                 }
             }
-            //craftStart=false;
+            else if (Blocktype == 2)
+            {
+                if (CraftCost >= 3)
+                {
+                    Main = CraftMain;
+                    if (y < 8)
+                    {
+                        y++;
+                        CraftMain.y += c_position;
+                        Instantiate(block2, Main, Quaternion.identity);
+                        CraftCost -= 3;
+                    }
+                    else if (y == 8)
+                    {
+                        Instantiate(block2, Main, Quaternion.identity);
+                        CraftCost -= 3;
+                    }
+                }
+            }
+            else if (Blocktype == 3)
+            {
+                if (CraftCost >= 5)
+                {
+                    Main = CraftMain;
+                    if (y < 8)
+                    {
+                        y++;
+                        CraftMain.y += c_position;
+                        Instantiate(block3, Main, Quaternion.identity);
+                        CraftCost -= 5;
+                    }
+                    else if (y == 8)
+                    {
+                        Instantiate(block3, Main, Quaternion.identity);
+                        CraftCost -= 5;
+                    }
+                }
+            }
+            else if (Blocktype == 4)
+            {
+                if (king == false)
+                {
+                    Main = CraftMain;
+                    if (y < 8)
+                    {
+                        y++;
+                        CraftMain.y += c_position;
+                        Instantiate(King, Main, Quaternion.identity);
+                        king = true;
+                    }
+                    else if (y == 8)
+                    {
+                        Instantiate(King, Main, Quaternion.identity);
+                        king = true;
+                    }
+                }
+            }
         }
+        //craftStart=false;
     }
-    
 }
+    
+

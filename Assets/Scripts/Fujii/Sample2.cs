@@ -52,7 +52,7 @@ public class Sample2 : MonoBehaviour
         if (nextScene.name == "ARbattle")
         {
             //use guravity の取得
-            //rd.useGravity = true; //重力の有無
+            rd.useGravity = true; //重力の有無
             rd.constraints = RigidbodyConstraints.None;
             rd.constraints = RigidbodyConstraints.FreezeRotation|RigidbodyConstraints.FreezePositionX| RigidbodyConstraints.FreezePositionZ;
         }
@@ -77,25 +77,53 @@ public class Sample2 : MonoBehaviour
             qq = true;
         }
     }
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider collision)
     {
-        if (other.gameObject.layer == 9)
+        if (collision.gameObject.layer == 9)
         {
 
         }
         else
         {
+            rd.isKinematic = false;
+            //rd.useGravity = false;
             moveOFF = true;
             this.gameObject.transform.position = stop;
         }
+        /*if (collision.gameObject.layer == 7)
+        {
+            collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }*/
     }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collision)
     {
-        stop = this.gameObject.transform.position;
+        if (collision.gameObject.layer == 9)
+        {
+
+        }
+        else
+        {
+            rd.isKinematic = false;
+            moveOFF = true;
+            //rd.useGravity = false;
+            stop = this.gameObject.transform.position;
+        }
+        if (collision.gameObject.layer == 7)
+        {
+            collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
     }
     void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.layer == 7)
+        {
+            rd.isKinematic = true;
+            moveOFF = false;
+            //rd.useGravity = true;
 
-        moveOFF = false;
+        }
+        else
+        {
+        }
     }
 }

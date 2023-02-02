@@ -35,6 +35,10 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
     //雨のコマンドをどちらが押したのか
     public bool rainShot2;
 
+    //AR用に追加
+    CastleSpawn UnitSpawn;
+    Vector3 Qii;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +46,8 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
 
         //PhotonConnecter取得
         _photonConnecter = GetComponent<PhotonConnecter>();
+        //AR用に追加
+        UnitSpawn = gameObject.GetComponent<CastleSpawn>();
 
         buttonFlag2 = false;
         rainShot2 = false;
@@ -167,7 +173,9 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
 
     public void SetUnit(float vecX, float vecY, float vecZ)
     {
+        Qii = new Vector3(vecX, vecY, vecZ);
+        Qii += UnitSpawn.CastleMain;
         //selectUnitNumber個目のユニットを配置する
-        var set = PhotonNetwork.Instantiate(units2[selectUnitNumber2].name, new Vector3(vecX, vecY, vecZ), Quaternion.identity);
+        var set = PhotonNetwork.Instantiate(units2[selectUnitNumber2].name, Qii, Quaternion.identity);
     }
 }

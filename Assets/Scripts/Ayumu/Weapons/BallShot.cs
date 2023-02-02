@@ -10,6 +10,11 @@ public class BallShot : MonoBehaviour
     private int _count;
     private GameObject _gameObject;
     private GameManager _gameManager;
+
+    SelectUnit select;
+
+    
+
     //î≠éÀâπ
     [SerializeField] private AudioClip cannon;
 
@@ -18,6 +23,7 @@ public class BallShot : MonoBehaviour
     {
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
+        select = _gameManager.GetComponent<SelectUnit>();
     }
 
     // Update is called once per frame
@@ -28,7 +34,7 @@ public class BallShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // 420ÉtÉåÅ[ÉÄÇ≤Ç∆Ç…ñCíeÇî≠éÀÇ∑ÇÈ
-            if (_count % 900 == 0)
+            if (_count % 20 == 0)
             {
                 GameObject ball = PhotonNetwork.Instantiate("Ball", transform.position, Quaternion.identity);
                 Rigidbody ballRb = ball.GetComponent<Rigidbody>();

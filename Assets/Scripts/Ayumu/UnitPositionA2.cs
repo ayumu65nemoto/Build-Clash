@@ -91,13 +91,13 @@ public class UnitPositionA2 : MonoBehaviour
         setUnitA2 = true;
         if (dir == FlickDirection.Left)
         {
-            _selectUnit2.SetUnit(-10, 1, -7);
+            _selectUnit2.SetUnit(-5, 1, -7);
             _gameManager.left2 = true;
             _unit -= 1;
         }
         else if (dir == FlickDirection.Right)
         {
-            _selectUnit2.SetUnit(10, 1, -7);
+            _selectUnit2.SetUnit(5, 1, -7);
             _gameManager.right2 = true;
             _unit -= 1;
         }
