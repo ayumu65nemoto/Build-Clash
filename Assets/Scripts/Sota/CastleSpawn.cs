@@ -82,7 +82,7 @@ public class CastleSpawn : MonoBehaviour
             sss += P_cas;
             sss.x=sss.x* Qi;
             sss.z=sss.z* Qi;
-            sss.y += 1f;
+            sss.y += P_cas.y;
             
 //            sss.x += P_cas.x;
   //          sss.z += P_cas.z;
