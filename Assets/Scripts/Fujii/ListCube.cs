@@ -43,8 +43,9 @@ public class ListCube : MonoBehaviour
 
         if (other.gameObject.layer == 7) //CraftBlock
         {
-            _GM.myLists[_listCount] = other.gameObject;
-            _listCount += 1;
+            //_GM.myLists[_listCount] = other.gameObject;
+            //_listCount += 1;
+            _GM.myList.Add(other.gameObject);
             _GM.PosList.Add(other.gameObject.transform.position);
             other.gameObject.SetActive(false);
             reset = Vector3.one;
