@@ -45,7 +45,7 @@ public class ListCube : MonoBehaviour
         {
             //_GM.myLists[_listCount] = other.gameObject;
             //_listCount += 1;
-            _GM.myList.Add(other.gameObject);
+            _GM.myList.Add(other.gameObject.name);
             _GM.PosList.Add(other.gameObject.transform.position);
             other.gameObject.SetActive(false);
             reset = Vector3.one;
