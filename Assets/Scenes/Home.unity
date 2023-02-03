@@ -614,7 +614,7 @@ MonoBehaviour:
   center2: 0
   right2: 0
   left2: 0
-  myList:
+  myLists:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
