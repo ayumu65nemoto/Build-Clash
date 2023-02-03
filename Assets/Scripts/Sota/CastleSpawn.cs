@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using Photon.Pun;
+using Photon.Realtime;
 
 
-public class CastleSpawn : MonoBehaviour
+public class CastleSpawn : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     ARRaycastManager m_RaycastManager;
@@ -86,11 +88,13 @@ public class CastleSpawn : MonoBehaviour
             sss.x=sss.x* Qi;
             sss.z=sss.z* Qi;
             sss.y += 0.1f;
-            
-//            sss.x += P_cas.x;
-  //          sss.z += P_cas.z;
-            _GM.myList[i].gameObject.SetActive(true);
-            _GM.myList[i].gameObject.transform.position = sss;        
+
+            //            sss.x += P_cas.x;
+            //          sss.z += P_cas.z;
+            //_GM.myList[i].gameObject.SetActive(true);
+            //_GM.myList[i].gameObject.transform.position = sss;
+
+            PhotonNetwork.Instantiate(_GM.myList[i].name, sss, Quaternion.identity);
         }
     }
 }

@@ -203,22 +203,22 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             if (_photonConnecter.playerId == 1)
             {
-                var position = new Vector3(0, 1.4f, -10);
-                var prefab = "PlayerPrefab";
+                //var position = new Vector3(0, 1.4f, -10);
+                //var prefab = "PlayerPrefab";
                 _canvas.SetActive(true);
                 _photonConnecter.canvasFlag = true;
                 _photonConnecter.p1 = true;
-                PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
+                //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
                 Debug.Log(_photonConnecter.playerId);
             }
             if (_photonConnecter.playerId == 2)
             {
-                var position = new Vector3(0, 1.4f, 6);
-                var prefab = "EnemyPrefab";
+                //var position = new Vector3(0, 1.4f, 6);
+                //var prefab = "EnemyPrefab";
                 _canvas2.SetActive(true);
                 _photonConnecter.canvasFlag2 = true;
                 _photonConnecter.p2 = true;
-                PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
+                //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
                 Debug.Log(_photonConnecter.playerId);
             }
         }
