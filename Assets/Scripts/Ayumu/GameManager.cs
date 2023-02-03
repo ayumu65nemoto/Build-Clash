@@ -410,7 +410,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             sss.z = sss.z * 1;
             sss.y += 0.1f;
             string prefab = myList[i].Replace("(Clone)", "");
-            PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+            GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+            Destroy(unit.GetComponent<Rigidbody>());
+            unit.tag = "Player";
+            unit.AddComponent<PlayerStates>();
+            unit.AddComponent<Player>();
+            if (unit.name == "KINGBLOCK")
+            {
+                unit.tag = "PlayerCore";
+                unit.AddComponent<PlayerCore>();
+            }
         }
     }
 
@@ -425,7 +434,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             sss.z = sss.z * 1;
             sss.y += 0.1f;
             string prefab = otherList[i].Replace("(Clone)", "");
-            PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+            GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+            Destroy(unit.GetComponent<Rigidbody>());
+            unit.tag = "Enemy";
+            unit.AddComponent<PlayerStates2>();
+            unit.AddComponent<Player>();
+            if (unit.name == "KINGBLOCK")
+            {
+                unit.tag = "EnemyCore";
+                unit.AddComponent<EnemyCore>();
+            }
         }
     }
 
