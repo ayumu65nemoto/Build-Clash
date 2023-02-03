@@ -2205,7 +2205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &355875337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2864,7 +2864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &549684395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3593,7 +3593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &727860180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5567,6 +5567,7 @@ MonoBehaviour:
   _arPlaneManager: {fileID: 1660710573}
   Plane: {fileID: 5316372436907622127, guid: e4ab5a880b1c26a4ebcdfc2543b12943, type: 3}
   CastleMain: {x: 0, y: 0, z: 0}
+  SC_pos: {x: 0, y: 0, z: 0}
 --- !u!4 &1257411641
 Transform:
   m_ObjectHideFlags: 0
@@ -6083,7 +6084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1372070344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6320,6 +6321,7 @@ MonoBehaviour:
   buttonFlag1: 0
   rainShot1: 0
   Qii: {x: 0, y: 0, z: 0}
+  ARget: 0
 --- !u!114 &1462813985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6462,6 +6464,7 @@ MonoBehaviour:
   _arPlaneManager: {fileID: 1660710573}
   Plane: {fileID: 5316372436907622127, guid: e4ab5a880b1c26a4ebcdfc2543b12943, type: 3}
   CastleMain: {x: 0, y: 0, z: 0}
+  SC_pos: {x: 0, y: 0, z: 0}
 --- !u!1 &1472339464
 GameObject:
   m_ObjectHideFlags: 0
@@ -6802,7 +6805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1513123776
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7475,7 +7478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1754111223
 RectTransform:
   m_ObjectHideFlags: 0

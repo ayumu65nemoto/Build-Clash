@@ -1077,7 +1077,7 @@ MonoBehaviour:
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
   units:
-  - {fileID: 0}
+  - {fileID: 489107533419251721, guid: f76b77b2a3077e844b70357061b380e9, type: 3}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!54 &871809102
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
   units:
-  - {fileID: 0}
+  - {fileID: 2143594722292911481, guid: 9981ae213ca5b4b4b8393ce7380609d0, type: 3}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!65 &1079314935
@@ -2025,7 +2025,7 @@ MonoBehaviour:
   cardslot2: {fileID: 0}
   cardslot3: {fileID: 0}
   units:
-  - {fileID: 0}
+  - {fileID: 4856539655737410556, guid: 494624ae6e669034090c8c6a2f852265, type: 3}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!54 &1399879345

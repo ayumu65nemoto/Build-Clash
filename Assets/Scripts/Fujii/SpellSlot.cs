@@ -77,14 +77,15 @@ public class SpellSlot : MonoBehaviour
                     //‹z‚¢‚İI‚í‚Á‚½‚çƒtƒ‰ƒO‰ğ•ú
                     SpellDrag.DragFlag = true;
 
-                    DeckCount++;
+                    //DeckCount++;
 
                     if (DeckCount == 0)
                     {
-                        deckmanager.DeckArrays[3] = other.gameObject;
+                        //deckmanager.DeckArrays[3] = other.gameObject;
                         //DeckCount++;
 
-                        gamemanager.decks[3] = other.gameObject.GetComponent<CardDrag>().units[0]; //
+                        gamemanager.decks[3] = other.gameObject.GetComponent<SpellDrag>().units[0];
+                        Debug.Log(gamemanager.decks[3]);
                     }
                 }
             }
