@@ -51,7 +51,7 @@ public class Sample2 : MonoBehaviour
 
         if (nextScene.name == "BattleAR")
         {
-            Destroy(GetComponent<Rigidbody>);
+            //Destroy(GetComponent<Rigidbody>);
             //use guravity ‚Ìæ“¾
             //rd.useGravity = true; //d—Í‚Ì—L–³
             //rd.constraints = RigidbodyConstraints.None;
