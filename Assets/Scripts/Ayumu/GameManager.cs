@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
-public class GameManager : MonoBehaviourPunCallbacks
+public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 {
     //シングルトン
     public static GameManager instance;
@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool left2;
     //拠点格納
     public List<string> myList = new List<string>();
-    //public GameObject[] myLists;
+    public List<string> otherList = new List<string>();
+    public List<Vector3> PosList = new List<Vector3>();
+    public List<Vector3> PosList2 = new List<Vector3>();
     //スタート処理を一度だけ行う
     private bool _start;
-
-    public List<Vector3> PosList = new List<Vector3>();
     //ユニット格納
     public GameObject[] decks = new GameObject[3];
 
@@ -355,16 +355,16 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void OnClick()
     {
-        battle = true;
-        //battle1 = true;
+        //battle = true;
+        battle1 = true;
         //SetActive(false)ではUpdateにあるSetActive(true)で上書きされるため
         Destroy(_battleStartButton);
     }
 
     public void OnClick2()
     {
-        battle = true;
-        //battle2 = true;
+        //battle = true;
+        battle2 = true;
         Destroy(_battleStartButton2);
     }
 
@@ -395,7 +395,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     void CastleCreate()
     {
         _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
-        Debug.Log(myList[i]);
         for (int i = 0; i < PosList.Count; i++)
         {
             Vector3 sss = PosList[i];
@@ -411,5 +410,25 @@ public class GameManager : MonoBehaviourPunCallbacks
     void Finish()
     {
         SceneManager.LoadScene("Home");
+    }
+
+    void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            //データの送信
+            stream.SendNext(battle1);
+            stream.SendNext(battle2);
+            stream.SendNext(myList);
+            stream.SendNext(otherList);
+        }
+        else
+        {
+            //データの受信
+            battle1 = (bool)stream.ReceiveNext();
+            battle2 = (bool)stream.ReceiveNext();
+            myList = (List<string>)stream.ReceiveNext();
+            otherList = (List<string>)stream.ReceiveNext();
+        }
     }
 }
