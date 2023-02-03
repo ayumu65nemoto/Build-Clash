@@ -5,6 +5,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -408,7 +409,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         }*/
         Vector3 sss = PosList[0];
         sss += _castleSpawn.CastleMain;
-        PhotonNetwork.Instantiate(myList[0], sss, Quaternion.identity);
+        string prefab = myList[0].Replace("(clone)", "");
+        PhotonNetwork.Instantiate(myList[2], sss, Quaternion.identity);
     }
 
     void Finish()
