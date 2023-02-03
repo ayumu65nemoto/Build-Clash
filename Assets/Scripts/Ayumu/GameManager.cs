@@ -78,11 +78,14 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     //CASTLE取得
     private CastleSpawn _castleSpawn;
+    //castle出現
+    private bool _build;
 
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         _start = true;
+        _build = true;
     }
 
     // Start is called before the first frame update
@@ -225,12 +228,16 @@ public class GameManager : MonoBehaviourPunCallbacks
                 //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
                 Debug.Log(_photonConnecter.playerId);
             }
-
-            Invoke("CastleCreate", 1f);
         }
 
         if (SceneManager.GetActiveScene().name == "BattleAR")
         {
+            if (_build == true)
+            {
+                CastleCreate();
+                _build = false;
+            }
+
             //キャンバスが非アクティブからアクティブになったタイミングで再度取得
             //Start内のものはあえて残している(無いと最初に呼ばれた109行目でエラーを吐く)
             if (_photonConnecter.canvasFlag == true)
@@ -391,6 +398,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             PhotonNetwork.Instantiate(myLists[i].name, sss, Quaternion.identity);
         }
+        Debug.Log("build");
     }
 
     void Finish()

@@ -432,7 +432,6 @@ GameObject:
   - component: {fileID: 576564917}
   - component: {fileID: 576564916}
   - component: {fileID: 576564915}
-  - component: {fileID: 576564914}
   - component: {fileID: 576564913}
   m_Layer: 0
   m_Name: GameManager
@@ -463,23 +462,6 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &576564914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576564912}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8e900910017a04a88ba12fd261ae4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RaycastManager: {fileID: 0}
-  _arPlaneManager: {fileID: 0}
-  Plane: {fileID: 5316372436907622127, guid: e4ab5a880b1c26a4ebcdfc2543b12943, type: 3}
-  CastleMain: {x: 0, y: 0, z: 0}
-  SC_pos: {x: 0, y: 0, z: 0}
 --- !u!114 &576564915
 MonoBehaviour:
   m_ObjectHideFlags: 0
