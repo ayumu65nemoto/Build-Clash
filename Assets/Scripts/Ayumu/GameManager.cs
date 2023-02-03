@@ -63,8 +63,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool right2;
     public bool left2;
     //拠点格納
-    //public List<GameObject> myList = new List<GameObject>();
-    public GameObject[] myLists;
+    public List<GameObject> myList = new List<GameObject>();
     //スタート処理を一度だけ行う
     private bool _start;
 
@@ -78,14 +77,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     //CASTLE取得
     private CastleSpawn _castleSpawn;
-    //castleフラグ
-    private bool _build;
 
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
         _start = true;
-        _build = true;
     }
 
     // Start is called before the first frame update
@@ -228,18 +224,12 @@ public class GameManager : MonoBehaviourPunCallbacks
                 //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
                 Debug.Log(_photonConnecter.playerId);
             }
+
+            Invoke("CastleCreate", 1f);
         }
 
         if (SceneManager.GetActiveScene().name == "BattleAR")
         {
-            if (_build == true)
-            {
-                //Invoke("CastleCreate", 1f);
-                CastleCreate();
-                _build = false;
-                Debug.Log(_build);
-            }
-
             //キャンバスが非アクティブからアクティブになったタイミングで再度取得
             //Start内のものはあえて残している(無いと最初に呼ばれた109行目でエラーを吐く)
             if (_photonConnecter.canvasFlag == true)
@@ -389,7 +379,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     void CastleCreate()
     {
         _castleSpawn = GetComponent<CastleSpawn>();
-        for (int i = 0; i < myLists.Length; i++)
+        for (int i = 0; i < myList.Count; i++)
         {
             Vector3 sss = PosList[i];
             sss += _castleSpawn.CastleMain;
@@ -398,9 +388,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             sss.y += 0.1f;
 
 
-            PhotonNetwork.Instantiate(myLists[i].name, sss, Quaternion.identity);
+            PhotonNetwork.Instantiate(myList[i].name, sss, Quaternion.identity);
         }
-        Debug.Log("castle");
     }
 
     void Finish()
