@@ -63,7 +63,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool right2;
     public bool left2;
     //拠点格納
-    public List<GameObject> myList = new List<GameObject>();
+    //public List<GameObject> myList = new List<GameObject>();
+    public GameObject[] myLists;
     //スタート処理を一度だけ行う
     private bool _start;
 
@@ -379,7 +380,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     void CastleCreate()
     {
         _castleSpawn = GetComponent<CastleSpawn>();
-        for (int i = 0; i < myList.Count; i++)
+        for (int i = 0; i < myLists.Length; i++)
         {
             Vector3 sss = PosList[i];
             sss += _castleSpawn.CastleMain;
@@ -388,7 +389,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             sss.y += 0.1f;
 
 
-            PhotonNetwork.Instantiate(myList[i].name, sss, Quaternion.identity);
+            PhotonNetwork.Instantiate(myLists[i].name, sss, Quaternion.identity);
         }
     }
 
