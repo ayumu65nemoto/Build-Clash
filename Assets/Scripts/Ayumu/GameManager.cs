@@ -232,12 +232,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if (SceneManager.GetActiveScene().name == "BattleAR")
         {
-            if (_build == true)
-            {
-                CastleCreate();
-                _build = false;
-            }
-
             //キャンバスが非アクティブからアクティブになったタイミングで再度取得
             //Start内のものはあえて残している(無いと最初に呼ばれた109行目でエラーを吐く)
             if (_photonConnecter.canvasFlag == true)
@@ -342,6 +336,13 @@ public class GameManager : MonoBehaviourPunCallbacks
                 photonView.RPC("ThunderDestroy2", RpcTarget.All);
                 thunder2 = false;
             }
+
+            if (_build == true)
+            {
+                CastleCreate();
+                //Invoke("CastleCreate", 1f);
+                _build = false;
+            }
         }
     }
 
@@ -386,7 +387,8 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     void CastleCreate()
     {
-        _castleSpawn = GetComponent<CastleSpawn>();
+        _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
+        Debug.Log("build");
         for (int i = 0; i < myLists.Length; i++)
         {
             Vector3 sss = PosList[i];
@@ -398,7 +400,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             PhotonNetwork.Instantiate(myLists[i].name, sss, Quaternion.identity);
         }
-        Debug.Log("build");
     }
 
     void Finish()
