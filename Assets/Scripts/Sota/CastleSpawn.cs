@@ -19,9 +19,10 @@ public class CastleSpawn : MonoBehaviour
 
     GameObject Listsaver;
     GameManager _GM;
+    SelectUnit _SU;
 
     public Vector3 CastleMain;
-    Vector3 SC_pos;
+    public Vector3 SC_pos;
 
     bool castlespawn = false;
 
@@ -30,6 +31,7 @@ public class CastleSpawn : MonoBehaviour
     {
         Listsaver = GameObject.Find("GameManager");
         _GM = Listsaver.GetComponent<GameManager>();
+        _SU = Listsaver.GetComponent<SelectUnit>();
         arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
     }
 
@@ -58,13 +60,14 @@ public class CastleSpawn : MonoBehaviour
                 if (castlespawn == false)
                 {
                     CastleMain = m_Hits[0].pose.position;
-                    
-                    Instantiate(Plane, CastleMain, Quaternion.identity);
+                    SC_pos = m_Hits[0].pose.position;
+                    CastleMain.y -= 1f;
+                    //Instantiate(Plane, CastleMain, Quaternion.identity);
                     CastleMain = m_Hits[0].pose.position;
                     CastleCreate(CastleMain,1);
                     castlespawn = true;
                     _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
-
+                    _SU.ARget = true;
                     //transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                 }
             }
@@ -82,7 +85,7 @@ public class CastleSpawn : MonoBehaviour
             sss += P_cas;
             sss.x=sss.x* Qi;
             sss.z=sss.z* Qi;
-            sss.y += sss.y;
+            sss.y += 0.1f;
             
 //            sss.x += P_cas.x;
   //          sss.z += P_cas.z;

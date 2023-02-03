@@ -38,8 +38,10 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     private GameManager _gameManager;
 
     //AR用に追加
+    GameObject _GM_F;
     CastleSpawn UnitSpawn;
-    public Vector3 Qii;
+    public Vector3 Qii = new Vector3(0, 0, 0);
+    public bool ARget = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +50,6 @@ public class SelectUnit : MonoBehaviourPunCallbacks
 
         //PhotonConnecter取得
         _photonConnecter = GetComponent<PhotonConnecter>();
-        //AR用に追加
-        UnitSpawn = gameObject.GetComponent<CastleSpawn>();
 
         buttonFlag1 = false;
         rainShot1 = false;
@@ -158,6 +158,13 @@ public class SelectUnit : MonoBehaviourPunCallbacks
             }
             _photonConnecter.canvasFlag = false;
         }
+        if (ARget == true)
+        {
+            //AR用に追加
+            _GM_F = GameObject.Find("CASTLE");
+            UnitSpawn = _GM_F.GetComponent<CastleSpawn>();
+            ARget = false;
+        }
     }
 
     public void LatePushUpA()
@@ -177,8 +184,8 @@ public class SelectUnit : MonoBehaviourPunCallbacks
 
     public void SetUnit(float vecX, float vecY, float vecZ)
     {
-        Qii = new Vector3(vecX, vecY, vecZ);
-        Qii += UnitSpawn.CastleMain;
+        Qii = UnitSpawn.SC_pos;
+        Qii += new Vector3(vecX, vecY, vecZ);
         //selectUnitNumber個目のユニットを配置する
         var set = PhotonNetwork.Instantiate(_gameManager.decks[selectUnitNumber].name, Qii, Quaternion.identity);
         Debug.Log("unit");
