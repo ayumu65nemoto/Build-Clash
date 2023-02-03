@@ -136,7 +136,7 @@ public class crafter : MonoBehaviour
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
                         transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                         spawnCount = true;
-
+                        Destroy(spawnedObject.GetComponent<Rigidbody>);
                     }
                 }
 

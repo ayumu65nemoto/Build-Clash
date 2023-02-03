@@ -49,12 +49,13 @@ public class Sample2 : MonoBehaviour
     {
 
 
-        if (nextScene.name == "battleAR")
+        if (nextScene.name == "BattleAR")
         {
+            Destroy(GetComponent<Rigidbody>);
             //use guravity の取得
-            rd.useGravity = true; //重力の有無
-            rd.constraints = RigidbodyConstraints.None;
-            rd.constraints = RigidbodyConstraints.FreezeRotation|RigidbodyConstraints.FreezePositionX| RigidbodyConstraints.FreezePositionZ;
+            //rd.useGravity = true; //重力の有無
+            //rd.constraints = RigidbodyConstraints.None;
+            //rd.constraints = RigidbodyConstraints.FreezeRotation|RigidbodyConstraints.FreezePositionX| RigidbodyConstraints.FreezePositionZ;
         }
         else if(nextScene.name =="ScanScene")
         {
