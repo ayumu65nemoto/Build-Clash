@@ -724,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveList: []
+  PosList: []
 --- !u!1 &1167308899
 GameObject:
   m_ObjectHideFlags: 0

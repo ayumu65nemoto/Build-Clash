@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     //castleèoåª
     private bool _build;
 
+    GameObject _cs;
+    CastleSpawn cs_;
+
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -228,7 +231,10 @@ public class GameManager : MonoBehaviourPunCallbacks
                 //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
                 Debug.Log(_photonConnecter.playerId);
             }
+            _cs = GameObject.Find("CASTLE");
+            cs_ = _cs.GetComponent<CastleSpawn>();
         }
+
 
         if (SceneManager.GetActiveScene().name == "BattleAR")
         {
@@ -337,7 +343,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 thunder2 = false;
             }
 
-            if (_build == true)
+            if (_build == true&&cs_.castlespawn==true)
             {
                 CastleCreate();
                 //Invoke("CastleCreate", 1f);
@@ -388,18 +394,21 @@ public class GameManager : MonoBehaviourPunCallbacks
     void CastleCreate()
     {
         _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
-        Debug.Log("build");
-        for (int i = 0; i < myLists.Length; i++)
+        Debug.Log(myLists[2]);
+        /*for (int i = 0; i < PosList.Count; i++)
         {
-            Vector3 sss = PosList[i];
-            sss += _castleSpawn.CastleMain;
+            
             sss.x = sss.x * 1;
             sss.z = sss.z * 1;
             sss.y += 0.1f;
 
 
-            PhotonNetwork.Instantiate(myLists[i].name, sss, Quaternion.identity);
-        }
+            
+     
+        }*/
+        Vector3 sss = PosList[0];
+        sss += _castleSpawn.CastleMain;
+        PhotonNetwork.Instantiate("Redd", sss, Quaternion.identity);
     }
 
     void Finish()

@@ -26,7 +26,7 @@ public class CastleSpawn : MonoBehaviourPunCallbacks
     public Vector3 CastleMain;
     public Vector3 SC_pos;
 
-    bool castlespawn = false;
+    public bool castlespawn = false;
 
     // Start is called before the first frame update
     void Awake()

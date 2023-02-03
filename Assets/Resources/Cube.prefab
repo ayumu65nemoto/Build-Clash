@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7553481846362964022}
   - component: {fileID: -4514169512178708869}
   - component: {fileID: 1885442727120786553}
+  - component: {fileID: 4152645025438225567}
   m_Layer: 7
   m_Name: Cube
   m_TagString: CraftBlock
@@ -127,3 +128,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd1bd63383660f40ae7700bd74900ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4152645025438225567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553481846362964021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
