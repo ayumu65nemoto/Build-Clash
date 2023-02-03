@@ -43,6 +43,7 @@ TagManager:
   - Lose2
   - Target
   - KING
+  - Spell
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DeckManager : MonoBehaviour
 {
     public static DeckManager instance;
-    public GameObject[] DeckArrays = new GameObject[3];
+    public GameObject[] DeckArrays = new GameObject[4];
 
     public void OnClickHomeButton()
     {
