@@ -409,7 +409,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         }*/
         Vector3 sss = PosList[0];
         sss += _castleSpawn.CastleMain;
-        string prefab = myList[0].Replace("(clone)", "");
+        string prefab = myList[0].Replace("(Clone)", "");
         PhotonNetwork.Instantiate(myList[2], sss, Quaternion.identity);
     }
 
