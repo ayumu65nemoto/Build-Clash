@@ -306,6 +306,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 _textWin2.SetActive(true);
                 Destroy(_textWin);
                 Destroy(_textLose2);
+                Invoke("Finish", 3f);
             }
 
             if (isGround2 == true)
@@ -314,6 +315,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 _textLose2.SetActive(true);
                 Destroy(_textLose);
                 Destroy(_textWin2);
+                Invoke("Finish", 3f);
             }
 
             if (thunder1 == true)
@@ -367,5 +369,10 @@ public class GameManager : MonoBehaviourPunCallbacks
             Debug.Log(block);
             Destroy(block);
         }
+    }
+
+    void Finish()
+    {
+        SceneManager.LoadScene("Home");
     }
 }
