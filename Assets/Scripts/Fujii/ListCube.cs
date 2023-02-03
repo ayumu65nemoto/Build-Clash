@@ -12,11 +12,12 @@ public class ListCube : MonoBehaviour
     Vector3 reset;
     //void ListHidden()
     //{
-        //for (int i = 0; i < myList.Count; i++)
-        //{
-            //myList[i].ListCube.SetActive(false);
-        //}
+    //for (int i = 0; i < myList.Count; i++)
+    //{
+    //myList[i].ListCube.SetActive(false);
     //}
+    //}
+    private int _listCount;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class ListCube : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         Listsaver = GameObject.Find("GameManager");
         _GM = Listsaver.GetComponent<GameManager>();
+        _listCount = 0;
     }
 
     // Update is called once per frame
@@ -41,7 +43,8 @@ public class ListCube : MonoBehaviour
 
         if (other.gameObject.layer == 7) //CraftBlock
         {
-            _GM.myList.Add(other.gameObject);
+            _GM.myLists[_listCount] = other.gameObject;
+            _listCount += 1;
             _GM.PosList.Add(other.gameObject.transform.position);
             other.gameObject.SetActive(false);
             reset = Vector3.one;
