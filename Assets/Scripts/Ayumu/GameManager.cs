@@ -225,8 +225,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                 Debug.Log(_photonConnecter.playerId);
             }
 
-            _castleSpawn = GetComponent<CastleSpawn>();
-            CastleCreate(_castleSpawn.CastleMain, 1);
+            Invoke("CastleCreate", 5f);
         }
 
         if (SceneManager.GetActiveScene().name == "BattleAR")
@@ -377,15 +376,15 @@ public class GameManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void CastleCreate(Vector3 P_cas, int Qi)
+    void CastleCreate()
     {
-
+        _castleSpawn = GetComponent<CastleSpawn>();
         for (int i = 0; i < myList.Count; i++)
         {
             Vector3 sss = PosList[i];
-            sss += P_cas;
-            sss.x = sss.x * Qi;
-            sss.z = sss.z * Qi;
+            sss += _castleSpawn.CastleMain;
+            sss.x = sss.x * 1;
+            sss.z = sss.z * 1;
             sss.y += 0.1f;
 
 
