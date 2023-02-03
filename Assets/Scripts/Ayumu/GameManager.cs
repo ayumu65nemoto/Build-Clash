@@ -80,7 +80,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     //CASTLEéÊìæ
     private CastleSpawn _castleSpawn;
     //castleèoåª
-    private bool _build;
+    private bool _build1;
+    private bool _build2;
 
     GameObject _cs;
     CastleSpawn cs_;
@@ -89,7 +90,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     {
         DontDestroyOnLoad(this.gameObject);
         _start = true;
-        _build = true;
+        _build1 = true;
+        _build2 = true;
     }
 
     // Start is called before the first frame update
@@ -344,11 +346,16 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 thunder2 = false;
             }
 
-            if (_build == true&&cs_.castlespawn==true)
+            if (_build1 == true && cs_.castlespawn==true && _photonConnecter.playerId == 1)
             {
                 CastleCreate();
-                //Invoke("CastleCreate", 1f);
-                _build = false;
+                _build1 = false;
+            }
+
+            if (_build2 == true && cs_.castlespawn == true && _photonConnecter.playerId == 1)
+            {
+                CastleCreate2();
+                _build2 = false;
             }
         }
     }
@@ -403,6 +410,21 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             sss.z = sss.z * 1;
             sss.y += 0.1f;
             string prefab = myList[i].Replace("(Clone)", "");
+            PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+        }
+    }
+
+    void CastleCreate2()
+    {
+        _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
+        for (int i = 0; i < PosList2.Count; i++)
+        {
+            Vector3 sss = PosList2[i];
+            sss += _castleSpawn.CastleMain;
+            sss.x = sss.x * 1;
+            sss.z = sss.z * 1;
+            sss.y += 0.1f;
+            string prefab = otherList[i].Replace("(Clone)", "");
             PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
         }
     }
