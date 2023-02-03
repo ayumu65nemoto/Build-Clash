@@ -66,7 +66,7 @@ public class CastleSpawn : MonoBehaviourPunCallbacks
                     CastleMain.y -= 1f;
                     //Instantiate(Plane, CastleMain, Quaternion.identity);
                     CastleMain = m_Hits[0].pose.position;
-                    CastleCreate(CastleMain,1);
+                    //CastleCreate(CastleMain,1);
                     castlespawn = true;
                     _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
                     _SU.ARget = true;
@@ -78,23 +78,23 @@ public class CastleSpawn : MonoBehaviourPunCallbacks
         }
     }
 
-    void CastleCreate(Vector3 P_cas,int Qi)
-    {
+    //void CastleCreate(Vector3 P_cas,int Qi)
+    //{
         
-        for (int i = 0; i < _GM.myList.Count; i++)
-        {
-            Vector3 sss = _GM.PosList[i];
-            sss += P_cas;
-            sss.x=sss.x* Qi;
-            sss.z=sss.z* Qi;
-            sss.y += 0.1f;
+    //    for (int i = 0; i < _GM.myList.Count; i++)
+    //    {
+    //        Vector3 sss = _GM.PosList[i];
+    //        sss += P_cas;
+    //        sss.x=sss.x* Qi;
+    //        sss.z=sss.z* Qi;
+    //        sss.y += 0.1f;
 
-            //            sss.x += P_cas.x;
-            //          sss.z += P_cas.z;
-            //_GM.myList[i].gameObject.SetActive(true);
-            //_GM.myList[i].gameObject.transform.position = sss;
+    //        //            sss.x += P_cas.x;
+    //        //          sss.z += P_cas.z;
+    //        //_GM.myList[i].gameObject.SetActive(true);
+    //        //_GM.myList[i].gameObject.transform.position = sss;
 
-            PhotonNetwork.Instantiate(_GM.myList[i].name, sss, Quaternion.identity);
-        }
-    }
+    //        PhotonNetwork.Instantiate(_GM.myList[i].name, sss, Quaternion.identity);
+    //    }
+    //}
 }
