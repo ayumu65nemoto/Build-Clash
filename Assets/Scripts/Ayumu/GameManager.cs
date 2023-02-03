@@ -395,22 +395,17 @@ public class GameManager : MonoBehaviourPunCallbacks
     void CastleCreate()
     {
         _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
-        Debug.Log(myList[2]);
-        /*for (int i = 0; i < PosList.Count; i++)
+        Debug.Log(myList[i]);
+        for (int i = 0; i < PosList.Count; i++)
         {
-            
+            Vector3 sss = PosList[i];
+            sss += _castleSpawn.CastleMain;
             sss.x = sss.x * 1;
             sss.z = sss.z * 1;
             sss.y += 0.1f;
-
-
-            
-     
-        }*/
-        Vector3 sss = PosList[0];
-        sss += _castleSpawn.CastleMain;
-        string prefab = myList[0].Replace("(Clone)", "");
-        PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+            string prefab = myList[i].Replace("(Clone)", "");
+            PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
+        }
     }
 
     void Finish()
