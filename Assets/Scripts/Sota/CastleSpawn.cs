@@ -29,7 +29,7 @@ public class CastleSpawn : MonoBehaviourPunCallbacks
     bool castlespawn = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Listsaver = GameObject.Find("GameManager");
         _GM = Listsaver.GetComponent<GameManager>();
