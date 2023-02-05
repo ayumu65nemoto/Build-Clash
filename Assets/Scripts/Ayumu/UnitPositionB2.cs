@@ -92,19 +92,19 @@ public class UnitPositionB2 : MonoBehaviour
         setUnitB2 = true;
         if (dir == FlickDirection.Left)
         {
-            _selectUnit2.SetUnit(-10, 1, -7);
+            _selectUnit2.SetUnit(-2.5f, 0, 7);
             _gameManager.left2 = true;
             _unit -= 1;
         }
         else if (dir == FlickDirection.Right)
         {
-            _selectUnit2.SetUnit(10, 1, -7);
+            _selectUnit2.SetUnit(2.5f, 0, 7);
             _gameManager.right2 = true;
             _unit -= 1;
         }
         else if (dir == FlickDirection.Up)
         {
-            _selectUnit2.SetUnit(0, 1, -6);
+            _selectUnit2.SetUnit(0, 0, -6);
             _gameManager.center2 = true;
             _unit -= 1;
         }
