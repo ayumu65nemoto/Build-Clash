@@ -45,13 +45,14 @@ public class ListCube : MonoBehaviour
 
         if (other.gameObject.layer == 7) //CraftBlock
         {
+            _GM.myList.Add(other.gameObject.name);
+            _GM.PosList.Add(other.gameObject.transform.position);
+            other.gameObject.SetActive(false);
+            reset = Vector3.one;
+            other.gameObject.transform.position += reset;
+
             /*if (other.gameObject.CompareTag("CraftBlock"))
             {
-                _GM.myList.Add(other.gameObject.name);
-                _GM.PosList.Add(other.gameObject.transform.position);
-                other.gameObject.SetActive(false);
-                reset = Vector3.one;
-                other.gameObject.transform.position += reset;
             }
             else if (other.gameObject.CompareTag("CraftBlock2"))
             {

@@ -6358,6 +6358,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  canvasFlag: 0
+  canvasFlag2: 0
+  p1: 0
+  p2: 0
 --- !u!114 &1462813986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6388,10 +6392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  canvasFlag: 0
-  canvasFlag2: 0
-  p1: 0
-  p2: 0
+  connect: 0
 --- !u!114 &1462813988
 MonoBehaviour:
   m_ObjectHideFlags: 0

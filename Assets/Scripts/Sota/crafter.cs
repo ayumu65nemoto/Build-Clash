@@ -40,6 +40,7 @@ public class crafter : MonoBehaviour
     public int ReturnCost;
     float c_position = 0.1f;
     Vector3 Main;
+   // Vector3 poss;
     public Vector3 CraftMain;
     public Vector3 Once;
     public Vector3 F_Pos;
@@ -49,6 +50,7 @@ public class crafter : MonoBehaviour
 
 
     GameObject spawnedObject;
+    //GameObject spawned;
     GameObject transparent;
     GameObject Craftframe;
     public GameObject Death;
@@ -65,6 +67,8 @@ public class crafter : MonoBehaviour
     {
         spawnedObject = null;
         arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
+        //spawned = GameObject.Find("AR Session Origin");
+        //poss = spawned.transform.position;
         CraftCost = 100;
     }
 
@@ -72,7 +76,7 @@ public class crafter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       // spawned.transform.position = poss;
         Cost.text = "" + CraftCost;
         if (spawnCount == true)
         {
@@ -136,6 +140,7 @@ public class crafter : MonoBehaviour
                         spawnedObject = Instantiate(Frame, CraftMain, Quaternion.identity);
                         transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
                         spawnCount = true;
+                        //poss.x += 0.1f;
                         //Destroy(spawnedObject.GetComponent<Rigidbody>);
                     }
                 }
@@ -182,6 +187,7 @@ public class crafter : MonoBehaviour
         {
             CraftMain.y += c_position;
             y++;
+            //poss.x += 0.1f;
         }
     }
     public void DOWN()
@@ -273,7 +279,7 @@ public class crafter : MonoBehaviour
                         Instantiate(block1, Main, Quaternion.identity);
                         CraftCost -= 1;
                     }
-                    if (y == 8)
+                    else if (y == 8)
                     {
                         Instantiate(block1, Main, Quaternion.identity);
                         CraftCost -= 1;
