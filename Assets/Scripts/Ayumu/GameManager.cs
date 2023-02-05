@@ -79,12 +79,18 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     //CASTLE取得
     private CastleSpawn _castleSpawn;
+    private CastleSpawn1 _castleSpawn1;
     //castle出現
     private bool _build1;
     private bool _build2;
+    //テスト
+    private bool _build1_2 = false;
+
 
     GameObject _cs;
     CastleSpawn cs_;
+    GameObject _cs2;
+    CastleSpawn1 cs_1;
 
     void Awake()
     {
@@ -214,8 +220,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _canvas.SetActive(false);
             _canvas2.SetActive(false);
 
+            _cs = GameObject.Find("CASTLE");
+            cs_ = _cs.GetComponent<CastleSpawn>();
+
+            _cs2 = GameObject.Find("CASTLE2");
+            cs_1 = _cs2.GetComponent<CastleSpawn1>();
             if (_photonConnecter.playerId == 1)
             {
+                _cs2.gameObject.SetActive(false);
                 //var position = new Vector3(0, 1.4f, -10);
                 //var prefab = "PlayerPrefab";
                 _canvas.SetActive(true);
@@ -226,6 +238,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             }
             if (_photonConnecter.playerId == 2)
             {
+                _cs.gameObject.SetActive(false);
                 //var position = new Vector3(0, 1.4f, 6);
                 //var prefab = "EnemyPrefab";
                 _canvas2.SetActive(true);
@@ -234,8 +247,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
                 Debug.Log(_photonConnecter.playerId);
             }
-            _cs = GameObject.Find("CASTLE");
-            cs_ = _cs.GetComponent<CastleSpawn>();
         }
 
 
@@ -351,7 +362,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 CastleCreate();
                 _build1 = false;
             }
-
+            //ID  1 ?
             if (_build2 == true && cs_.castlespawn == true && _photonConnecter.playerId == 1)
             {
                 CastleCreate2();
@@ -413,6 +424,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Player";
+            unit.layer = LayerMask.NameToLayer("Player1");
             unit.AddComponent<PlayerStates>();
             unit.AddComponent<Player>();
             if (unit.name == "KINGBLOCK")
@@ -425,11 +437,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     void CastleCreate2()
     {
-        _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
+        _castleSpawn1 = GameObject.Find("CASTLE2").GetComponent<CastleSpawn1>();
         for (int i = 0; i < PosList2.Count; i++)
         {
             Vector3 sss = PosList2[i];
-            sss += _castleSpawn.CastleMain;
+            sss += _castleSpawn1.CastleMain;
             sss.x = sss.x * 1;
             sss.z = sss.z * 1;
             sss.y += 0.1f;
@@ -437,12 +449,35 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Enemy";
+            unit.layer = LayerMask.NameToLayer("Player2");
             unit.AddComponent<PlayerStates2>();
             unit.AddComponent<Player>();
             if (unit.name == "KINGBLOCK")
             {
                 unit.tag = "EnemyCore";
                 unit.AddComponent<EnemyCore>();
+            }
+        }
+        //_castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
+        for (int i = 0; i < PosList.Count; i++)
+        {
+            Vector3 sss = PosList[i];
+            sss += _castleSpawn1.CastleMain;
+            sss.x = sss.x * -1;
+            sss.z = sss.z * -1;
+            sss.y += 0.1f;
+            sss.z += 20f;
+            string prefab = myList[i].Replace("(Clone)", "");
+            GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.Euler(0, 180, 0));
+            Destroy(unit.GetComponent<Rigidbody>());
+            unit.tag = "Player";
+            unit.layer = LayerMask.NameToLayer("Player2");
+            unit.AddComponent<PlayerStates>();
+            unit.AddComponent<Player>();
+            if (unit.name == "KINGBLOCK")
+            {
+                unit.tag = "PlayerCore";
+                unit.AddComponent<PlayerCore>();
             }
         }
     }
