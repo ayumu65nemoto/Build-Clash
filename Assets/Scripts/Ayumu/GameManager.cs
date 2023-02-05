@@ -428,6 +428,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     void CastleCreate()
     {
         _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
+        posr = _castleSpawn.CastleMain;
         for (int i = 0; i < PosList.Count; i++)
         {
             Vector3 sss = PosList[i];
@@ -455,7 +456,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         for (int i = 0; i < PosList2.Count; i++)
         {
             Vector3 sss = PosList2[i];
-            sss += _castleSpawn.CastleMain;
+            sss += posr;
             sss.x = sss.x * -1;
             sss.z = sss.z * -1;
             sss.y += 0.1f;
