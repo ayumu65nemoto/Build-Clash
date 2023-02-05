@@ -62,7 +62,6 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     {
         push_a = true;
         selectUnitNumber = 0;
-        Debug.Log(indicater_a[0]);
         indicater_a[0].SetActive(true);
         indicater_a[1].SetActive(true);
         indicater_a[2].SetActive(true);

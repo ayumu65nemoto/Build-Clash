@@ -383,6 +383,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 CastleCreate2();
                 _build2 = false;
             }
+
         }
     }
 
@@ -489,6 +490,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(battle2);
             stream.SendNext(myList);
             stream.SendNext(otherList);
+            stream.SendNext(PosList);
+            stream.SendNext(PosList2);
         }
         else
         {
@@ -497,6 +500,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             battle2 = (bool)stream.ReceiveNext();
             myList = (List<string>)stream.ReceiveNext();
             otherList = (List<string>)stream.ReceiveNext();
+            PosList = (List<Vector3>)stream.ReceiveNext();
         }
     }
 }
