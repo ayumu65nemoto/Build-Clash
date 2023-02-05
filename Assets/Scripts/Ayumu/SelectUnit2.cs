@@ -159,6 +159,7 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
                 indicater_c2[i].SetActive(false);
             }
             _gameManager.canvasFlag2 = false;
+            
         }
     }
 
@@ -180,7 +181,7 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
     public void SetUnit(float vecX, float vecY, float vecZ)
     {
         Qii = new Vector3(vecX, vecY, vecZ);
-        Qii += UnitSpawn.CastleMain;
+        Qii += _gameManager.posr;
         //selectUnitNumber個目のユニットを配置する
         var set = PhotonNetwork.Instantiate(_gameManager.decks[selectUnitNumber2].name, Qii, Quaternion.identity);
     }

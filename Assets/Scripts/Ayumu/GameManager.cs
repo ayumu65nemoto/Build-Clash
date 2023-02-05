@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     GameObject _cs;
     CastleSpawn cs_;
     Vector3 poss;
-    Vector3 posr;
+    public Vector3 posr;
     GameObject spawned;
 
     void Awake()
@@ -496,6 +496,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(otherList);
             stream.SendNext(PosList);
             stream.SendNext(PosList2);
+            stream.SendNext(posr);
         }
         else
         {
@@ -506,6 +507,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             otherList = (List<string>)stream.ReceiveNext();
             PosList = (List<Vector3>)stream.ReceiveNext();
             PosList2 = (List<Vector3>)stream.ReceiveNext();
+            posr = (Vector3)stream.ReceiveNext();
         }
     }
 }
