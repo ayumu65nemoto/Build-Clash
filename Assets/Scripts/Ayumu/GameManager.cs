@@ -91,6 +91,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     public bool p1;
     public bool p2;
 
+    //リスト格納フラグ
+    public bool list;
+
     GameObject _cs;
     CastleSpawn cs_;
     Vector3 poss;
@@ -107,6 +110,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         canvasFlag2 = false;
         p1 = false;
         p2 = false;
+        list = true;
     }
 
     // Start is called before the first frame update

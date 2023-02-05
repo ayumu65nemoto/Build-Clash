@@ -22,6 +22,7 @@ public class CastleSpawn : MonoBehaviour
     GameObject Listsaver;
     GameManager _GM;
     SelectUnit _SU;
+    SelectUnit2 _SU2;
 
     public Vector3 CastleMain;
     public Vector3 SC_pos;
@@ -33,7 +34,8 @@ public class CastleSpawn : MonoBehaviour
     {
         Listsaver = GameObject.Find("GameManager");
         _GM = Listsaver.GetComponent<GameManager>();
-        _SU = Listsaver.GetComponent<SelectUnit>();
+        _SU = GameObject.Find("Canvas").GetComponent<SelectUnit>();
+        _SU2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
     }
 
