@@ -962,7 +962,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813988}
+        - m_Target: {fileID: 1354312426}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: PushDownC
           m_Mode: 1
@@ -990,7 +990,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813988}
+        - m_Target: {fileID: 1354312426}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: LatePushUpC
           m_Mode: 1
@@ -1418,7 +1418,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1462813984}
+        - m_Target: {fileID: 1913422872}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: PushDownC
           m_Mode: 1
@@ -1446,7 +1446,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1462813984}
+        - m_Target: {fileID: 1913422872}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: LatePushUpC
           m_Mode: 1
@@ -3458,7 +3458,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1462813984}
+        - m_Target: {fileID: 1913422872}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: PushDownA
           m_Mode: 1
@@ -3486,7 +3486,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1462813984}
+        - m_Target: {fileID: 1913422872}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: LatePushUpA
           m_Mode: 1
@@ -4330,7 +4330,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1462813984}
+        - m_Target: {fileID: 1913422872}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: PushDownB
           m_Mode: 1
@@ -4358,7 +4358,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1462813984}
+        - m_Target: {fileID: 1913422872}
           m_TargetAssemblyTypeName: SelectUnit, Assembly-CSharp
           m_MethodName: LatePushUpB
           m_Mode: 1
@@ -5724,7 +5724,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813988}
+        - m_Target: {fileID: 1354312426}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: PushDownA
           m_Mode: 1
@@ -5752,7 +5752,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813988}
+        - m_Target: {fileID: 1354312426}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: LatePushUpA
           m_Mode: 1
@@ -5961,6 +5961,7 @@ GameObject:
   - component: {fileID: 1354312422}
   - component: {fileID: 1354312421}
   - component: {fileID: 1354312425}
+  - component: {fileID: 1354312426}
   m_Layer: 5
   m_Name: Canvas2
   m_TagString: Canvas2
@@ -6066,6 +6067,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc3e9a86517d6c4db3b15a04796f14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1354312426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354312420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d39b0c0078c4f4aa2e92fc5c5d8006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  units2: []
+  selectUnitNumber2: 0
+  push_a2: 0
+  push_b2: 0
+  push_c2: 0
+  indicater_a2: []
+  indicater_b2: []
+  indicater_c2: []
+  _indicater02: {fileID: 0}
+  _indicater12: {fileID: 0}
+  _indicater22: {fileID: 0}
+  _indicater32: {fileID: 0}
+  _indicater42: {fileID: 0}
+  _indicater52: {fileID: 0}
+  _indicater62: {fileID: 0}
+  _indicater72: {fileID: 0}
+  _indicater82: {fileID: 0}
+  buttonFlag2: 0
+  rainShot2: 0
 --- !u!1 &1372070343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6448,7 +6480,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1462813985}
   sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -6793,6 +6826,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497609293}
   m_CullTransparentMesh: 1
+--- !u!1 &1503494998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503495000}
+  - component: {fileID: 1503494999}
+  m_Layer: 0
+  m_Name: PhotonController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1503494999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503494998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24ca596a874f86b44b4a95d44ef28f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 0
+  connect: 0
+--- !u!4 &1503495000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503494998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.3172426, y: -16.343357, z: 34.84581}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513123775
 GameObject:
   m_ObjectHideFlags: 0
@@ -7030,7 +7109,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813988}
+        - m_Target: {fileID: 1354312426}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: PushDownB
           m_Mode: 1
@@ -7058,7 +7137,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1462813988}
+        - m_Target: {fileID: 1354312426}
           m_TargetAssemblyTypeName: SelectUnit2, Assembly-CSharp
           m_MethodName: LatePushUpB
           m_Mode: 1
@@ -7997,6 +8076,7 @@ GameObject:
   - component: {fileID: 1913422868}
   - component: {fileID: 1913422867}
   - component: {fileID: 1913422871}
+  - component: {fileID: 1913422872}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -8102,6 +8182,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad66cff39de668499bbe5d131d0a3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1913422872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913422866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ffe4f38f3da054a93928e436ed8380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  units: []
+  selectUnitNumber: 0
+  push_a: 0
+  push_b: 0
+  push_c: 0
+  indicater_a: []
+  indicater_b: []
+  indicater_c: []
+  _indicater0: {fileID: 0}
+  _indicater1: {fileID: 0}
+  _indicater2: {fileID: 0}
+  _indicater3: {fileID: 0}
+  _indicater4: {fileID: 0}
+  _indicater5: {fileID: 0}
+  _indicater6: {fileID: 0}
+  _indicater7: {fileID: 0}
+  _indicater8: {fileID: 0}
+  buttonFlag1: 0
+  rainShot1: 0
+  Qii: {x: 0, y: 0, z: 0}
+  ARget: 0
 --- !u!1 &1921298612
 GameObject:
   m_ObjectHideFlags: 0
