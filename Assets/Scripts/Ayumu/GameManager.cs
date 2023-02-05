@@ -93,6 +93,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     GameObject _cs;
     CastleSpawn cs_;
+    Vector3 poss;
+    Vector3 posr;
+    GameObject spawned;
 
     void Awake()
     {
@@ -229,7 +232,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
             _cs = GameObject.Find("CASTLE");
             cs_ = _cs.GetComponent<CastleSpawn>();
-
+            spawned = GameObject.Find("AR Session Origin");
+            poss = spawned.transform.position;
             _start = false;
         }
 
@@ -250,6 +254,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 }
                 if (_photonConnecter.playerId == 2)
                 {
+                    poss.z += 10f;
+                    spawned.transform.position = poss;
+                    spawned.transform.Rotate(0, 180, 0, Space.Self);
                     //var position = new Vector3(0, 1.4f, 6);
                     //var prefab = "EnemyPrefab";
                     _canvas2.SetActive(true);
@@ -449,9 +456,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         {
             Vector3 sss = PosList2[i];
             sss += _castleSpawn.CastleMain;
-            sss.x = sss.x * 1;
-            sss.z = sss.z * 1;
+            sss.x = sss.x * -1;
+            sss.z = sss.z * -1;
             sss.y += 0.1f;
+            sss.z += 8f;
             string prefab = otherList[i].Replace("(Clone)", "");
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
