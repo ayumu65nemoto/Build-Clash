@@ -7,7 +7,7 @@ using UnityEngine.XR.ARSubsystems;
 //using Photon.Realtime;
 
 
-public class CastleSpawn : MonoBehaviourPunCallbacks
+public class CastleSpawn : MonoBehaviour
 {
     [SerializeField]
     ARRaycastManager m_RaycastManager;
