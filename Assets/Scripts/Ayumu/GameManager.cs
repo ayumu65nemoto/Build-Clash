@@ -501,6 +501,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             myList = (List<string>)stream.ReceiveNext();
             otherList = (List<string>)stream.ReceiveNext();
             PosList = (List<Vector3>)stream.ReceiveNext();
+            PosList2 = (List<Vector3>)stream.ReceiveNext();
         }
     }
 }
