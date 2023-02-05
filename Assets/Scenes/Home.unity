@@ -429,9 +429,6 @@ GameObject:
   m_Component:
   - component: {fileID: 576564919}
   - component: {fileID: 576564918}
-  - component: {fileID: 576564917}
-  - component: {fileID: 576564916}
-  - component: {fileID: 576564915}
   - component: {fileID: 576564913}
   m_Layer: 0
   m_Name: GameManager
@@ -458,117 +455,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 576564918}
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &576564915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576564912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24ca596a874f86b44b4a95d44ef28f1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerId: 0
-  canvasFlag: 0
-  canvasFlag2: 0
-  p1: 0
-  p2: 0
---- !u!114 &576564916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576564912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d39b0c0078c4f4aa2e92fc5c5d8006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  units2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  selectUnitNumber2: 0
-  push_a2: 0
-  push_b2: 0
-  push_c2: 0
-  indicater_a2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  indicater_b2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  indicater_c2:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _indicater02: {fileID: 0}
-  _indicater12: {fileID: 0}
-  _indicater22: {fileID: 0}
-  _indicater32: {fileID: 0}
-  _indicater42: {fileID: 0}
-  _indicater52: {fileID: 0}
-  _indicater62: {fileID: 0}
-  _indicater72: {fileID: 0}
-  _indicater82: {fileID: 0}
-  buttonFlag2: 0
-  rainShot2: 0
---- !u!114 &576564917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576564912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ffe4f38f3da054a93928e436ed8380, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  units:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  selectUnitNumber: 0
-  push_a: 0
-  push_b: 0
-  push_c: 0
-  indicater_a:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  indicater_b:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  indicater_c:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _indicater0: {fileID: 0}
-  _indicater1: {fileID: 0}
-  _indicater2: {fileID: 0}
-  _indicater3: {fileID: 0}
-  _indicater4: {fileID: 0}
-  _indicater5: {fileID: 0}
-  _indicater6: {fileID: 0}
-  _indicater7: {fileID: 0}
-  _indicater8: {fileID: 0}
-  buttonFlag1: 0
-  rainShot1: 0
-  Qii: {x: 0, y: 0, z: 0}
-  ARget: 0
 --- !u!114 &576564918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,113 +487,19 @@ MonoBehaviour:
   center2: 0
   right2: 0
   left2: 0
-  myLists:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  myList: []
+  otherList: []
   PosList: []
+  PosList2: []
   decks:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  canvasFlag: 0
+  canvasFlag2: 0
+  p1: 0
+  p2: 0
 --- !u!4 &576564919
 Transform:
   m_ObjectHideFlags: 0

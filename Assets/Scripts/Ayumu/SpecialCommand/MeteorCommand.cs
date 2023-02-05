@@ -20,6 +20,7 @@ public class MeteorCommand : MonoBehaviour
     private Vector3 _targetTransform2;
     //ÉQÅ[ÉÄÉ}ÉlÅ[ÉWÉÉÅ[
     private GameObject _gameManager;
+    private GameManager _gameManagerScript;
     //PhotonConnecter
     private PhotonConnecter _photonConnecter;
     //ÉGÉâÅ[âÒîÉtÉâÉO
@@ -33,10 +34,11 @@ public class MeteorCommand : MonoBehaviour
     {
         //GameManageréÊìæ
         _gameManager = GameObject.FindWithTag("GameManager");
+        _gameManagerScript = _gameManager.GetComponent<GameManager>();
         //PhotonConnecteréÊìæ
         _photonConnecter = _gameManager.GetComponent<PhotonConnecter>();
-        _selectUnit = _gameManager.GetComponent<SelectUnit>();
-        _selectUnit2 = _gameManager.GetComponent<SelectUnit2>();
+        _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
+        _selectUnit2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         _player = GameObject.FindWithTag("Player");
         _enemy = GameObject.FindWithTag("Enemy");
         _target1 = _player.GetComponent<Transform>();
@@ -52,7 +54,7 @@ public class MeteorCommand : MonoBehaviour
     {
         if (_meteorCount > 0)
         {
-            if (_photonConnecter.p2 == true)
+            if (_gameManagerScript.p2 == true)
             {
                 _player = GameObject.FindWithTag("Player");
                 _enemy = GameObject.FindWithTag("Enemy");
@@ -62,41 +64,6 @@ public class MeteorCommand : MonoBehaviour
                 _targetTransform2 = new Vector3(_target2.position.x, _target2.position.y + 10, _target2.position.z);
                 _success = true;
             }
-
-            //if (_success == true)
-            //{
-            //    if (_selectUnit.buttonFlag1 == true)
-            //    {
-            //        GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target2.position.x, 10, _target2.position.z), Quaternion.identity);
-            //        //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
-            //        Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
-            //        _meteorCount -= 1;
-
-            //        //// î≠éÀâπÇèoÇ∑
-            //        //AudioSource.PlayClipAtPoint(sound, transform.position);
-
-            //        // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
-            //        Destroy(meteor, 2.0f);
-            //        _selectUnit.buttonFlag1 = false;
-            //        Debug.Log("a");
-            //    }
-
-            //    if (_selectUnit2.buttonFlag2 == true)
-            //    {
-            //        GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(_target1.position.x, 10, _target1.position.z), Quaternion.identity);
-            //        //GameObject meteor = PhotonNetwork.Instantiate("Meteor", new Vector3(0, 10, 0), Quaternion.identity);
-            //        Rigidbody meteorRb = meteor.GetComponent<Rigidbody>();
-            //        _meteorCount -= 1;
-
-            //        //// î≠éÀâπÇèoÇ∑
-            //        //AudioSource.PlayClipAtPoint(sound, transform.position);
-
-            //        // ÇTïbå„Ç…ñCíeÇîjâÛÇ∑ÇÈ
-            //        Destroy(meteor, 2.0f);
-            //        _selectUnit2.buttonFlag2 = false;
-            //    }
-            //    Debug.Log(_meteorCount);
-            //}
 
             if (_selectUnit.buttonFlag1 == true)
             {

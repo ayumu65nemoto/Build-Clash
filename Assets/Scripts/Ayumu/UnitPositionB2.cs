@@ -39,7 +39,7 @@ public class UnitPositionB2 : MonoBehaviour
 
             _gameObject = GameObject.FindWithTag("GameManager");
             _gameManager = _gameObject.GetComponent<GameManager>();
-            _selectUnit2 = _gameObject.GetComponent<SelectUnit2>();
+            _selectUnit2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         }
         else if (Input.GetMouseButtonUp(0))
         {

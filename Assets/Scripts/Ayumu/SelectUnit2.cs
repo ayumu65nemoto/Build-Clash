@@ -35,6 +35,7 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
     //雨のコマンドをどちらが押したのか
     public bool rainShot2;
     //GameManager
+    private GameObject _gameObject;
     private GameManager _gameManager;
 
     //AR用に追加
@@ -54,7 +55,8 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
         buttonFlag2 = false;
         rainShot2 = false;
 
-        _gameManager = GetComponent<GameManager>();
+        _gameObject = GameObject.FindWithTag("GameManager");
+        _gameManager = _gameObject.GetComponent<GameManager>();
     }
 
     public void PushDownA()
@@ -134,7 +136,7 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (_photonConnecter.canvasFlag2 == true)
+        if (_gameManager.canvasFlag2 == true)
         {
             _indicater02 = GameObject.FindWithTag("id0");
             _indicater12 = GameObject.FindWithTag("id1");
@@ -156,7 +158,7 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
                 indicater_b2[i].SetActive(false);
                 indicater_c2[i].SetActive(false);
             }
-            _photonConnecter.canvasFlag2 = false;
+            _gameManager.canvasFlag2 = false;
         }
     }
 

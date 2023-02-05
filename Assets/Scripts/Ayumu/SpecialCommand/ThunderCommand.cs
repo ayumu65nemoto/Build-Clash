@@ -38,8 +38,8 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
     {
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
-        _selectUnit = _gameObject.GetComponent<SelectUnit>();
-        _selectUnit2 = _gameObject.GetComponent<SelectUnit2>();
+        _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
+        _selectUnit2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         //PhotonConnecterŽæ“¾
         _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
         _playerObject = GameObject.FindWithTag("Player");
@@ -56,7 +56,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
     {
         if (_thunder > 0)
         {
-            if (_photonConnecter.p2 == true)
+            if (_gameManager.p2 == true)
             {
                 _playerObject = GameObject.FindWithTag("Player");
                 _enemyObject = GameObject.FindWithTag("Enemy");

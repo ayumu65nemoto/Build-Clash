@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (_photonConnecter.p2 == true)
+        if (_gameManager.p2 == true)
         {
             _playerObject = GameObject.FindWithTag("Player");
             _enemyObject = GameObject.FindWithTag("Enemy");

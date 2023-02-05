@@ -9,21 +9,25 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
 {
     //プレイヤーID(擬似取得)
     public int playerId;
-    //キャンバス表示フラグ
-    public bool canvasFlag;
-    public bool canvasFlag2;
-    //相手プレイヤー出現フラグ
-    public bool p1;
-    public bool p2;
+    ////キャンバス表示フラグ
+    //public bool canvasFlag;
+    //public bool canvasFlag2;
+    ////相手プレイヤー出現フラグ
+    //public bool p1;
+    //public bool p2;
+
+    //接続フラグ
+    public bool connect;
 
     private void Start()
     {
         // PhotonServerSettingsの設定内容を使ってマスターサーバーへ接続する
         PhotonNetwork.ConnectUsingSettings();
-        canvasFlag = false;
-        canvasFlag2 = false;
-        p1 = false;
-        p2 = false;
+        //canvasFlag = false;
+        //canvasFlag2 = false;
+        //p1 = false;
+        //p2 = false;
+        connect = false;
     }
 
     // マスターサーバーへの接続が成功した時に呼ばれるコールバック
@@ -39,6 +43,8 @@ public class PhotonConnecter : MonoBehaviourPunCallbacks
         foreach (var player in PhotonNetwork.PlayerList)
         {
             playerId = player.ActorNumber;
+            connect = true;
+            Debug.Log(playerId);
         }
     }
 

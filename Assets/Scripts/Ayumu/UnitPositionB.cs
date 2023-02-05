@@ -38,7 +38,7 @@ public class UnitPositionB : MonoBehaviour
             _clickStartPosition = Input.mousePosition;
 
             _gameObject = GameObject.FindWithTag("GameManager");
-            _selectUnit = _gameObject.GetComponent<SelectUnit>();
+            _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
             _gameManager = _gameObject.GetComponent<GameManager>();
         }
         else if (Input.GetMouseButtonUp(0))

@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     private GameObject _textLose;
     private GameObject _textLose2;
     //キャンバス確認のためにPhotonConnecterを取得
+    private GameObject _photonController;
     private PhotonConnecter _photonConnecter;
     //その位置にユニットが配置されているか
     public bool center1;
@@ -79,18 +80,19 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     //CASTLE取得
     private CastleSpawn _castleSpawn;
-    private CastleSpawn1 _castleSpawn1;
     //castle出現
     private bool _build1;
     private bool _build2;
-    //テスト
-    private bool _build1_2 = false;
 
+    //キャンバス表示フラグ
+    public bool canvasFlag;
+    public bool canvasFlag2;
+    //相手プレイヤー出現フラグ
+    public bool p1;
+    public bool p2;
 
     GameObject _cs;
     CastleSpawn cs_;
-    GameObject _cs2;
-    CastleSpawn1 cs_1;
 
     void Awake()
     {
@@ -98,6 +100,10 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         _start = true;
         _build1 = true;
         _build2 = true;
+        canvasFlag = false;
+        canvasFlag2 = false;
+        p1 = false;
+        p2 = false;
     }
 
     // Start is called before the first frame update
@@ -146,7 +152,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _textLose2 = GameObject.FindWithTag("Lose2");
 
             //PhotonConnecter取得
-            _photonConnecter = GetComponent<PhotonConnecter>();
+            _photonController = GameObject.Find("PhotonController");
+            _photonConnecter = _photonController.GetComponent<PhotonConnecter>();
 
             //配置確認フラグ
             center1 = false;
@@ -194,8 +201,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             isGround2 = false;
 
             //両プレイヤーコアを取得
-            _player1 = GameObject.FindWithTag("PlayerCore");
-            _player2 = GameObject.FindWithTag("EnemyCore");
+            //_player1 = GameObject.FindWithTag("PlayerCore");
+            //_player2 = GameObject.FindWithTag("EnemyCore");
 
             //勝敗テキスト取得
             _textWin = GameObject.FindWithTag("Win");
@@ -204,7 +211,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _textLose2 = GameObject.FindWithTag("Lose2");
 
             //PhotonConnecter取得
-            _photonConnecter = GetComponent<PhotonConnecter>();
+            _photonController = GameObject.Find("PhotonController");
+            _photonConnecter = _photonController.GetComponent<PhotonConnecter>();
 
             //配置確認フラグ
             center1 = false;
@@ -214,7 +222,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             right2 = false;
             left2 = false;
 
-            _start = false;
             _canvas = GameObject.FindWithTag("Canvas");
             _canvas2 = GameObject.FindWithTag("Canvas2");
             _canvas.SetActive(false);
@@ -223,38 +230,39 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _cs = GameObject.Find("CASTLE");
             cs_ = _cs.GetComponent<CastleSpawn>();
 
-            _cs2 = GameObject.Find("CASTLE2");
-            cs_1 = _cs2.GetComponent<CastleSpawn1>();
-            if (_photonConnecter.playerId == 1)
-            {
-                _cs2.gameObject.SetActive(false);
-                //var position = new Vector3(0, 1.4f, -10);
-                //var prefab = "PlayerPrefab";
-                _canvas.SetActive(true);
-                _photonConnecter.canvasFlag = true;
-                _photonConnecter.p1 = true;
-                //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
-                Debug.Log(_photonConnecter.playerId);
-            }
-            if (_photonConnecter.playerId == 2)
-            {
-                _cs.gameObject.SetActive(false);
-                //var position = new Vector3(0, 1.4f, 6);
-                //var prefab = "EnemyPrefab";
-                _canvas2.SetActive(true);
-                _photonConnecter.canvasFlag2 = true;
-                _photonConnecter.p2 = true;
-                //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
-                Debug.Log(_photonConnecter.playerId);
-            }
+            _start = false;
         }
 
 
         if (SceneManager.GetActiveScene().name == "BattleAR")
         {
+            if (_photonConnecter.connect == true)
+            {
+                if (_photonConnecter.playerId == 1)
+                {
+                    //var position = new Vector3(0, 1.4f, -10);
+                    //var prefab = "PlayerPrefab";
+                    _canvas.SetActive(true);
+                    canvasFlag = true;
+                    p1 = true;
+                    //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
+                    Debug.Log(_photonConnecter.playerId);
+                }
+                if (_photonConnecter.playerId == 2)
+                {
+                    //var position = new Vector3(0, 1.4f, 6);
+                    //var prefab = "EnemyPrefab";
+                    _canvas2.SetActive(true);
+                    canvasFlag2 = true;
+                    p2 = true;
+                    //PhotonNetwork.Instantiate(prefab, position, Quaternion.identity);
+                    Debug.Log(_photonConnecter.playerId);
+                }
+                _photonConnecter.connect = false;
+            }
             //キャンバスが非アクティブからアクティブになったタイミングで再度取得
             //Start内のものはあえて残している(無いと最初に呼ばれた109行目でエラーを吐く)
-            if (_photonConnecter.canvasFlag == true)
+            if (canvasFlag == true)
             {
                 //バトルスタートボタン取得
                 _battleStartButton = GameObject.FindWithTag("BattleStart");
@@ -279,7 +287,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 //_photonConnecter.canvasFlag = false;
             }
 
-            if (_photonConnecter.canvasFlag2 == true)
+            if (canvasFlag2 == true)
             {
                 //バトルスタートボタン取得
                 _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
@@ -302,7 +310,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 _textLose2.SetActive(false);
             }
 
-            if (_unitPositionA.setUnitA == true && _unitPositionB.setUnitB == true && _unitPositionC.setUnitC && true)
+            if (_unitPositionA.setUnitA == true && _unitPositionB.setUnitB == true && _unitPositionC.setUnitC == true)
             {
                 //バトルスタートボタンがあるか確認
                 //これがないとボタンを壊した後も永遠にアクセスし続けるため
@@ -312,7 +320,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 }
             }
 
-            if (_unitPositionA2.setUnitA2 == true && _unitPositionB2.setUnitB2 == true && _unitPositionC2.setUnitC2 && true)
+            if (_unitPositionA2.setUnitA2 == true && _unitPositionB2.setUnitB2 == true && _unitPositionC2.setUnitC2 == true)
             {
                 //バトルスタートボタンがあるか確認
                 //これがないとボタンを壊した後も永遠にアクセスし続けるため
@@ -362,8 +370,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 CastleCreate();
                 _build1 = false;
             }
-            //ID  1 ?
-            if (_build2 == true && cs_.castlespawn == true && _photonConnecter.playerId == 1)
+
+            if (_build2 == true && cs_.castlespawn == true && _photonConnecter.playerId == 2)
             {
                 CastleCreate2();
                 _build2 = false;
@@ -424,7 +432,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Player";
-            unit.layer = LayerMask.NameToLayer("Player1");
             unit.AddComponent<PlayerStates>();
             unit.AddComponent<Player>();
             if (unit.name == "KINGBLOCK")
@@ -437,11 +444,11 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
     void CastleCreate2()
     {
-        _castleSpawn1 = GameObject.Find("CASTLE2").GetComponent<CastleSpawn1>();
+        _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
         for (int i = 0; i < PosList2.Count; i++)
         {
             Vector3 sss = PosList2[i];
-            sss += _castleSpawn1.CastleMain;
+            sss += _castleSpawn.CastleMain;
             sss.x = sss.x * 1;
             sss.z = sss.z * 1;
             sss.y += 0.1f;
@@ -449,35 +456,12 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Enemy";
-            unit.layer = LayerMask.NameToLayer("Player2");
             unit.AddComponent<PlayerStates2>();
             unit.AddComponent<Player>();
             if (unit.name == "KINGBLOCK")
             {
                 unit.tag = "EnemyCore";
                 unit.AddComponent<EnemyCore>();
-            }
-        }
-        //_castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
-        for (int i = 0; i < PosList.Count; i++)
-        {
-            Vector3 sss = PosList[i];
-            sss += _castleSpawn1.CastleMain;
-            sss.x = sss.x * -1;
-            sss.z = sss.z * -1;
-            sss.y += 0.1f;
-            sss.z += 20f;
-            string prefab = myList[i].Replace("(Clone)", "");
-            GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.Euler(0, 180, 0));
-            Destroy(unit.GetComponent<Rigidbody>());
-            unit.tag = "Player";
-            unit.layer = LayerMask.NameToLayer("Player2");
-            unit.AddComponent<PlayerStates>();
-            unit.AddComponent<Player>();
-            if (unit.name == "KINGBLOCK")
-            {
-                unit.tag = "PlayerCore";
-                unit.AddComponent<PlayerCore>();
             }
         }
     }
