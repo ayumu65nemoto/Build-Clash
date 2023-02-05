@@ -63,6 +63,7 @@ public class Sample2 : MonoBehaviour
             Me = transform.position;
             Me.x -= reset.x;
             Me.z -= reset.z;
+            Me.y -= reset.y;
             transform.position = Me;
             rd.constraints = RigidbodyConstraints.FreezeAll;
         }
