@@ -218,8 +218,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _textLose2 = GameObject.FindWithTag("Lose2");
 
             //PhotonConnecter取得
-            _photonController = GameObject.Find("PhotonController");
-            _photonConnecter = _photonController.GetComponent<PhotonConnecter>();
+            //_photonController = GameObject.Find("PhotonController");
+            //_photonConnecter = _photonController.GetComponent<PhotonConnecter>();
+            _photonConnecter = GetComponent<PhotonConnecter>();
 
             //配置確認フラグ
             center1 = false;
