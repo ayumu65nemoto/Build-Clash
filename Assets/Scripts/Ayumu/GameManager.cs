@@ -473,15 +473,15 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     void CastleCreate2()
     {
         _castleSpawn = GameObject.Find("CASTLE").GetComponent<CastleSpawn>();
-        for (int i = 0; i < PosList2.Count; i++)
+        for (int i = 0; i < PosList.Count; i++)
         {
-            Vector3 sss = PosList2[i];
+            Vector3 sss = PosList[i];
             sss += posr;
             sss.x = sss.x * -1;
             sss.z = sss.z * -1;
             sss.y += 0.1f;
             sss.z += 6f;
-            string prefab = otherList[i].Replace("(Clone)", "");
+            string prefab = myList[i].Replace("(Clone)", "");
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Enemy";
