@@ -48,8 +48,6 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
     {
         selectUnitNumber2 = 0;
 
-        //PhotonConnecterŽæ“¾
-        _photonConnecter = GetComponent<PhotonConnecter>();
         //AR—p‚É’Ç‰Á
         UnitSpawn = gameObject.GetComponent<CastleSpawn>();
 
@@ -58,6 +56,8 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
 
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
+        //PhotonConnecterŽæ“¾
+        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
     }
 
     public void PushDownA()

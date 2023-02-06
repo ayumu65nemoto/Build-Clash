@@ -49,13 +49,12 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     {
         selectUnitNumber = 0;
 
-        //PhotonConnecterŽæ“¾
-        _photonConnecter = GetComponent<PhotonConnecter>();
-
         buttonFlag1 = false;
         rainShot1 = false;
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
+        //PhotonConnecterŽæ“¾
+        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
     }
 
     public void PushDownA()
