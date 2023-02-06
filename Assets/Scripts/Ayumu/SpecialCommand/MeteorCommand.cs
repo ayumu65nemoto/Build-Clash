@@ -36,7 +36,7 @@ public class MeteorCommand : MonoBehaviour
         _gameManager = GameObject.FindWithTag("GameManager");
         _gameManagerScript = _gameManager.GetComponent<GameManager>();
         //PhotonConnecterŽæ“¾
-        _photonConnecter = _gameManager.GetComponent<PhotonConnecter>();
+        _photonConnecter = GameObject.Find("PhotonController").GetComponent<PhotonConnecter>();
         _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
         _selectUnit2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         _player = GameObject.FindWithTag("Player");

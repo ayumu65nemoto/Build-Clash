@@ -37,7 +37,7 @@ public class RainCommand : MonoBehaviourPunCallbacks
         _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
         _selectUnit2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         //PhotonConnecterŽæ“¾
-        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
+        _photonConnecter = GameObject.Find("PhotonController").GetComponent<PhotonConnecter>();
         _rainCount = 1;
         _player = GameObject.FindWithTag("Player");
         _enemy = GameObject.FindWithTag("Enemy");

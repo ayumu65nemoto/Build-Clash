@@ -57,7 +57,7 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
         //PhotonConnecterŽæ“¾
-        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
+        _photonConnecter = GameObject.Find("PhotonController").GetComponent<PhotonConnecter>();
     }
 
     public void PushDownA()

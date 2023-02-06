@@ -41,7 +41,7 @@ public class ThunderCommand : MonoBehaviourPunCallbacks, IPunObservable
         _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
         _selectUnit2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
         //PhotonConnecterŽæ“¾
-        _photonConnecter = _gameObject.GetComponent<PhotonConnecter>();
+        _photonConnecter = GameObject.Find("PhotonController").GetComponent<PhotonConnecter>();
         _playerObject = GameObject.FindWithTag("Player");
         _enemyObject = GameObject.FindWithTag("Enemy");
         _playerStates1 = _playerObject.GetComponent<PlayerStates>();
