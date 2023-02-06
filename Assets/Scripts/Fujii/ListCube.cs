@@ -26,7 +26,7 @@ public class ListCube : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         Listsaver = GameObject.Find("GameManager");
         _GM = Listsaver.GetComponent<GameManager>();
-        _photonConnecter = GameObject.Find("PhotonController").GetComponent<PhotonConnecter>();
+        //_photonConnecter = GameObject.Find("PhotonController").GetComponent<PhotonConnecter>();
         _listCount = 0;
     }
 

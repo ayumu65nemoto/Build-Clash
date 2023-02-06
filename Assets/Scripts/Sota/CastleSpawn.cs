@@ -36,7 +36,7 @@ public class CastleSpawn : MonoBehaviour
         _GM = Listsaver.GetComponent<GameManager>();
         _SU = GameObject.Find("Canvas").GetComponent<SelectUnit>();
         _SU2 = GameObject.Find("Canvas2").GetComponent<SelectUnit2>();
-        arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
+        //arCam = GameObject.Find("AR Camera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -50,34 +50,34 @@ public class CastleSpawn : MonoBehaviour
             }
         }
 
-        RaycastHit hit;
-        Ray ray = arCam.ScreenPointToRay(Input.GetTouch(0).position);
+        //RaycastHit hit;
+        //Ray ray = arCam.ScreenPointToRay(Input.GetTouch(0).position);
 
 
 
-        if (m_RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits))
-        {
+        //if (m_RaycastManager.Raycast(Input.GetTouch(0).position, m_Hits))
+        //{
 
-            if (Physics.Raycast(ray, out hit))
-            {
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
 
-                if (castlespawn == false)
-                {
-                    CastleMain = m_Hits[0].pose.position;
-                    SC_pos = m_Hits[0].pose.position;
-                    CastleMain.y -= 1f;
-                    //Instantiate(Plane, CastleMain, Quaternion.identity);
-                    CastleMain = m_Hits[0].pose.position;
-                    //CastleCreate(CastleMain,1);
-                    castlespawn = true;
-                    _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
-                    _SU.ARget = true;
-                    //transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
-                }
-            }
+        //        if (castlespawn == false)
+        //        {
+        //            CastleMain = m_Hits[0].pose.position;
+        //            SC_pos = m_Hits[0].pose.position;
+        //            CastleMain.y -= 1f;
+        //            //Instantiate(Plane, CastleMain, Quaternion.identity);
+        //            CastleMain = m_Hits[0].pose.position;
+        //            //CastleCreate(CastleMain,1);
+        //            castlespawn = true;
+        //            _arPlaneManager.requestedDetectionMode = PlaneDetectionMode.None;
+        //            _SU.ARget = true;
+        //            //transparent = Instantiate(DeleteTool, CraftMain, Quaternion.identity);
+        //        }
+        //    }
 
 
-        }
+        //}
     }
 
     //void CastleCreate(Vector3 P_cas,int Qi)

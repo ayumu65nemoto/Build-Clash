@@ -238,7 +238,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _cs = GameObject.Find("CASTLE");
             cs_ = _cs.GetComponent<CastleSpawn>();
             spawned = GameObject.Find("AR Session Origin");
-            poss = spawned.transform.position;
+            //poss = spawned.transform.position;
             _start = false;
         }
 
@@ -391,15 +391,17 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 thunder2 = false;
             }
 
-            if (_build1 == true && cs_.castlespawn==true && _photonConnecter.playerId == 1)
+            if (_build1 == true &&  _photonConnecter.playerId == 1)
             {
-                CastleCreate();
+                //CastleCreate();
+                PhotonNetwork.Instantiate("PlayerPrefab", new Vector3(0, 1.5f, -7), Quaternion.identity);
                 _build1 = false;
             }
 
-            if (_build2 == true && cs_.castlespawn == true && _photonConnecter.playerId == 2)
+            if (_build2 == true && _photonConnecter.playerId == 2)
             {
-                CastleCreate2();
+                //CastleCreate2();
+                PhotonNetwork.Instantiate("EnemyPrefab", new Vector3(0, 1.5f, 5), Quaternion.identity);
                 _build2 = false;
             }
 

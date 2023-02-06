@@ -95,19 +95,19 @@ public class UnitPositionA : MonoBehaviour
         setUnitA = true;
         if (dir == FlickDirection.Left)
         {
-            _selectUnit.SetUnit(-2.5f, 0, 2);
+            _selectUnit.SetUnit(-7, 1, 2);
             _gameManager.left1 = true;
             _unit -= 1;
         }
         else if (dir == FlickDirection.Right)
         {
-            _selectUnit.SetUnit(2.5f, 0, 2);
+            _selectUnit.SetUnit(7, 1, 2);
             _gameManager.right1 = true;
             _unit -= 1;
         }
         else if (dir == FlickDirection.Up)
         {
-            _selectUnit.SetUnit(0, 0, 2);
+            _selectUnit.SetUnit(0, 1, 2);
             _gameManager.center1 = true;
             _unit -= 1;
         }
