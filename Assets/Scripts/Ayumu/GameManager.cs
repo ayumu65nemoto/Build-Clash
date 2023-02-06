@@ -94,6 +94,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     //リスト格納フラグ
     public bool list;
 
+    //特殊コマンドフラグ
+    public bool special;
+
     GameObject _cs;
     CastleSpawn cs_;
     Vector3 poss;
@@ -111,6 +114,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         p1 = false;
         p2 = false;
         list = true;
+        special = false;
     }
 
     // Start is called before the first frame update
@@ -199,7 +203,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             _unitPositionC2 = _buttonC2.GetComponent<UnitPositionC2>();
 
             //各種フラグ
-            battle = false;
+            //battle = false;
             rain1 = false;
             rain2 = false;
             thunder1 = false;
@@ -355,6 +359,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             if (battle1 == true && battle2 == true)
             {
                 battle = true;
+                special = true;
             }
 
             if (isGround1 == true)
@@ -507,6 +512,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         if (stream.IsWriting)
         {
             //データの送信
+            //stream.SendNext(battle);
             stream.SendNext(battle1);
             stream.SendNext(battle2);
             stream.SendNext(posr);
@@ -514,6 +520,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
         else
         {
             //データの受信
+            //battle = (bool)stream.ReceiveNext();
             battle1 = (bool)stream.ReceiveNext();
             battle2 = (bool)stream.ReceiveNext();
             posr = (Vector3)stream.ReceiveNext();

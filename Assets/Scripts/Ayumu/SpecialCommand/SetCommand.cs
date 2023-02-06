@@ -26,14 +26,15 @@ public class SetCommand : MonoBehaviour
 
     public void SetShot()
     {
-        if (_gameManager.battle == true)
+        if (_gameManager.battle == false)
         {
-            //if (_commandCount > 0)
-            //{
-            //    _selectUnit.SetUnit(0, 0, 0);
-            //    _commandCount -= 1;
-            //}
-            _selectUnit.SetUnit(0, 0, 0);
+            if (_commandCount > 0)
+            {
+                _selectUnit.SetUnit(0, 0, 0);
+                _commandCount -= 1;
+                Debug.Log(_selectUnit.selectUnitNumber);
+            }
+            //_selectUnit.SetUnit(0, 0, 0);
         }
     }
 }
