@@ -34,7 +34,7 @@ public class BallShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // 420ƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-            if (_count % 420 == 0)
+            if (_count % 90 == 0)
             {
                 GameObject ball = PhotonNetwork.Instantiate("Ball", transform.position, Quaternion.identity);
                 Rigidbody ballRb = ball.GetComponent<Rigidbody>();

@@ -366,9 +366,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             {
                 _textLose = GameObject.Find("Canvas").transform.Find("Lose").gameObject;
                 _textLose.SetActive(true);
+                Destroy(_textWin);
                 _textWin2 = GameObject.Find("Canvas2").transform.Find("Win").gameObject;
                 _textWin2.SetActive(true);
-                Destroy(_textWin);
                 Destroy(_textLose2);
                 Invoke("Finish", 3f);
             }
@@ -377,9 +377,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             {
                 _textWin = GameObject.Find("Canvas").transform.Find("Win").gameObject;
                 _textWin.SetActive(true);
+                Destroy(_textLose);
                 _textLose2 = GameObject.Find("Canvas2").transform.Find("Lose").gameObject;
                 _textLose2.SetActive(true);
-                Destroy(_textLose);
                 Destroy(_textWin2);
                 Invoke("Finish", 3f);
             }

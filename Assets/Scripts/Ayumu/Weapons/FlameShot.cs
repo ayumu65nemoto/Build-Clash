@@ -28,7 +28,7 @@ public class FlameShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-            if (_count % 840 == 0)
+            if (_count % 240 == 0)
             {
                 GameObject flame = PhotonNetwork.Instantiate("Flame", transform.position, Quaternion.identity);
                 Rigidbody flameRb = flame.GetComponent<Rigidbody>();

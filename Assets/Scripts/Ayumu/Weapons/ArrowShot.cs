@@ -29,7 +29,7 @@ public class ArrowShot : MonoBehaviour
         if (_gameManager.battle == true)
         {
             // ‚U‚OƒtƒŒ[ƒ€‚²‚Æ‚É–C’e‚ğ”­Ë‚·‚é
-            if (_count % 240 == 0)
+            if (_count % 60 == 0)
             {
                 GameObject arrow = PhotonNetwork.Instantiate("Arrow", transform.position, Quaternion.Euler(_angle, 0, 0));
                 Rigidbody arrowRb = arrow.GetComponent<Rigidbody>();
