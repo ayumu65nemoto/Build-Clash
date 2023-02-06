@@ -56,6 +56,8 @@ public class crafter : MonoBehaviour
     public GameObject Death;
     CraftFrame craftFrame;
 
+    Rigidbody rd;
+
     //ƒtƒ‰ƒO
     public bool spawnCount = false;
     public bool craftStart = false;
@@ -276,12 +278,20 @@ public class crafter : MonoBehaviour
                     {
                         y++;
                         CraftMain.y += c_position;
-                        Instantiate(block1, Main, Quaternion.identity);
+                        GameObject blck=Instantiate(block1, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         CraftCost -= 1;
                     }
                     else if (y == 8)
                     {
-                        Instantiate(block1, Main, Quaternion.identity);
+                        GameObject blck = Instantiate(block1, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         CraftCost -= 1;
                     }
                 }
@@ -295,12 +305,20 @@ public class crafter : MonoBehaviour
                     {
                         y++;
                         CraftMain.y += c_position;
-                        Instantiate(block2, Main, Quaternion.identity);
+                        GameObject blck= Instantiate(block2, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         CraftCost -= 3;
                     }
                     else if (y == 8)
                     {
-                        Instantiate(block2, Main, Quaternion.identity);
+                        GameObject blck = Instantiate(block2, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         CraftCost -= 3;
                     }
                 }
@@ -314,12 +332,20 @@ public class crafter : MonoBehaviour
                     {
                         y++;
                         CraftMain.y += c_position;
-                        Instantiate(block3, Main, Quaternion.identity);
+                        GameObject blck=Instantiate(block3, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         CraftCost -= 5;
                     }
                     else if (y == 8)
                     {
-                        Instantiate(block3, Main, Quaternion.identity);
+                        GameObject blck = Instantiate(block3, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         CraftCost -= 5;
                     }
                 }
@@ -333,12 +359,21 @@ public class crafter : MonoBehaviour
                     {
                         y++;
                         CraftMain.y += c_position;
-                        Instantiate(King, Main, Quaternion.identity);
+
+                        GameObject blck= Instantiate(King, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd = blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         king = true;
                     }
                     else if (y == 8)
                     {
-                        Instantiate(King, Main, Quaternion.identity);
+                        GameObject blck = Instantiate(King, Main, Quaternion.identity);
+                        blck.AddComponent<Rigidbody>();
+                        rd =blck.GetComponent<Rigidbody>();
+                        rd.constraints = RigidbodyConstraints.None;
+                        rd.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
                         king = true;
                     }
                 }
