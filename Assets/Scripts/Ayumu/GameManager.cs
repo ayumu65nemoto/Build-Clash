@@ -507,8 +507,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             //データの送信
             stream.SendNext(battle1);
             stream.SendNext(battle2);
-            stream.SendNext(myList);
-            stream.SendNext(PosList);
             stream.SendNext(posr);
         }
         else
@@ -516,8 +514,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             //データの受信
             battle1 = (bool)stream.ReceiveNext();
             battle2 = (bool)stream.ReceiveNext();
-            myList = (List<string>)stream.ReceiveNext();
-            PosList = (List<Vector3>)stream.ReceiveNext();
             posr = (Vector3)stream.ReceiveNext();
         }
     }
