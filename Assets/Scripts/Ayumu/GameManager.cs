@@ -516,6 +516,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(battle1);
             stream.SendNext(battle2);
             stream.SendNext(posr);
+            stream.SendNext(isGround1);
+            stream.SendNext(isGround2);
         }
         else
         {
@@ -524,6 +526,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             battle1 = (bool)stream.ReceiveNext();
             battle2 = (bool)stream.ReceiveNext();
             posr = (Vector3)stream.ReceiveNext();
+            isGround1 = (bool)stream.ReceiveNext();
+            isGround2 = (bool)stream.ReceiveNext();
         }
     }
 }
