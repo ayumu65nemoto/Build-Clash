@@ -39,9 +39,10 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
     private GameManager _gameManager;
 
     //AR—p‚É’Ç‰Á
-    CastleSpawn UnitSpawn;
     Vector3 Qii;
-
+    GameObject _GM_F;
+    CastleSpawn UnitSpawn;
+    public bool ARget;
     // Start is called before the first frame update
     void Start()
     {
@@ -159,7 +160,14 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
                 indicater_c2[i].SetActive(false);
             }
             _gameManager.canvasFlag2 = false;
-            
+
+        }
+        if (ARget == true)
+        {
+            //AR—p‚É’Ç‰Á
+            _GM_F = GameObject.Find("CASTLE");
+            UnitSpawn = _GM_F.GetComponent<CastleSpawn>();
+            ARget = false;
         }
     }
 

@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 }
                 if (_photonConnecter.playerId == 2)
                 {
-                    poss.z += 10f;
+                    poss.z += 8f;
                     spawned.transform.position = poss;
                     spawned.transform.Rotate(0, 180, 0, Space.Self);
                     //var position = new Vector3(0, 1.4f, 6);
@@ -466,7 +466,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             sss.x = sss.x * -1;
             sss.z = sss.z * -1;
             sss.y += 0.1f;
-            sss.z += 8f;
+            sss.z += 6f;
             string prefab = otherList[i].Replace("(Clone)", "");
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
             Destroy(unit.GetComponent<Rigidbody>());
