@@ -458,7 +458,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             sss.y += 0.1f;
             string prefab = myList[i].Replace("(Clone)", "");
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
-            Destroy(unit.GetComponent<Rigidbody>());
+            //Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Player";
             unit.AddComponent<PlayerStates>();
             unit.AddComponent<Player>();
@@ -483,7 +483,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             sss.z += 6f;
             string prefab = myList[i].Replace("(Clone)", "");
             GameObject unit = PhotonNetwork.Instantiate(prefab, sss, Quaternion.identity);
-            Destroy(unit.GetComponent<Rigidbody>());
+            //Destroy(unit.GetComponent<Rigidbody>());
             unit.tag = "Enemy";
             unit.AddComponent<PlayerStates2>();
             unit.AddComponent<Player>();
