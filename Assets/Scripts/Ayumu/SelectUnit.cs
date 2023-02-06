@@ -88,13 +88,14 @@ public class SelectUnit : MonoBehaviourPunCallbacks
     {
         selectUnitNumber = 3;
         buttonFlag1 = true;
+        rainShot1 = true;
     }
 
     public void PushDownE()
     {
         selectUnitNumber = 4;
         buttonFlag1 = true;
-        rainShot1 = true;
+        //rainShot1 = true;
     }
 
     public void PushDownF()
