@@ -259,9 +259,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 }
                 if (_photonConnecter.playerId == 2)
                 {
-                    poss.z += 8f;
-                    spawned.transform.position = poss;
-                    spawned.transform.Rotate(0, 180, 0, Space.Self);
+                    //poss.z += 8f;
+                    //spawned.transform.position = poss;
+                    //spawned.transform.Rotate(0, 180, 0, Space.Self);
                     //var position = new Vector3(0, 1.4f, 6);
                     //var prefab = "EnemyPrefab";
                     _canvas2.SetActive(true);
