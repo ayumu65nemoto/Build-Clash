@@ -182,9 +182,14 @@ public class SelectUnit : MonoBehaviourPunCallbacks
         Invoke("PushUpC", 0.5f);
     }
 
+    public void ResetCanvasFlag()
+    {
+        _gameManager.canvasFlag = false;
+    }
+
     public void SetUnit(float vecX, float vecY, float vecZ)
     {
-        Qii = UnitSpawn.SC_pos;
+        //Qii = UnitSpawn.SC_pos;
         Qii += new Vector3(vecX, vecY, vecZ);
         //selectUnitNumber個目のユニットを配置する
         var set = PhotonNetwork.Instantiate(_gameManager.decks[selectUnitNumber].name, Qii, Quaternion.identity);

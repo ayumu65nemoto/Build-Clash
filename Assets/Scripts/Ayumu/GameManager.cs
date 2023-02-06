@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
     private UnitPositionB2 _unitPositionB2;
     private UnitPositionC2 _unitPositionC2;
     //バトル開始ボタン
-    private GameObject _battleStartButton;
-    private GameObject _battleStartButton2;
+    public GameObject _battleStartButton;
+    public GameObject _battleStartButton2;
     //ユニット配置ボタン
     private GameObject _buttonA;
     private GameObject _buttonB;
@@ -277,7 +277,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             if (canvasFlag == true)
             {
                 //バトルスタートボタン取得
-                _battleStartButton = GameObject.FindWithTag("BattleStart");
+                //_battleStartButton = GameObject.FindWithTag("BattleStart");
+                //_battleStartButton.SetActive(false);
+                _battleStartButton = GameObject.Find("Canvas").transform.Find("BattleStart").gameObject;
                 _battleStartButton.SetActive(false);
 
                 //ユニットボタン取得
@@ -295,14 +297,15 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 //テキスト非アクティブ
                 _textWin.SetActive(false);
                 _textLose.SetActive(false);
-
-                //_photonConnecter.canvasFlag = false;
+                //canvasFlag = false;
             }
 
             if (canvasFlag2 == true)
             {
                 //バトルスタートボタン取得
-                _battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+                //_battleStartButton2 = GameObject.FindWithTag("BattleStart2");
+                //_battleStartButton2.SetActive(false);
+                _battleStartButton2 = GameObject.Find("Canvas2").transform.Find("BattleStart2").gameObject;
                 _battleStartButton2.SetActive(false);
 
                 //ユニットボタン取得
@@ -320,26 +323,33 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
                 //テキスト非アクティブ
                 _textWin2.SetActive(false);
                 _textLose2.SetActive(false);
+                //canvasFlag2 = false;
             }
 
             if (_unitPositionA.setUnitA == true && _unitPositionB.setUnitB == true && _unitPositionC.setUnitC == true)
             {
                 //バトルスタートボタンがあるか確認
                 //これがないとボタンを壊した後も永遠にアクセスし続けるため
+                _battleStartButton = GameObject.Find("Canvas").transform.Find("BattleStart").gameObject;
+                _battleStartButton.SetActive(false);
                 if (_battleStartButton == true)
                 {
                     _battleStartButton.SetActive(true);
                 }
+                _unitPositionA.setUnitA = false;
             }
 
             if (_unitPositionA2.setUnitA2 == true && _unitPositionB2.setUnitB2 == true && _unitPositionC2.setUnitC2 == true)
             {
                 //バトルスタートボタンがあるか確認
                 //これがないとボタンを壊した後も永遠にアクセスし続けるため
+                _battleStartButton2 = GameObject.Find("Canvas2").transform.Find("BattleStart2").gameObject;
+                _battleStartButton2.SetActive(false);
                 if (_battleStartButton2 == true)
                 {
                     _battleStartButton2.SetActive(true);
                 }
+                _unitPositionA2.setUnitA2 = false;
             }
 
             if (battle1 == true && battle2 == true)
@@ -349,7 +359,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isGround1 == true)
             {
+                _textLose = GameObject.Find("Canvas").transform.Find("Lose").gameObject;
                 _textLose.SetActive(true);
+                _textWin2 = GameObject.Find("Canvas2").transform.Find("Win").gameObject;
                 _textWin2.SetActive(true);
                 Destroy(_textWin);
                 Destroy(_textLose2);
@@ -358,7 +370,9 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
 
             if (isGround2 == true)
             {
+                _textWin = GameObject.Find("Canvas").transform.Find("Win").gameObject;
                 _textWin.SetActive(true);
+                _textLose2 = GameObject.Find("Canvas2").transform.Find("Lose").gameObject;
                 _textLose2.SetActive(true);
                 Destroy(_textLose);
                 Destroy(_textWin2);
@@ -494,9 +508,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             stream.SendNext(battle1);
             stream.SendNext(battle2);
             stream.SendNext(myList);
-            stream.SendNext(otherList);
             stream.SendNext(PosList);
-            stream.SendNext(PosList2);
             stream.SendNext(posr);
         }
         else
@@ -505,9 +517,7 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             battle1 = (bool)stream.ReceiveNext();
             battle2 = (bool)stream.ReceiveNext();
             myList = (List<string>)stream.ReceiveNext();
-            otherList = (List<string>)stream.ReceiveNext();
             PosList = (List<Vector3>)stream.ReceiveNext();
-            PosList2 = (List<Vector3>)stream.ReceiveNext();
             posr = (Vector3)stream.ReceiveNext();
         }
     }

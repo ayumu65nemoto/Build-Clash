@@ -96,7 +96,7 @@ public class SelectUnitAlt : MonoBehaviour
 
     public void OnClick()
     {
-        _gameManager.battle = true;
+        _gameManager.battle1 = true;
         //battle1 = true;
         //SetActive(false)‚Å‚ÍUpdate‚É‚ ‚éSetActive(true)‚Åã‘‚«‚³‚ê‚é‚½‚ß
         Destroy(GameObject.FindWithTag("BattleStart"));

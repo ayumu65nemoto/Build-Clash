@@ -160,7 +160,6 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
                 indicater_c2[i].SetActive(false);
             }
             _gameManager.canvasFlag2 = false;
-
         }
         if (ARget == true)
         {
@@ -184,6 +183,11 @@ public class SelectUnit2 : MonoBehaviourPunCallbacks
     public void LatePushUpC()
     {
         Invoke("PushUpC", 0.5f);
+    }
+
+    public void ResetCanvasFlag2()
+    {
+        _gameManager.canvasFlag2 = false;
     }
 
     public void SetUnit(float vecX, float vecY, float vecZ)
