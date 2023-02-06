@@ -394,14 +394,14 @@ public class GameManager : MonoBehaviourPunCallbacks, IPunObservable
             if (_build1 == true &&  _photonConnecter.playerId == 1)
             {
                 //CastleCreate();
-                PhotonNetwork.Instantiate("PlayerPrefab", new Vector3(0, 1.5f, -7), Quaternion.identity);
+                PhotonNetwork.Instantiate("PlayerPrefab", new Vector3(1.5f, 1.2f, -7), Quaternion.identity);
                 _build1 = false;
             }
 
             if (_build2 == true && _photonConnecter.playerId == 2)
             {
                 //CastleCreate2();
-                PhotonNetwork.Instantiate("EnemyPrefab", new Vector3(0, 1.5f, 5), Quaternion.identity);
+                PhotonNetwork.Instantiate("EnemyPrefab", new Vector3(1.5f, 1.2f, 4), Quaternion.identity);
                 _build2 = false;
             }
 

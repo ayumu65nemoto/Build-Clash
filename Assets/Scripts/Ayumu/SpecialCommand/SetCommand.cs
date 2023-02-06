@@ -14,7 +14,7 @@ public class SetCommand : MonoBehaviour
     {
         _gameObject = GameObject.FindWithTag("GameManager");
         _gameManager = _gameObject.GetComponent<GameManager>();
-        _selectUnit = _gameObject.GetComponent<SelectUnit>();
+        _selectUnit = GameObject.Find("Canvas").GetComponent<SelectUnit>();
         _commandCount = 1;
     }
 
